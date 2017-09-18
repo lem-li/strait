@@ -1,0 +1,49 @@
+body {
+	background-color: #f3f3f3;
+}
+.link-wrap {
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+.friendlink_t {
+  margin: 30px 0 20px -20px;
+  zoom: 1;
+  overflow: hidden;
+}
+.friendlink_t li {
+  width: 298px;
+  height: 80px;
+  border: 1px solid #e8e8e8;
+  background-color: #ffffff;
+  float: left;
+  margin: 0 0 15px 20px;
+  display: inline;
+  line-height: 80px;
+  padding: 10px;
+  overflow: hidden;
+}
+.friendlink_t li a img {
+  float: left;
+}
+.friendlink_t li a span {
+  font-size: 14px;
+  color: #4c4c4c;
+}
+.friendlink_t li a:hover span {
+  color: #00448c;
+}
+.friendlink_b {
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+.friendlink_b a {
+  width: 20%;
+  float: left;
+  color: #666666;
+  height: 30px;
+  line-height: 30px;
+}
+.friendlink_b a:hover {
+  color: #00448c;
+}

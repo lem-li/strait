@@ -1,0 +1,94 @@
+﻿@charset "utf-8";
+
+.pagetion{
+    /* height:26px; */
+    /* width:100%; */
+    /* margin-top:24px; */
+    /* margin-bottom:48px; */
+    /* position:relative; */
+}
+.pagetion{
+    margin:24px auto;
+    /* height:26px; */
+    /* position:relative; */
+    background-color: #ffffff;
+    width: 998px;
+    padding: 10px 0px;
+    /* margin: 0 auto; */
+    text-align: center;
+}
+.pagetion .pages{
+    /* position:absolute; */
+    /* left:360px; */
+    /* top:0px; */
+    /* background-color: #ffffff; */
+    /* width: 998px; */
+    /* padding: 10px 0px; */
+    /* margin: 0 auto; */
+}
+.pagetion  .po_left{
+    
+}
+.pagetion .pages .page_count{
+    /* float:left; */
+    display: inline-block;
+}
+.pagetion .pages .page_count font{
+    color:#666666;
+    font-size:12px;
+    margin-right:12px;
+    line-height:26px;
+}
+.page{
+    /* float:left; */
+    display: inline-block;
+    margin-right: 5px;
+}
+.page a{
+    display:block;
+    border:1px solid #dddddd;
+    background:#f3f4f8;
+    padding:0px 10px;
+    line-height:26px;
+    height:26px;
+    -moz-box-sizing: border-box;  
+    -webkit-box-sizing: border-box; 
+    -o-box-sizing: border-box; 
+    -ms-box-sizing: border-box; 
+    box-sizing: border-box;
+    font-size:12px;
+    color:#666666;
+}
+.page .page_num{
+    display:block;
+    height:26px;
+    border:1px solid #dddddd;
+    background:#f3f4f8;
+    padding:0px 10px;
+    width:45px;
+    font-size: 12px;
+    text-align: center;
+    z-index: 2;
+    outline: 0;
+    -moz-box-sizing: border-box;  
+    -webkit-box-sizing: border-box; 
+    -o-box-sizing: border-box; 
+    -ms-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+.page a.active{
+    display:block;
+    border:none;
+    background: #0080ff;
+    padding:0px 10px;
+    line-height:26px;
+    height:26px;
+    -moz-box-sizing: border-box;  
+    -webkit-box-sizing: border-box; 
+    -o-box-sizing: border-box; 
+    -ms-box-sizing: border-box; 
+    box-sizing: border-box;
+    font-size:12px;
+    color:#FFF;
+}
+

@@ -1,0 +1,380 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en"><![endif]-->
+<html class="no-js" lang="zh">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+	<link rel="shortcut icon" href="../images/fav.ico" type="image/x-icon">
+    <title>中国海事仲裁委员会</title>
+    <link rel="stylesheet" href="../styles/normalize.css"/>
+    <link rel="stylesheet" href="../styles/foundation5/app.css"/>
+    <link rel="stylesheet" href="../styles/foundation5/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/jquery.bxslider.css"/>
+    <link href="../styles/rotaion.css" rel="stylesheet" type="text/css"/>
+    <script src="../scripts/jquery.js"></script>
+</head>
+<body id="home-page">
+<div id="container">
+    <div id="header">
+        <div class="row">
+            <div class="large-6 medium-6 columns logo">
+                <a href="index.html">
+                    <img src="../images/logo.png" alt=""/>
+                </a>
+            </div>
+            <div class="large-6 medium-6 columns">
+                <ul id="login" class="inline-list">
+                    <li><a href="/" class="button selected" title="中文版">中文版</a></li>
+                    <li><a href="/?l=en" class="button" title="English">English</a></li>
+                    <li><a href="/?l=fc" class="button" title="繁体版">繁体版</a></li>
+                </ul>
+                <div id="searchBar">
+                    <form name="searchPage" id="searchPage" method="get" action="index.php?" onsubmit="return validatek();">
+                        <input type="hidden" id="" name="m" value="Search"/>
+                        <input type="hidden" name="l" value="cn"/>
+                        <input type="text" name="keyword" id="searchBarText" value="" placeholder="请输入要搜索的内容">
+                        <input type="submit" value="" id="searchBarBtn">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 菜单 -->
+    <div id="top-menu">
+        <div id="top-nav" class="row collapse">
+            <div class="large-12 medium-12">
+                <nav class="top-bar">
+                    <section class="top-bar-section">
+                        <ul class="nav">
+                            <li class="nav_item">
+                                <a href="##" class="nav_a">首 页</a>
+                            </li>
+                            <li class="nav_item">
+                                <a href="##" class="nav_a">关于我们</a>
+                            </li>
+                            <li class="nav_item">
+                                <a href="##" class="nav_a">仲裁指南</a>
+                                <span></span>
+                                <div class="drop_list">
+                                    <a href="/index.php?m=Page&amp;a=index&amp;id=2">贸仲简介</a>
+                                    <a href="/index.php?m=Page&amp;a=index&amp;id=20">组织机构</a>
+                                    <a href="/index.php?m=Page&amp;a=index&amp;id=21">贸仲章程</a>
+                                    <a href="/index.php?m=Article&amp;a=index&amp;id=22">历史资料</a>
+                                    <a href="/index.php?m=Article&amp;a=index&amp;id=23">工作报告</a>
+                                    <a href="/index.php?m=Page&amp;a=index&amp;id=24">统计数据</a>
+                                    <a href="/index.php?m=Page&amp;a=index&amp;id=25">服务设施</a>
+                                    <a href="/index.php?m=Page&amp;a=index&amp;id=26">联系我们</a>
+                                </div>
+                            </li>
+                            <li class="nav_item">
+                                <a href="##" class="nav_a">仲裁员</a>
+                            </li>
+                            <li class="nav_item">
+                                <a href="##" class="nav_a">中心新闻</a>
+                            </li>
+                            <li class="nav_item">
+                                <a href="##" class="nav_a">活动公告</a>
+                            </li>
+                            <li class="nav_item">
+                                <a href="##" class="nav_a">仲裁资料</a>
+                            </li>
+                            <li class="nav_item">
+                                <a href="##" class="nav_a">仲裁前沿</a>
+                            </li>
+                        </ul>
+                    </section>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- 菜单 -->
+    <!-- 图 -->
+    <div id="top-banner" class="hide-for-small top-banner">
+        <div class="banners">
+            <div class="bitem">
+                <a href="#">
+                    <div class="img" style="background-image:url(../images/banner/banner_01.jpg)">
+
+                    </div>
+                </a>
+            </div>
+            <div class="bitem">
+                <a href="#">
+                    <div class="img" style="background-image:url(../images/banner/banner_02.jpg)">
+
+                    </div>
+                </a>
+            </div>
+            <div class="bitem">
+                <a href="#">
+                    <div class="img" style="background-image:url(../images/banner/banner_03.jpg)">
+
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 图 -->
+    <section id="home-feeds">
+        <div class="row maincontent">
+            <div class="content-feed-sidebar">
+                <!-- 热点新闻 -->
+                <div class="content-feed news-hot">
+                    <h2 class="content-feed-heading">
+                        <span class="line line-ml10"></span>
+                        <span>热点新闻</span>
+                    </h2>
+                    <div class="yx-rotaion newpic_list">
+                        <ul class="rotaion_list">
+                            <li><a href="#"><img src="../images/news/img1.jpg" alt="俄攀高狂人偷爬在建中国第一高楼"></a></li>
+                            <li><a href="#"><img src="../images/news/img2.jpg" alt="深圳路面塌陷形成直径10米大坑"></a></li>
+                            <li><a href="#"><img src="../images/news/img3.jpg" alt='"520" 武汉新人扎堆结婚'></a></li>
+                            <li><a href="#"><img src="../images/news/img4.jpg" alt="暴雨突袭广州 南沙上演科幻大片"></a></li>
+                            <li><a href="#"><img src="../images/news/img5.jpg" alt="上海美博会模特赤身才会博眼球"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 热点新闻 -->
+
+                <!-- 快捷键 -->
+                <div class="content-feed quickentry">
+                    <div class="content-feeds">
+                        <div class="quicklinks clearfix">
+                            <a href="#" class="qlink kj1"><i></i>申请仲裁</a>
+                            <a href="#" class="qlink kj2"><i></i>费用快算</a>
+                            <a href="#" class="qlink kj3"><i></i>受案范围</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 快捷键 -->
+
+                <!-- 在线公告 -->
+                <div class="content-feed notices">
+                    <h2 class="content-feed-heading content-feed-heading-line">
+                        <span class="line"></span>
+                        <span>在线公告</span>
+                        <a href="#" class="link-more link-more-mr0">更多&gt;</a>
+                    </h2>
+                    <div class="content-feed-con">
+                        <ul>
+                            <li>
+                                <a href="#" class="tt">招聘公告招聘公告招聘公告招聘公告招聘公告招聘公告（海峡两岸仲)</a>
+                                <div class="n-info">
+                                    <span class="time">2015-10-10 10:25</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="tt">人杭州峰会系列活动纪实纪实纪人杭州峰会系列活动纪实纪实纪</a>
+                                <div class="n-info">
+                                    <span class="time">2015-10-10 10:25</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="tt">人杭州峰会系列活动纪实纪实纪人杭州峰会系列活动纪实纪实纪</a>
+                                <div class="n-info">
+                                    <span class="time">2015-10-10 10:25</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="tt">人杭州峰会系列活动纪实纪实纪人杭州峰会系列活动纪实纪实纪</a>
+                                <div class="n-info">
+                                    <span class="time">2015-10-10 10:25</span>
+                                </div>
+                            </li>
+                            <li class="noborder">
+                                <a href="#" class="tt">人杭州峰会系列活动纪实纪实纪人杭州峰会系列活动纪实纪实纪</a>
+                                <div class="n-info">
+                                    <span class="time">2015-10-10 10:25</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 在线公告 -->
+
+            </div>
+
+            <div class="large-12 medium-12 columns content-feed-main">
+                <div class="row">
+                    <div class="large-12 medium-12 columns news">
+                        <!-- 通讯 -->
+                        <div class="content-feed">
+                            <h2 class="content-feed-heading">
+                                <span class="line"></span>
+                                <span>新闻</span>
+                                <a href="news_more.html" class="link-more">更多&gt;</a>
+                            </h2>
+                            <div class="content-feed-con">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="tt">人杭州峰会系列活动纪实纪实纪人杭州峰会系列活动纪实纪实纪</a>
+                                        <div class="n-info">
+                                            <span class="time">2015-10-10 10:25</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tt">人杭州峰会系列活动纪实纪实纪人杭州峰会系列活动纪实纪实纪</a>
+                                        <div class="n-info">
+                                            <span class="time">2015-10-10 10:25</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tt">人杭州峰会系列活动纪实纪实纪人杭州峰会系列活动纪实纪实纪</a>
+                                        <div class="n-info">
+                                            <span class="time">2015-10-10 10:25</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tt">人杭州峰会系列活动纪实纪实纪人杭州峰会系列活动纪实纪实纪</a>
+                                        <div class="n-info">
+                                            <span class="time">2015-10-10 10:25</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tt">人杭州峰会系列活动纪实纪实纪人杭州峰会系列活动纪实纪实纪</a>
+                                        <div class="n-info">
+                                            <span class="time">2015-10-10 10:25</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tt">人杭州峰会系列活动纪实纪实纪人杭州峰会系列活动纪实纪实纪</a>
+                                        <div class="n-info">
+                                            <span class="time">2015-10-10 10:25</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tt">人杭州峰会系列活动纪实纪实纪人杭州峰会系列活动纪实纪实纪</a>
+                                        <div class="n-info">
+                                            <span class="time">2015-10-10 10:25</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tt">人杭州峰会系列活动纪实纪实纪人杭州峰会系列活动纪实纪实纪</a>
+                                        <div class="n-info">
+                                            <span class="time">2015-10-10 10:25</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tt">人杭州峰会系列活动纪实纪实纪人杭州峰会系列活动纪实纪实纪</a>
+                                        <div class="n-info">
+                                            <span class="time">2015-10-10 10:25</span>
+                                        </div>
+                                    </li>
+                                    <li class="noborder">
+                                        <a href="#" class="tt">人杭州峰会系列活动纪实纪实纪人杭州峰会系列活动纪实纪实纪</a>
+                                        <div class="n-info">
+                                            <span class="time">2015-10-10 10:25</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 通讯 -->
+                    </div>
+                </div>
+
+                <!--
+                <div class="row">
+                    <div class="large-12 medium-12 columns">
+                        <div class="activity-add">
+                            <a href="#">
+                                <img src="../images/c1_img.jpg" width="100%" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                -->
+
+                <div class="row">
+                    <div class="large-12 medium-12 columns tab-doc">
+                        <div class="tab-head">
+                            <ul>
+                                <li class="bt selected"><span class="line"></span>示范条款</li>
+                                <li class="bt">重要提示</li>
+                            </ul>
+                        </div>
+                        <div class="tab-con">
+                            <div class="tab-item">
+                                <div class="c-info-con">
+                                    "凡因本合同引起的或与本合同有关的任何争议，均应提交 中国国际经济贸易仲裁委员会香港仲裁中心，按照申请仲裁时该会现行有效的仲裁规则 进行仲裁。仲裁裁决是终局的，对双方均有约束力
+                                </div>
+                            </div>
+                            <div class="tab-item hide">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </section>
+
+    <!-- 页面底部 -->
+    <div class="footer">
+        <div class="f1">
+            <div class="wrap">
+                <dl class="item2">
+                    <dd>
+                        <a href="/index.php?g=User&amp;m=Login&amp;a=index" target="_blank"> 仲裁员入口</a>
+                        <a href="/index.php?g=User&amp;m=Trainee&amp;a=index" target="_blank"> 实习生入口</a>
+                    </dd>
+                </dl>
+                <dl class="item3">
+                    <dt>仲裁指南</dt>
+                    <dd><a href="/index.php?m=Page&amp;a=index&amp;id=116" title="为何选择仲裁" target="_blank">为何选择仲裁</a></dd>
+                    <dd><a href="/index.php?m=Page&amp;a=index&amp;id=117" title="为何选择CIETAC" target="_blank">为何选择CIETAC</a></dd>
+                    <dd><a href="/index.php?m=Page&amp;a=index&amp;id=119" title="CIETAC受案范围" target="_blank">CIETAC受案范围</a></dd>
+                    <dd><a href="/index.php?m=Page&amp;a=index&amp;id=118" title="示范仲裁条款" target="_blank">示范仲裁条款</a></dd>
+                    <dd><a href="/index.php?m=Page&amp;a=index&amp;id=115" title="申请仲裁须知" target="_blank">申请仲裁须知</a></dd>
+                </dl>
+                <dl class="item4">
+                    <dt>资料</dt>
+                    <dd><a href="/index.php?m=Article&amp;a=index&amp;id=73" title="中国法资料" target="_blank">中国法资料</a></dd>
+                    <dd><a href="/index.php?m=Article&amp;a=index&amp;id=74" title="外国法资料" target="_blank">外国法资料</a></dd>
+                    <dd><a href="/index.php?m=Article&amp;a=index&amp;id=75" title="外国仲裁机构仲裁规则" target="_blank">外国仲裁机构仲裁规则</a></dd>
+                    <dd><a href="/index.php?m=Article&amp;a=index&amp;id=76" title="国际公约及惯例" target="_blank">国际公约及惯例</a></dd>
+                </dl>
+                <dl class="item5">
+                    <dt>下载专区</dt>
+                    <dd><a href="index.php?m=Download&amp;a=down&amp;id=2" title="申请仲裁须知" target="_blank">申请仲裁须知</a></dd>
+                    <dd><a href="index.php?m=Download&amp;a=down&amp;id=4" title="仲裁申请书示范文本" target="_blank">仲裁申请书示范文本</a></dd>
+                    <dd><a href="index.php?m=Download&amp;a=down&amp;id=5" title="答辩书示范文本" target="_blank">答辩书示范文本</a></dd>
+                </dl>
+                <div class="item6 wxcode">
+                    <img src="../images/wx.png">
+                </div>
+            </div>
+        </div>
+        <div class="f2">
+            <span class="icon"></span>海峡两岸仲裁中心 2013版权所有
+        </div>
+    </div>
+    <!-- 页面底部 -->
+</div>
+<a href="#0" class="cd-top">Top</a>
+
+<script src="../scripts/jquery.bxslider.min.js"></script>
+<script src="../scripts/jquery.yx_rotaion.js" type="text/javascript"></script>
+<script src="../scripts/base.js" type="text/javascript"></script>
+<script>
+    $(document).ready(function () {
+
+        $('.top-banner .banners').bxSlider({
+            pager: false,
+            speed: 1000,
+            auto: true,
+            mode: 'fade'
+        });
+
+        //新闻图片轮播
+        $(".newpic_list").yx_rotaion({
+            auto: true
+        });
+    });
+</script>
+
+</body>
+</html>

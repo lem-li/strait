@@ -1,0 +1,654 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if IE 9]><html class="lt-ie10" lang="en"><![endif]-->
+<html class="no-js" lang="zh"> 
+<head>
+    <meta charset="utf-8" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="images/fav.ico" type="image/x-icon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Description" content="" />
+    <meta name="Keywords" content="" />
+    <meta name="Author" content="LCIA" />
+    <meta name="Copyright" content="Copyright LCIA 2015" />
+    <title>中国海事仲裁委员会</title>
+    <link rel="stylesheet" href="../styles/normalize.css" />
+    <link rel="stylesheet" href="../styles/foundation5/app.css" />
+    <link rel="stylesheet" href="../styles/foundation5/style.css" />
+    <link rel="stylesheet" href="../styles/login.css" />
+</head>
+<body>
+<div id="container">
+	<header id="header" class="hide-for-print">
+		<div class="row">
+			<div class="large-6 medium-6 columns logo">
+				<a href="index.html">
+					<img src="../images/logo.png" alt=""/>
+				</a>
+			</div>
+			<div class="large-6 medium-6 columns">
+				<ul id="login" class="inline-list">
+					<li><a href="/" class="online-filing-button button tiny radius" title="中文版">中文版</a></li>
+                    <li><a href="/?l=en" class="online-filing-button button tiny radius" title="English">English</a></li>
+                    <li><a href="/?l=fc" class="online-filing-button button tiny radius" title="繁体版">繁体版</a></li>
+				</ul>
+				<div id="searchBar">
+					<form>
+						<input type="text" id="searchBarText" placeholder="请输入要搜索的内容">
+						<input type="submit" value="" id="searchBarBtn">
+					</form>
+				</div>
+			</div>
+		</div>
+	</header>
+
+    <!-- 菜单 -->
+    <div id="top-menu" class="hide-for-print">
+        <div id="top-nav" class="row collapse">
+            <div class="large-12 medium-12">
+                <nav class="top-bar">
+                    <section class="top-bar-section">
+                        <ul class="nav">
+                            <li class="nav_item">
+                                <a href="##" class="nav_a">首 页</a>
+                            </li>
+                            <li class="nav_item">
+                                <a href="##" class="nav_a">关于我们</a>
+                            </li>
+                            <li class="nav_item">
+                                <a href="##" class="nav_a">仲裁规则</a>
+                                <span></span>
+                                <div class="drop_list">
+                                    <a href="/index.php?m=Page&amp;a=index&amp;id=2">贸仲简介</a>
+                                    <a href="/index.php?m=Page&amp;a=index&amp;id=20">组织机构</a>
+                                    <a href="/index.php?m=Page&amp;a=index&amp;id=21">贸仲章程</a>
+                                    <a href="/index.php?m=Article&amp;a=index&amp;id=22">历史资料</a>
+                                    <a href="/index.php?m=Article&amp;a=index&amp;id=23">工作报告</a>
+                                    <a href="/index.php?m=Page&amp;a=index&amp;id=24">统计数据</a>
+                                    <a href="/index.php?m=Page&amp;a=index&amp;id=25">服务设施</a>
+                                    <a href="/index.php?m=Page&amp;a=index&amp;id=26">联系我们</a>
+                                </div>
+                            </li>
+                            <li class="nav_item">
+                                <a href="##" class="nav_a">仲裁程序</a>
+                            </li>
+                            <li class="nav_item">
+                                <a href="##" class="nav_a">仲裁员</a>
+                            </li>
+                            <li class="nav_item">
+                                <a href="##" class="nav_a">仲裁文书</a>
+                            </li>
+                            <li class="nav_item">
+                                <a href="##" class="nav_a">格式合同</a>
+                            </li>
+                            <li class="nav_item">
+                                <a href="##" class="nav_a">案例分析</a>
+                            </li>
+                            <li class="nav_item">
+                                <a href="##" class="nav_a">友好合作</a>
+                            </li>
+                        </ul>
+                    </section>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- 菜单 -->
+	<!-- 内容 -->
+    <div class="content">
+        <div class="form_list form_list2">
+            <div class="bt">仲裁员申请信息修改</div>
+            <div class="bt_notice">请注意：* 为必填项，其他信息请尽量填写完整。</div>
+            <form method="post" enctype="multipart/form-data" id="myform" action="/index.php?g=User&amp;m=Index&amp;a=profile">
+                <table class="form_table" style="margin:10px auto;">
+                    <tbody><tr>
+                        <td style="width:180px;" class="tr">
+                            <span class="form_label"><span class="red">*</span>真实姓名:</span>
+                        </td>
+                        <td style="width:320px;">
+                            <input type="text" id="realname" name="realname" value="王大力" class="form_text">
+                        </td>
+                        <td style="width:180px;" class="tr" rowspan="3">
+                            <span class="form_label">照片:</span>
+                        </td>
+                        <td style="width:320px;" rowspan="3">
+                            <p class="txt">未上传</p>
+                            <!--<div class="file_img">
+                                <input type="file" id="file1" name="file">
+
+                            </div>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label"><span class="red">*</span>性&nbsp;&nbsp;&nbsp;别:</span>
+                        </td>
+                        <td>
+                            <select class="form_text" name="sex" id="sex">
+                                <option value="0">保密</option>
+                                <option value="1">男</option>
+                                <option value="2">女</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label">上传照片:</span>
+                        </td>
+                        <td>
+                            <input type="file" id="photos" name="photos" value="" style="width:135px;">
+                            <span class="tips">小于1M 的近期免冠照片。</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label"><span class="red">*</span>姓:</span>
+                        </td>
+                        <td>
+                            <input type="text" id="surname" name="surname" class="form_text">
+                        </td>
+                        <td class="tr">
+                            <span class="form_label"><span class="red">*</span>名:</span>
+                        </td>
+                        <td>
+                            <input type="text" id="name" name="name" class="form_text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label"><span class="red">*</span>国&nbsp;&nbsp;&nbsp;籍:</span>
+                        </td>
+                        <td>
+                            <select class="form_text" name="nationalityid" id="nationalityid">
+                                <option value="1">中国大陆（P.R.C.）</option>
+                                <option value="8">中国香港（H.K.）</option>
+                                <option value="9">中国澳门（Macau）</option>
+                                <option value="10">中国台湾（Taiwan）</option>
+                                <option value="2">美国（U.S.A.）</option>
+                                <option value="27">英国（U.K.）</option>
+                                <option value="109">澳大利亚（Australia）</option>
+                                <option value="38">法国（France）</option>
+                                <option value="47">德国（Germany）</option>
+                                <option value="68">加拿大（Canada）</option>
+                                <option value="22">新加坡（Singapore）</option>
+                                <option value="18">韩国（Korea）</option>
+                                <option value="44">瑞典（Sweden）</option>
+                                <option value="11">日本（Japan）</option>
+                                <option value="55">瑞士（Switzerland）</option>
+                                <option value="19">马来西亚（Malaysia）</option>
+                                <option value="59">奥地利（Austria）</option>
+                                <option value="57">意大利（Italy）</option>
+                                <option value="81">埃及（Egypt）</option>
+                                <option value="53">比利时（Belgium）</option>
+                                <option value="60">荷兰（Netherlands）</option>
+                                <option value="62">西班牙（Spain）</option>
+                                <option value="72">巴西（Brazil）</option>
+                                <option value="123">新西兰（New Zealand）</option>
+                                <option value="25">伊朗（Iran）</option>
+                                <option value="40">阿联酋（U.A.E.）</option>
+                                <option value="71">阿根廷（Argentina）</option>
+                                <option value="64">爱尔兰（Ireland）</option>
+                                <option value="58">波兰（Poland）</option>
+                                <option value="31">沙特阿拉伯（Saudi Arabia）</option>
+                                <option value="24">斯里兰卡（Sri Lanka）</option>
+                                <option value="15">印度（India）</option>
+                                <option value="73">智利（Chile）</option>
+                                <option value="21">菲律宾（Philippine）</option>
+                                <option value="129">文莱（Brunei）</option>
+                                <option value="12">泰国（Thailand）</option>
+                                <option value="23">巴基斯坦（Pakistan）</option>
+                                <option value="9999">其他（Others）</option>
+                            </select>
+                        </td>
+                        <td class="tr">
+                            <span class="form_label">第二国籍:</span>
+                        </td>
+                        <td>
+                            <select class="form_text" name="twonationality" id="twonationality">
+                                <option value="1">中国大陆（P.R.C.）</option><option value="8">中国香港（H.K.）</option><option value="9">中国澳门（Macau）</option><option value="10">中国台湾（Taiwan）</option><option value="2">美国（U.S.A.）</option><option value="27">英国（U.K.）</option><option value="109">澳大利亚（Australia）</option><option value="38">法国（France）</option><option value="47">德国（Germany）</option><option value="68">加拿大（Canada）</option><option value="22">新加坡（Singapore）</option><option value="18">韩国（Korea）</option><option value="44">瑞典（Sweden）</option><option value="11">日本（Japan）</option><option value="55">瑞士（Switzerland）</option><option value="19">马来西亚（Malaysia）</option><option value="59">奥地利（Austria）</option><option value="57">意大利（Italy）</option><option value="81">埃及（Egypt）</option><option value="53">比利时（Belgium）</option><option value="60">荷兰（Netherlands）</option><option value="62">西班牙（Spain）</option><option value="72">巴西（Brazil）</option><option value="123">新西兰（New Zealand）</option><option value="25">伊朗（Iran）</option><option value="40">阿联酋（U.A.E.）</option><option value="71">阿根廷（Argentina）</option><option value="64">爱尔兰（Ireland）</option><option value="58">波兰（Poland）</option><option value="31">沙特阿拉伯（Saudi Arabia）</option><option value="24">斯里兰卡（Sri Lanka）</option><option value="15">印度（India）</option><option value="73">智利（Chile）</option><option value="21">菲律宾（Philippine）</option><option value="129">文莱（Brunei）</option><option value="12">泰国（Thailand）</option><option value="23">巴基斯坦（Pakistan）</option><option value="9999">其他（Others）</option>						</select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label"><span class="red">*</span>证件类型:</span>
+                        </td>
+                        <td>
+                            <select class="form_text" name="" id="">
+                                <option value="">--请选择--</option>
+                                <option value="1">身份证</option>
+                                <option value="2">护照</option>
+                                <option value="2">其他</option>
+                            </select>
+                        </td>
+                        <td class="tr">
+                            <span class="form_label"><span class="red">*</span>证件号:</span>
+                        </td>
+                        <td>
+                            <input type="text" id="identityid" name="identityid" value="230106198704123313" class="form_text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label"><span class="red">*</span>所在城市:</span>
+                        </td>
+                        <td>
+                            <select class="form_text" name="city" id="city">
+                                <option value="">--请选择--</option>
+                                <option value="北京">北京</option><option value="天津">天津</option><option value="上海">上海</option><option value="重庆">重庆</option><option value="广东">广东</option><option value="江苏">江苏</option><option value="浙江">浙江</option><option value="福建">福建</option><option value="湖南">湖南</option><option value="湖北">湖北</option><option value="山东">山东</option><option value="辽宁">辽宁</option><option value="吉林">吉林</option><option value="云南">云南</option><option value="四川">四川</option><option value="安徽">安徽</option><option value="江西">江西</option><option value="黑龙江">黑龙江</option><option value="河北">河北</option><option value="陕西">陕西</option><option value="海南">海南</option><option value="河南">河南</option><option value="山西">山西</option><option value="内蒙古">内蒙古</option><option value="广西">广西</option><option value="贵州">贵州</option><option value="宁夏">宁夏</option><option value="青海">青海</option><option value="新疆">新疆</option><option value="西藏">西藏</option><option value="甘肃">甘肃</option><option value="台湾">台湾</option><option value="香港">香港</option><option value="澳门">澳门</option><option value="国外">国外</option>
+                            </select>
+                        </td>
+                        <td class="tr">
+                            <span class="form_label"><span class="red">*</span>出生日期:</span>
+                        </td>
+                        <td>
+                            <input type="text" id="birthday" name="birthday" class="form_text Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',lang:'{$l}'})">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label"><span class="red">*</span>职&nbsp;&nbsp;&nbsp;称:</span>
+                        </td>
+                        <td>
+                            <select class="form_text" name="technicaltitle" id="technicaltitle">
+                                <option value="">--请选择--</option>
+                                <option value="1">教授</option>
+                                <option value="2">研究员</option>
+                                <option value="3">副教授</option>
+                                <option value="4">副研究员</option>
+                                <option value="6">高级工程师</option>
+                                <option value="7">高级会计师</option>
+                                <option value="8">高级商务师</option>
+                                <option value="5">其他</option>
+                            </select>
+                        </td>
+                        <td class="tr">
+                            <span class="form_label"><span class="red">*</span>最高学历:</span>
+                        </td>
+                        <td>
+                            <select class="form_text" name="highestschooling" id="highestschooling">
+                                <option value="">--请选择--</option>
+                                <option value="1">博士</option><option value="2">硕士</option><option value="3">学士</option><option value="4">其他</option>						</select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label form_label_zh"><span class="red">*</span>公务员或参公管理人员:</span>
+                        </td>
+                        <td>
+                            <select class="form_text" name="identitycategory" id="identitycategory">
+                                <option value="">--请选择--</option>
+                                <option value="1">是</option>
+                                <option value="2">否</option>
+                            </select>
+                            <p class="txt">如是公务员或参公管理人员，请提交所在单位人事主管部门书面意见。请将书面意见邮寄至：北京市西城区桦皮厂胡同2号国际经济贸易仲裁委员会仲裁监督处收，并请在在信封上注明“单位书面意见”。</p>
+                        </td>
+                        <td class="tr">
+                            <span class="form_label"><span class="red">*</span>职业分类:</span>
+                        </td>
+                        <td>
+                            <select class="form_text" name="occclassification" id="occclassification">
+                                <option value="">--请选择--</option>
+                                <option value="1">教学研究(Teaching and Research)</option><option value="2">律师(Lawyer)</option><option value="3">商会(Chamber of Commerce)</option><option value="4">公司企业(Enterprise)</option><option value="5">政府机构(Government Official)</option><option value="6">退休法官(Retired Judge)</option><option value="7">其他(Others)</option>						</select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label">单位地址及邮编:</span>
+                        </td>
+                        <td>
+                            <textarea id="companyaddress" class="form_textarea" name="companyaddress"></textarea>
+                        </td>
+                        <td class="tr">
+                            <span class="form_label">家庭地址及邮编:</span>
+                        </td>
+                        <td>
+                            <textarea id="familyaddress" class="form_textarea" name="familyaddress"></textarea>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label">单&nbsp;&nbsp;&nbsp;位:</span>
+                        </td>
+                        <td>
+                            <input type="text" id="company" name="company" value="" class="form_text">
+                        </td>
+                        <td class="tr">
+                            <span class="form_label">职&nbsp;&nbsp;&nbsp;务:</span>
+                        </td>
+                        <td>
+                            <input type="text" id="job" name="job" value="" class="form_text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label">工作电话:</span>
+                        </td>
+                        <td>
+                            <input type="text" id="worktel" name="worktel" value="" class="form_text" placeholder="例：86-10-82217788">
+                        </td>
+                        <td class="tr">
+                            <span class="form_label">工作传真:</span>
+                        </td>
+                        <td>
+                            <input type="text" id="workfax" name="workfax" value="" class="form_text" placeholder="例：86-10-82217788">
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label">家庭电话:</span>
+                        </td>
+                        <td>
+                            <input type="text" id="familytel" name="familytel" class="form_text" placeholder="例：86-10-82217788">
+                        </td>
+                        <td class="tr">
+                            <span class="form_label">家庭传真:</span>
+                        </td>
+                        <td>
+                            <input type="text" id="familyfax" name="familyfax" class="form_text" placeholder="例：86-10-82217788">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label"><span class="red">*</span>有效地址及邮编:</span>
+                        </td>
+                        <td>
+                            <textarea id="validaddress" class="form_textarea" name="validaddress"></textarea>
+                        </td>
+                        <td class="tr">
+                            <span class="form_label"><span class="red">*</span>专&nbsp;&nbsp;&nbsp;长:</span>
+                        </td>
+                        <td>
+                            <input type="text" id="specialty" name="specialty" value="" class="form_text">
+                            <p class="txt">请用简洁词语描述，并按优先顺序排列，限四项。</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label"><span class="red">*</span>手&nbsp;&nbsp;&nbsp;机:</span>
+                        </td>
+                        <td>
+                            <input type="text" id="mobile" name="mobile" value="" class="form_text">
+                        </td>
+                        <td class="tr">
+                            <span class="form_label"><span class="red">*</span>邮&nbsp;&nbsp;&nbsp;箱:</span>
+                        </td>
+                        <td>
+                            <input type="text" id="email" name="email" value="" class="form_text">
+                        </td>
+                    </tr>
+
+                    </tbody></table>
+                <!-- 下半部分 -->
+                <table class="form_table form_table2" style="margin-bottom:10px;">
+                    <tbody><tr>
+                        <td class="tr">
+                            <span class="form_label">教育背景:</span>
+                        </td>
+                        <td style="width:820px;">
+                            <textarea id="edubackground" class="form_textarea" name="edubackground" onchange="this.value=this.value.substring(0, 1500)" onkeydown="this.value=this.value.substring(0, 1500)" onkeyup="this.value=this.value.substring(0, 1500)"></textarea>
+                            <p class="txt">请自大学阶段开始填写,不超过1500汉字。</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label">工作经历:</span>
+                        </td>
+                        <td>
+                            <textarea id="workexperience" class="form_textarea" name="workexperience" onchange="this.value=this.value.substring(0, 1500)" onkeydown="this.value=this.value.substring(0, 1500)" onkeyup="this.value=this.value.substring(0, 1500)"></textarea>
+                            <p class="txt">不超过1500汉字。</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label">社会团体兼职情况:</span>
+                        </td>
+                        <td>
+                            <textarea id="partjob" class="form_textarea" name="partjob" onchange="this.value=this.value.substring(0, 100)" onkeydown="this.value=this.value.substring(0, 100)" onkeyup="this.value=this.value.substring(0, 100)"></textarea>
+                            <p class="txt">不超过100汉字。</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label">专业成果:</span>
+                        </td>
+                        <td>
+                            <textarea id="professresults" class="form_textarea" name="professresults" onchange="this.value=this.value.substring(0, 1500)" onkeydown="this.value=this.value.substring(0, 1500)" onkeyup="this.value=this.value.substring(0, 1500)"></textarea>
+                            <p class="txt">不超过1500汉字。</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label">仲裁培训情况:</span>
+                        </td>
+                        <td>
+                            <textarea id="train" class="form_textarea" name="train" onchange="this.value=this.value.substring(0, 200)" onkeydown="this.value=this.value.substring(0, 200)" onkeyup="this.value=this.value.substring(0, 200)"></textarea>
+                            <p class="txt">不超过200汉字。</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label">仲裁相关经历:</span>
+                        </td>
+                        <td>
+                            <textarea id="arbitexperience" class="form_textarea" name="arbitexperience" onchange="this.value=this.value.substring(0, 1500)" onkeydown="this.value=this.value.substring(0, 1500)" onkeyup="this.value=this.value.substring(0, 1500)"></textarea>
+                            <p class="txt">比如：自何时起受聘担任仲裁委员会的仲裁员，以及作为仲裁员或者代理人参加仲裁案件审理的情况或者在仲裁领域的研究成果。（不超过1500汉字）</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label">第一外语水平:</span>
+                        </td>
+                        <td>
+                            <select class="form_text" name="firstlang" id="firstlang">
+                                <option value="">--请选择语种--</option>
+                                <option value="1">英语</option>
+                                <option value="2">法语</option>
+                                <option value="3">俄语</option>
+                                <option value="4">德语</option>
+                                <option value="5">西班牙语</option>
+                                <option value="6">葡萄牙语</option>
+                                <option value="7">日语</option>
+                                <option value="8">韩语</option>
+                                <option value="9">阿拉伯语</option>
+                                <option value="9">其他</option>
+                            </select>
+                            <br>
+                            <table class="form_table form_table_border" style="width:300px;margin-top:10px;">
+                                <tbody>
+                                <tr>
+                                    <td>&nbsp;听力：</td>
+                                    <td><input name="firhearing" value="1" type="radio">优</td>
+                                    <td><input name="firhearing" value="2" type="radio">良</td>
+                                    <td><input name="firhearing" value="3" type="radio">一般<br></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;口语：</td>
+                                    <td><input name="firspoken" value="1" type="radio">优</td>
+                                    <td><input name="firspoken" value="2" type="radio">良</td>
+                                    <td><input name="firspoken" value="3" type="radio">一般<br></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;阅读：</td>
+                                    <td><input name="firread" value="1" type="radio">优</td>
+                                    <td><input name="firread" value="2" type="radio">良</td>
+                                    <td><input name="firread" value="3" type="radio">一般<br></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;写作：</td>
+                                    <td><input name="firwriting" value="1" type="radio">优</td>
+                                    <td><input name="firwriting" value="2" type="radio">良</td>
+                                    <td><input name="firwriting" value="3" type="radio">一般<br></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label">第二外语水平:</span>
+                        </td>
+                        <td>
+                            <select class="form_text" name="twolang" id="twolang">
+                                <option value="">--请选择语种--</option>
+                                <option value="1">英语</option>
+                                <option value="2">法语</option>
+                                <option value="3">俄语</option>
+                                <option value="4">德语</option>
+                                <option value="5">西班牙语</option>
+                                <option value="6">葡萄牙语</option>
+                                <option value="7">日语</option>
+                                <option value="8">韩语</option>
+                                <option value="9">阿拉伯语</option>
+                                <option value="9">其他</option>
+                            </select>
+                            <br>
+                            <table class="form_table form_table_border" style="width:300px;margin-top:10px;">
+                                <tbody>
+                                <tr>
+                                    <td>&nbsp;听力：</td>
+                                    <td><input name="twohearing" value="1" type="radio">优</td>
+                                    <td><input name="twohearing" value="2" type="radio">良</td>
+                                    <td><input name="twohearing" value="3" type="radio">一般<br></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;口语：</td>
+                                    <td><input name="twospoken" value="1" type="radio">优</td>
+                                    <td><input name="twospoken" value="2" type="radio">良</td>
+                                    <td><input name="twospoken" value="3" type="radio">一般<br></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;阅读：</td>
+                                    <td><input name="tworead" value="1" type="radio">优</td>
+                                    <td><input name="tworead" value="2" type="radio">良</td>
+                                    <td><input name="tworead" value="3" type="radio">一般<br></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;写作：</td>
+                                    <td><input name="twowriting" value="1" type="radio">优</td>
+                                    <td><input name="twowriting" value="2" type="radio">良</td>
+                                    <td><input name="twowriting" value="3" type="radio">一般<br></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label">自我介绍:</span>
+                        </td>
+                        <td>
+                            <textarea id="introduction" class="form_textarea" name="introduction" onchange="this.value=this.value.substring(0, 1500)" onkeydown="this.value=this.value.substring(0, 1500)" onkeyup="this.value=this.value.substring(0, 1500)"></textarea>
+                            <p class="txt">不超过1500汉字。</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label">推荐人:</span>
+                        </td>
+                        <td>
+                            <textarea id="recommend" class="form_textarea" name="recommend" onchange="this.value=this.value.substring(0, 50)" onkeydown="this.value=this.value.substring(0, 50)" onkeyup="this.value=this.value.substring(0, 50)"></textarea>
+                            <p class="txt">如有推荐人，请注明推荐人姓名，最多不超过两人；如推荐人另有推荐信，请将推荐信邮寄至：北京市西城区桦皮厂胡同2号国际商会大厦6层(100035)，中国国际经济贸易仲裁委员会监督协调处收，并请在信封上注明“推荐信”。</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label">备注:</span>
+                        </td>
+                        <td>
+                            <textarea id="remarks" class="form_textarea" name="remarks" onchange="this.value=this.value.substring(0, 1500)" onkeydown="this.value=this.value.substring(0, 1500)" onkeyup="this.value=this.value.substring(0, 1500)"></textarea>
+                            <p class="txt">不超过1500汉字。</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tr">
+                            <span class="form_label">上传附件:</span>
+                        </td>
+                        <td>
+                            <input type="file" id="" name="" value="" style="width:135px;">
+                            <span class="tips">（上传格式为word）</span>
+                        </td>
+                    </tr>
+                    </tbody></table>
+                <div class="form_group">
+                    <div class="btns">
+                        <input type="hidden" name="dosubmit" value="1">
+                        <a href="javascript:;" onclick="document.getElementById('myform').submit();" class="btn_green">提交</a>
+                        <a href="javascript:;" class="btn_green">信息预览</a>
+                        <a href="/index.php?g=User&amp;m=Index&amp;a=password&amp;l=cn" class="btn_green">修改密码</a>
+                        <a href="/index.php?g=User&amp;m=Login&amp;a=noagreement" class="btn_green">关闭</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+	<script src="../scripts/MyDate/WdatePicker.js"></script>
+	<!-- 内容 -->
+    <!-- 页面底部 -->
+    <div class="footer">
+        <div class="f1">
+            <div class="wrap">
+                <dl class="item2">
+                    <dd>
+                        <a href="/index.php?g=User&amp;m=Login&amp;a=index" target="_blank"> 仲裁员入口</a>
+                        <a href="/index.php?g=User&amp;m=Trainee&amp;a=index" target="_blank"> 实习生入口</a>
+                    </dd>
+                </dl>
+                <dl class="item3">
+                    <dt>仲裁指南</dt>
+                    <dd><a href="/index.php?m=Page&amp;a=index&amp;id=116" title="为何选择仲裁" target="_blank">为何选择仲裁</a>
+                    </dd>
+                    <dd><a href="/index.php?m=Page&amp;a=index&amp;id=117" title="为何选择CIETAC"
+                           target="_blank">为何选择CIETAC</a></dd>
+                    <dd><a href="/index.php?m=Page&amp;a=index&amp;id=119" title="CIETAC受案范围"
+                           target="_blank">CIETAC受案范围</a></dd>
+                    <dd><a href="/index.php?m=Page&amp;a=index&amp;id=118" title="示范仲裁条款" target="_blank">示范仲裁条款</a>
+                    </dd>
+                    <dd><a href="/index.php?m=Page&amp;a=index&amp;id=115" title="申请仲裁须知" target="_blank">申请仲裁须知</a>
+                    </dd>
+                    <dd><a href="/index.php?m=Article&amp;a=index&amp;id=124" title="程序指南" target="_blank">程序指南</a></dd>
+                </dl>
+                <dl class="item4">
+                    <dt>资料</dt>
+                    <dd><a href="/index.php?m=Article&amp;a=index&amp;id=73" title="中国法资料" target="_blank">中国法资料</a>
+                    </dd>
+                    <dd><a href="/index.php?m=Article&amp;a=index&amp;id=74" title="外国法资料" target="_blank">外国法资料</a>
+                    </dd>
+                    <dd><a href="/index.php?m=Article&amp;a=index&amp;id=75" title="外国仲裁机构仲裁规则" target="_blank">外国仲裁机构仲裁规则</a>
+                    </dd>
+                    <dd><a href="/index.php?m=Article&amp;a=index&amp;id=76" title="国际公约及惯例" target="_blank">国际公约及惯例</a>
+                    </dd>
+                </dl>
+                <dl class="item5">
+                    <dt>下载专区</dt>
+                    <dd><a href="index.php?m=Download&amp;a=down&amp;id=2" title="申请仲裁须知" target="_blank">申请仲裁须知</a>
+                    </dd>
+                    <dd><a href="index.php?m=Download&amp;a=down&amp;id=4" title="仲裁申请书示范文本"
+                           target="_blank">仲裁申请书示范文本</a></dd>
+                    <dd><a href="index.php?m=Download&amp;a=down&amp;id=5" title="答辩书示范文本" target="_blank">答辩书示范文本</a>
+                    </dd>
+                </dl>
+                <div class="item6 wxcode" style="float:right;margin-right: 40px">
+                    <img src="../images/wx.png">
+                </div>
+            </div>
+        </div>
+        <div class="f2">
+            <span class="icon"></span>中国海事仲裁委员会 2015版权所有
+        </div>
+    </div>
+    <!-- 页面底部 -->
+</div>
+<a href="#0" class="cd-top">Top</a>
+
+<script src="../scripts/jquery.js"></script>
+<script type="text/javascript" src="../scripts/tools.min.js"></script>
+<script type="text/javascript" src="../scripts/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="../scripts/base.js"></script>
+</body>
+</html>

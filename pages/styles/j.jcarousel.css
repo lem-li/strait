@@ -1,0 +1,68 @@
+﻿/**
+ * This <div> element is wrapped by jCarousel around the list
+ * and has the classname "jcarousel-container".
+ */
+.carousel{
+    position:relative;
+    height: 57px;    
+    margin-top: 20px;
+}
+.carousel .loading{
+    text-align: center;
+    padding-top: 60px;
+    color: #96BF3B;
+}
+.carousel .nodata{
+    text-align: center;
+    padding-top: 60px;
+    color: #96BF3B;
+}
+.carousel a.prev{
+    background: url("../images/prev_01.png") no-repeat;
+    display: block;
+    height: 57px;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: 16px;
+}
+.carousel a.next {
+    background: url("../images/next_01.png") no-repeat;
+    display: block;
+    height: 57px;
+    position: absolute;
+    right: 0px;
+    width: 16px;
+}
+.carousel .carousellite {
+    overflow: hidden;
+    position:relative;
+    margin: 0px 25px;
+    height: 57px;
+    width: 960px;
+}
+.carousel .carousellite li {
+    float: left;
+    height: 57px;
+    width: 180px;
+    margin: 0px 5px;
+    text-align:center;
+    background: #f0f0f0;
+}
+.carousel .carousellite li:hover{
+    
+}
+.carousel .carousellite li a span {
+    clear:both;
+    line-height:20px;
+    display:block;
+    color:#FFFFFF;
+}
+.carousel .carousellite li a:hover span{
+    color:#FF6600;
+}
+.carousel .carousellite li a.kj{ 
+    background:url(../images/6.png) center top no-repeat; 
+    width:100px; 
+    display:block;
+}

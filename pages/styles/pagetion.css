@@ -1,0 +1,47 @@
+﻿@charset "utf-8";
+
+.pagetion{
+    margin:20px auto;
+    /* height:26px; */
+    /* position:relative; */
+    background-color: #ffffff;
+    width: 998px;
+    /* margin: 0 auto; */
+    text-align: center;
+}
+.pagetion .page a {
+	display: inline-block;
+    border: 1px solid #dddddd;
+    background: #f3f4f8;
+    padding: 0px 10px;
+    line-height: 26px;
+    height: 26px;
+    font-size: 12px;
+    color: #666666;
+	margin-right: 5px;
+}
+.pagetion .page .page_go_mz_val {
+    line-height: 26px;
+    display: inline-block;
+    height: 26px;
+    border: 1px solid #dddddd;
+    background: #fff;
+    width: 50px;
+    font-size: 12px;
+    text-align: center;
+    outline: 0;
+    vertical-align: top;
+	margin-right: 5px;
+}
+.pagetion .page span {
+    display: inline-block;
+	margin-right: 5px;
+    border: 1px solid #0080ff;
+    background: #0080ff;
+    padding:0px 10px;
+    line-height:26px;
+    height:26px;
+    font-size:12px;
+    color:#FFF;
+}
+

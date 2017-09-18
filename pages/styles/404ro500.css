@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+/*404¥ÌŒÛ“≥√Ê—˘ Ω*/
+#container{ background:url(../images/wrong.png) repeat-x; margin:0px auto;padding: 20px 40px; height:200px; width:500px;}
+#error_section img{float: left;height: 64px;margin-left: -10px;margin-top: -5px;width: 64px;}
+#error_section h1{padding-top: 15px;font-size:16px;}
+#separator{background: url("../images/separator_line_bright.jpg") repeat scroll 0 0 transparent;height: 2px;margin-top: 5px;}
+#content{ height:60px; padding:20px;}
+p.description{color: #484848; font-size:14px;}
+#search{display: block;float: left;}
+#send_message_button{display:block; text-align:center;}
+#send_message_button input.btn{ width: 140px;}
+#contact_form{display: none;}
+
+/* btn */
+.btn {
+	display:inline-block;
+	color:#fff;
+	background-image:none;
+	border: 5px solid #FFF;
+	-webkit-transition:all ease .15s;
+	transition:all ease .15s;
+	cursor:pointer;
+	vertical-align:middle;
+	margin:0;
+	position:relative
+}
+.btn-sm {
+	border-width:4px;
+	font-size:13px;
+	padding:4px 9px;
+	line-height:1.39
+}
+.btn-primary {
+	background-color:#428bca;
+	border-color:#428bca
+}
+.btn-primary:hover {
+	background-color:#1b6aaa;
+	border-color:#428bca
+}
+.btn-grey {
+	background-color:#a0a0a0;
+	border-color:#a0a0a0
+}
+.btn-grey:hover {
+	background-color:#888;
+	border-color:#a0a0a0
+}
