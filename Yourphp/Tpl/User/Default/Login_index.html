@@ -1,0 +1,67 @@
+<div class="content">
+	<div class="form_list">
+		<div class="bt">{:L(user_login)}</div>		<div style="text-align: center;">  			{if $l=='cn'}			<a href="http://cietac.org/index.php?m=Article&a=show&id=14050"><span style="color:red;font-size: 16px;text-decoration:underline;">中国国际经济贸易仲裁委员会关于仲裁员换届有关安排的公告</span></a><br />
+			<span style="color:red;font-size: 16px;">注册已截止</span>			{/if}			{if $l=='en'}			<a href="http://cietac.org/index.php?m=Article&a=show&id=14059&l=en"><span style="color:red;font-size: 16px;text-decoration:underline;">Announcement on the Arrangements for the Renewal of CIETAC Arbitrators</span></a>						<span style="color:red;font-size: 16px;">The enrollment has closed</span>			{/if}		</div>
+		<form method="post" id="myform" action="{:URL('User-Login/dologin')}">
+			<div class="form_group">
+				<div class="form_item">
+                    <span class="form_label">{:L(user_username)}:</span>
+                    <input type="text" id="username" name="username" class="form_text" />
+                </div>
+                <div class="form_item">
+                    <span class="form_label">{:L(user_password)}:</span>
+                    <input type="password" id="password" name="password" class="form_text" />
+                </div>
+                {if  $member_config['member_login_verify']}  
+                <div class="form_item">
+                    <span class="form_label">{:L(verify)}:</span>
+                    <input name="verifyCode" class="form_text verifyCode" id="verifyCode" size="6" value="" maxlength="4" />
+                    <img src="{:U('Home/Index/verify')}" onclick="javascript:resetVerifyCode();" class="checkcode" title="{:L('resetVerifyCode')}" id="verifyImage"/>
+                    <a class="touclick-bgimg touclick-reload" onclick="javascript:resetVerifyCode();"></a>
+                </div>
+                {/if}
+							</div>
+			<div class="form_group">
+                <div class="btns">
+                	<input type="hidden" id="forward" name="forward" value="{$forward}"/>
+					<!--中文不允许注册 -->
+					{if $l=='cn'}
+                    <a class="btn_green">{:L(user_login)}</a>
+					{/if}
+					{if $l=='en'}					<a class="btn_green">{:L(user_login)}</a>
+					<!--<a href="javascript:;" id="submit_on" class="btn_green">{:L(user_login)}</a>-->
+					{/if}
+				</div>
+            </div>
+			<div class="form_group">
+                <div class="flink">
+				{if $l=='cn'}
+                   <a target="_top" style="font-size:14px;text-decoration:underline;"/>{:L(REGISTER)}</a>
+					{/if}
+					{if $l=='en'}
+					<a href="{:URL('User-Register/index?')}" target="_top" style="font-size:14px;text-decoration:underline;"/>{:L(REGISTER)}</a>
+					{/if}
+                    
+					<a href="javascript:;" style="font-size:14px;text-decoration:underline;" id="forgotpass">{:L(user_forgot_password)}</a>
+                </div>
+            </div>
+		</form>
+	</div>
+</div>
+<script type="text/javascript">
+$("#submit_on").on('click', function(){
+    document.forms[0].target="_self";
+    document.forms[0].action = "{:URL('User-Login/dologin')}";
+    document.forms[0].submit();
+});
+$("#forgotpass").on('click', function(){
+    var username = $.trim($("#username").val());
+    if(username == ''){
+        alert("{:L(FIND_PASS_TIP)}");
+    }else{
+        document.forms[0].target="_blank";
+        document.forms[0].action = "{:URL('User-Login/getpassword')}";
+        document.forms[0].submit();
+    }
+});
+</script>

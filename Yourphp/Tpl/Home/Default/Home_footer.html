@@ -1,0 +1,90 @@
+<div class="footer">
+    <div class="f1">
+        <div class="wrap">
+            <dl class="item2">
+                <dd>
+                    <a href="{:URL('User-Login/index')}" target="_blank"> {if $l=='cn'}仲裁员入口{else}Arbitrators Entrance{/if}</a>
+                    <a href="{:URL('User-Trainee/index')}" target="_blank"> {if $l=='cn'}实习生入口{else}Interns Entrance{/if}</a>
+                </dd>
+            </dl>
+            <dl class="item3">
+                <dt>{if $l=='cn'}仲裁指南{else}Guide{/if}</dt>
+                {if $l=='cn'}
+                <YP:list sql="select `catname`,`url` FROM `mz_category` WHERE 1 and lang=1 and parentid = 4 ORDER BY listorder asc,id desc limit 6">
+                    <dd><a href="{$r.url}" title="{$r.catname}" target="_blank">{$r.catname|str_cut=###,30}</a></dd>
+                </YP:list> 
+                {else}
+                <YP:list sql="select `catname`,`url` FROM `mz_category` WHERE 1 and lang=2 and parentid = 45 ORDER BY listorder asc,id desc limit 6">
+                    <dd><a href="{$r.url}" title="{$r.catname}" target="_blank">{$r.catname|str_cut=###,30}</a></dd>
+                </YP:list>
+                {/if}
+            </dl>
+            <dl class="item4">
+                <dt>{if $l=='cn'}资料{else}Data{/if}</dt>
+                {if $l=='cn'}
+                <YP:list sql="select `catname`,`url` FROM `mz_category` WHERE 1 and lang=1 and parentid = 8 ORDER BY listorder asc,id desc limit 4">
+                    <dd><a href="{$r.url}" title="{$r.catname}" target="_blank">{$r.catname|str_cut=###,30}</a></dd>
+                </YP:list> 
+                {else}
+                <YP:list sql="select `catname`,`url` FROM `mz_category` WHERE 1 and lang=2 and parentid = 46 ORDER BY listorder asc,id desc limit 4">
+                    <dd><a href="{$r.url}" title="{$r.catname}" target="_blank">{$r.catname|str_cut=###,30}</a></dd>
+                </YP:list> 
+                {/if}
+            </dl>
+            <dl class="item5">
+                <dt>{if $l=='cn'}下载专区{else}Download{/if}</dt>
+                {if $l=='cn'}
+                <YP:list name="Download" field="id,title"  order="listorder asc,id desc" catid="83" limit="3">
+                <dd><a href="index.php?m=Download&a=down&id={$r.id}" title="{$r.title}" target="_blank">{$r.title|str_cut=###,26}</a></dd>
+                </YP:list> 
+                {else}
+                <YP:list name="Download" field="id,title"  order="listorder asc,id desc" catid="220" limit="3">
+                <dd><a href="index.php?m=Download&a=down&id={$r.id}" title="{$r.title}" target="_blank">{$r.title|str_cut=###,26}</a></dd>
+                </YP:list> 
+                {/if}
+            </dl>
+            <div class="item6" style="float:right;margin-right: 20px">
+                {if $l=='cn'}
+                <img src="Public/img/wx.png">
+                {else}
+                <img src="Public/img/wx-en.png">
+                {/if}
+            </div>
+        </div>
+    </div>
+    <div class="f2"><span class="icon"></span>
+        {if $l=='cn'}
+        <YP:block pos="footer_cn" />
+        {else}
+        <YP:block pos="footer_en" />
+        {/if} 
+    </div>
+</div>
+<div id="top"></div>
+<script type="text/javascript" src="Public/Js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="Public/Js/tools.min.js"></script>
+<script type="text/javascript" src="Public/Js/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="Public/Js/index.js"></script>
+<script type="text/javascript">
+    //轮播图
+    $('.flexslider').flexslider({
+        directionNav: true,
+        pauseOnAction: false
+    });
+    /* Accordion */
+    $('#left_nav .menu-link').click(function() {
+        $(this).toggleClass('actived');
+        $(this).next('.sub-main-menu').slideToggle('fast');
+    });
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?66eb039f0cf5cd367031cffc2988f54f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

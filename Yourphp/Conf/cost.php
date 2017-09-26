@@ -1,0 +1,385 @@
+<?php
+
+$data = array(
+    'dispute'   => array(
+        array(
+            'up'        => 1000000.00,
+            'down'      => 0,
+            'standard'  => 0.015,
+            'money'     => 0,
+        ),
+        array(
+            'up'        => 5000000.00,
+            'down'      => 1000001.00,
+            'standard'  => 0.008,
+            'money'     => 10000,
+        ),
+        array(
+            'up'        => 50000000.00,
+            'down'      => 5000001.00,
+            'standard'  => 0.006,
+            'money'     => 42000,
+        ),
+        array(
+            'up'        => 0,
+            'down'      => 50000001.00,
+            'standard'  => 0.005,
+            'money'     => 312000,
+        ),
+    ),
+    'out2015'   => array(
+        array(
+            'up'        => 1000000.00,
+            'down'      => 0,
+            'standard'  => 0.04,
+            'money'     => 0,
+        ),
+        array(
+            'up'        => 2000000.00,
+            'down'      => 1000001.00,
+            'standard'  => 0.035,
+            'money'     => 40000,
+        ),
+        array(
+            'up'        => 5000000.00,
+            'down'      => 2000001.00,
+            'standard'  => 0.025,
+            'money'     => 75000,
+        ),
+        array(
+            'up'        => 10000000.00,
+            'down'      => 5000001.00,
+            'standard'  => 0.015,
+            'money'     => 150000,
+        ),
+        array(
+            'up'        => 50000000.00,
+            'down'      => 10000001.00,
+            'standard'  => 0.010,
+            'money'     => 225000,
+        ),
+        array(
+            'up'        => 100000000,
+            'down'      => 50000001.00,
+            'standard'  => 0.005,
+            'money'     => 625000,
+        ),
+        array(
+            'up'        => 500000000,
+            'down'      => 100000001.00,
+            'standard'  => 0.0048,
+            'money'     => 875000,
+        ),
+        array(
+            'up'        => 1000000000,
+            'down'      => 500000001.00,
+            'standard'  => 0.0047,
+            'money'     => 2795000,
+        ),
+        array(
+            'up'        => 2000000000,
+            'down'      => 1000000001.00,
+            'standard'  => 0.0046,
+            'money'     => 5145000,
+        ),
+        array(
+            'up'        => 0,
+            'down'      => 2000000001.00,
+            'standard'  => 0.0045,
+            'money'     => 9745000,
+        ),
+    ),
+    'out2012'   => array(
+        array(
+            'up'        => 1000000.00,
+            'down'      => 0,
+            'standard'  => 0.04,
+            'money'     => 0,
+        ),
+        array(
+            'up'        => 2000000.00,
+            'down'      => 1000001.00,
+            'standard'  => 0.035,
+            'money'     => 40000,
+        ),
+        array(
+            'up'        => 5000000.00,
+            'down'      => 2000001.00,
+            'standard'  => 0.025,
+            'money'     => 75000,
+        ),
+        array(
+            'up'        => 10000000.00,
+            'down'      => 5000001.00,
+            'standard'  => 0.015,
+            'money'     => 150000,
+        ),
+        array(
+            'up'        => 50000000.00,
+            'down'      => 10000001.00,
+            'standard'  => 0.010,
+            'money'     => 225000,
+        ),
+        array(
+            'up'        => 100000000,
+            'down'      => 50000001.00,
+            'standard'  => 0.005,
+            'money'     => 625000,
+        ),
+        array(
+            'up'        => 500000000,
+            'down'      => 100000001.00,
+            'standard'  => 0.0048,
+            'money'     => 875000,
+        ),
+        array(
+            'up'        => 1000000000,
+            'down'      => 500000001.00,
+            'standard'  => 0.0047,
+            'money'     => 2795000,
+        ),
+        array(
+            'up'        => 2000000000,
+            'down'      => 1000000001.00,
+            'standard'  => 0.0046,
+            'money'     => 5145000,
+        ),
+        array(
+            'up'        => 0,
+            'down'      => 2000000001.00,
+            'standard'  => 0.0045,
+            'money'     => 9745000,
+        ),
+    ),
+    'in2015' => array(
+            'shou' => array(
+                array(
+                    'up'        => 1000,
+                    'down'      => 0.00,
+                    'standard'  => 0.0,
+                    'money'     => 0,
+                ),
+                array(
+                    'up'        => 50000,
+                    'down'      => 1001.00,
+                    'standard'  => 0.05,
+                    'money'     => 100,
+                ),
+                array(
+                    'up'        => 100000,
+                    'down'      => 50001.00,
+                    'standard'  => 0.04,
+                    'money'     => 2550,
+                ),
+                array(
+                    'up'        => 200000,
+                    'down'      => 100001.00,
+                    'standard'  => 0.03,
+                    'money'     => 4550,
+                ),
+                array(
+                    'up'        => 500000,
+                    'down'      => 200001.00,
+                    'standard'  => 0.02,
+                    'money'     => 7550,
+                ),
+                array(
+                    'up'        => 1000000,
+                    'down'      => 500001.00,
+                    'standard'  => 0.01,
+                    'money'     => 13550,
+                ),
+                array(
+                    'up'        => 0,
+                    'down'      => 1000001.00,
+                    'standard'  => 0.005,
+                    'money'     => 18550,
+                ),
+            ),
+            'chu' => array(
+                array(
+                    'up'        => 200000,
+                    'down'      => 0.00,
+                    'standard'  => 0.0,
+                    'money'     => 0,
+                ),
+                array(
+                    'up'        => 500000,
+                    'down'      => 200001.00,
+                    'standard'  => 0.02,
+                    'money'     => 6000,
+                ),
+                array(
+                    'up'        => 1000000,
+                    'down'      => 500001.00,
+                    'standard'  => 0.015,
+                    'money'     => 12000,
+                ),
+                array(
+                    'up'        => 2000000,
+                    'down'      => 1000001.00,
+                    'standard'  => 0.005,
+                    'money'     => 19500,
+                ),
+                array(
+                    'up'        => 5000000,
+                    'down'      => 2000001.00,
+                    'standard'  => 0.0045,
+                    'money'     => 24500,
+                ),
+                array(
+                    'up'        => 10000000,
+                    'down'      => 5000001.00,
+                    'standard'  => 0.004,
+                    'money'     => 38000,
+                ),
+                array(
+                    'up'        => 20000000,
+                    'down'      => 10000001.00,
+                    'standard'  => 0.003,
+                    'money'     => 58000,
+                ),
+                array(
+                    'up'        => 40000000,
+                    'down'      => 20000001.00,
+                    'standard'  => 0.002,
+                    'money'     => 88000,
+                ),
+                array(
+                    'up'        => 100000000,
+                    'down'      => 40000001.00,
+                    'standard'  => 0.0015,
+                    'money'     => 128000,
+                ),
+                array(
+                    'up'        => 500000000,
+                    'down'      => 100000001.00,
+                    'standard'  => 0.0013,
+                    'money'     => 218000,
+                ),
+                array(
+                    'up'        => 0,
+                    'down'      => 500000001.00,
+                    'standard'  => 0.0012,
+                    'money'     => 738000,
+                ),
+            ),
+        ),
+    'in2012' => array(
+        'shou' => array(
+            array(
+                'up'        => 1000,
+                'down'      => 0.00,
+                'standard'  => 0.0,
+                'money'     => 0,
+            ),
+            array(
+                'up'        => 50000,
+                'down'      => 1001.00,
+                'standard'  => 0.05,
+                'money'     => 100,
+            ),
+            array(
+                'up'        => 100000,
+                'down'      => 50001.00,
+                'standard'  => 0.04,
+                'money'     => 2550,
+            ),
+            array(
+                'up'        => 200000,
+                'down'      => 100001.00,
+                'standard'  => 0.03,
+                'money'     => 4550,
+            ),
+            array(
+                'up'        => 500000,
+                'down'      => 200001.00,
+                'standard'  => 0.02,
+                'money'     => 7550,
+            ),
+            array(
+                'up'        => 1000000,
+                'down'      => 500001.00,
+                'standard'  => 0.01,
+                'money'     => 13550,
+            ),
+            array(
+                'up'        => 0,
+                'down'      => 1000001.00,
+                'standard'  => 0.005,
+                'money'     => 18550,
+            ),
+        ),
+        'chu' => array(
+            array(
+                'up'        => 200000,
+                'down'      => 0.00,
+                'standard'  => 0.0,
+                'money'     => 0,
+            ),
+            array(
+                'up'        => 500000,
+                'down'      => 200001.00,
+                'standard'  => 0.02,
+                'money'     => 6000,
+            ),
+            array(
+                'up'        => 1000000,
+                'down'      => 500001.00,
+                'standard'  => 0.015,
+                'money'     => 12000,
+            ),
+            array(
+                'up'        => 2000000,
+                'down'      => 1000001.00,
+                'standard'  => 0.005,
+                'money'     => 19500,
+            ),
+            array(
+                'up'        => 6000000,
+                'down'      => 2000001.00,
+                'standard'  => 0.0045,
+                'money'     => 24500,
+            ),
+            array(
+                'up'        => 10000000,
+                'down'      => 6000001.00,
+                'standard'  => 0.004,
+                'money'     => 42500,
+            ),
+            array(
+                'up'        => 20000000,
+                'down'      => 10000001.00,
+                'standard'  => 0.003,
+                'money'     => 58500,
+            ),
+            array(
+                'up'        => 40000000,
+                'down'      => 20000001.00,
+                'standard'  => 0.002,
+                'money'     => 88500,
+            ),
+            array(
+                'up'        => 100000000,
+                'down'      => 40000001.00,
+                'standard'  => 0.0015,
+                'money'     => 128500,
+            ),
+            array(
+                'up'        => 500000000,
+                'down'      => 100000001.00,
+                'standard'  => 0.0013,
+                'money'     => 218500,
+            ),
+            array(
+                'up'        => 0,
+                'down'      => 500000001.00,
+                'standard'  => 0.0012,
+                'money'     => 738500,
+            ),
+        ),
+    ),
+);
+
+return $data;
+?>

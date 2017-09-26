@@ -1,0 +1,200 @@
+
+<table  class="search_table" width="100%">
+	<tr>
+		<td>
+			<form action="{:U('Arbitrator/index')}" method="get">
+			<input type="hidden" name="g" value="{$Think.GROUP_NAME}" />
+			<input type="hidden" name="m" value="{$Think.MODULE_NAME}" />
+			<input type="hidden" name="a" value="{$Think.ACTION_NAME}" />
+			<table width="100%" cellspacing="1" cellpadding="2" border="0" height="100%" class="tableLineStyle">
+				<tbody>
+					<tr>
+						<td width="5%" align="right" class="tableTitleStyle">
+							<font class="toptd">仲裁员姓名&nbsp;</font>
+						</td>
+						<td width="1%" class="tableTdStyle">
+							<input type="text"  class="input-text"  value="{$searchrealname}" name="searchrealname">
+						</td>
+						<td width="4%" align="right" class="tableTitleStyle">
+							<font class="toptd">性别&nbsp;</font>
+						</td>
+						<td width="35%" class="tableTdStyle">
+							<select name="searchSex">
+								<option value="" {if $searchSex == ''}selected="selected"{/if}>全部</option>
+								<option value="1" {if $searchSex == 1}selected="selected"{/if}>男</option>
+								<option value="2" {if $searchSex == 2}selected="selected"{/if}>女</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td align="right" class="tableTitleStyle">
+							仲裁员身份证号
+						</td>
+						<td class="tableTdStyle">
+							<input type="text"  class="input-text" value="{$searchidnumber}" name="searchidnumber">
+						</td>
+						<td align="right" class="tableTitleStyle">
+							<font class="toptd">所属城市&nbsp;</font>
+						</td>
+						<td class="tableTdStyle">
+							<select name="searchcity">
+								<option value="">请选择</option>
+								<volist name="city" id="cv">
+								<option value="{$key}" {if $searchcity == $key}selected="selected"{/if}>{$cv}</option>
+								</volist>
+							</select>&nbsp;省/直辖市
+						</td>
+					</tr>
+					<tr>
+						<td align="right" class="tableTitleStyle">
+							职业
+						</td>
+						<td class="tableTdStyle">
+							<select name="searchoccclassification">
+								<option value="">--请选择--</option>
+								<volist name="occclassification" id="ov">
+									<option value="{$key}" {if $searchoccclassification == $key}selected="selected"{/if}>{$ov}</option>
+								</volist>
+							</select>
+						</td>
+						<td align="right" class="tableTitleStyle">
+							<font class="toptd">学历&nbsp;</font>
+						</td>
+						<td class="tableTdStyle">
+							<select name="searchhighestschooling">
+								<option value="">--请选择--</option>
+								<volist name="highestschooling" id="hv">
+									<option value="{$key}" {if $searchhighestschooling == $key}selected="selected"{/if}>{$hv}</option>
+								</volist>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td align="right" class="tableTitleStyle">
+						第一外语
+						</td>
+						<td class="tableTdStyle">
+							<select name="searchlanguagetype">
+								<option value="">--请选择语种--</option>
+								<volist name="languagetype" id="lv">
+									<option value="{$key}" {if $searchlanguagetype == $key}selected="selected"{/if}>{$lv}</option>
+								</volist>
+							</select>
+						</td>
+						<td align="right" class="tableTitleStyle">
+							<font class="toptd">业务专长&nbsp;</font>
+						</td>
+						<td class="tableTdStyle">
+							<input type="text"  class="input-text" style="width:16%" value="{$searchexpertise}" name="searchexpertise">
+						</td>
+					</tr>
+					<tr>
+						<td align="right" class="tableTitleStyle">
+							<font class="toptd">审核状态&nbsp;</font>
+						</td>
+						<td class="tableTdStyle">
+							<select name="searchchecked">
+								<option value="">全部</option>
+								<option value="1" {if $searchchecked == 1}selected="selected"{/if}>未审核</option>
+								<option value="2" {if $searchchecked == 2}selected="selected"{/if}>审核通过</option>
+								<option value="3" {if $searchchecked == 3}selected="selected"{/if}>不通过</option>
+							</select>
+						</td>
+						<td align="right" class="tableTitleStyle">
+							<font class="toptd">申请时间段&nbsp;</font>
+						</td>
+						<td class="tableTitleStyle">
+							<span><select name="searchyear" style="display: inline;">
+								<option value="">请选择</option>
+								<volist name="year" id="y">
+								<option value="{$y}" {if $searchyear == $y}selected="selected"{/if}>{$y}</option>
+								</volist> 
+									</select>
+								&nbsp;年&nbsp;
+							<select name="searchmonth" style="display: inline;">
+							<option value="">请选择</option>
+							 <volist name="month" id="mon">
+							<option value="{$mon}" {if $searchmonth == $mon}selected="selected"{/if}>{$mon}</option>
+							 </volist> 
+							</select>
+							&nbsp;月</span>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2" class="tableTitleStyle">
+						    <input type="submit" value="{:L('chaxun')}"  class="button" />
+							<input type="reset" value="{:L('reset')}" class="button"  />
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</form>
+		</td>
+	</tr>
+</table>
+
+<form name="myform" action="{:U('Arbitrator/deleteall')}" method="post">
+<div class="table-list">
+    <table width="100%" cellspacing="0">
+        <thead>
+      		<tr>
+      		<th width="20"><input type="checkbox"  id="check_box"  onclick="selectall('ids[]');" /></th>
+			<th width="40">ID</th>
+			<th width="110">姓名</th>	
+			<th width="30">性别</th>
+			<th width="120">现工作单位</th>
+			<th width="100">职务</th>
+			<th width="70">出生日期</th>	
+			<th width="120">职称</th>
+			<th width="60">最高学历</th>
+			<th width="70">所在城市</th>
+			<th width="50">审核状态</th>
+			<th width="70">申请时间</th>
+			<th width="120">{:L('manage')}</th>
+      		</tr>
+      	</thead>
+      	<tbody>
+      		<volist name="ulist" id="user" key="k">
+      		<tr>
+      		<td align="center"><input type="checkbox" name="ids[]" value="{$user['id']}" /></td>
+			<td align="center">{$user['id']}</td>
+      		<td align="center">{$user['realname']}</td>
+			<td align="center">
+				{if $user['sex'] == 1}
+                	男
+	            {elseif $user['sex'] == 2}
+	                女
+	            {else}
+	                保密
+	            {/if}
+			</td>
+			<td align="center">{$user['company']}</td>
+      		<td align="center">{$user['job']}</td>
+      		<td align="center">{$user['birthday']}</td>     	
+      		<td align="center">{$nicaltitle[$user['technicaltitle']]}</td>    
+      		<td align="center">{$highestschooling[$user['highestschooling']]}</td>    
+      		<td align="center">{$user['city']}</td>    	
+			<td align="center">
+      		{if $user['checked'] == 2}
+      		已审核
+      		{elseif $user['checked'] == 3}
+			已驳回
+      		{else}
+      		未审核
+      		{/if}
+      		</td>
+			<td align="center">{$user['createtime']|toDate=###,'Y-m-d'}</td>  
+			<td align="center">
+				<a href="{:U('Arbitrator/preview',array(id=>$user['id']))}">预览</a> |
+				<a href="{:U('Arbitrator/detail',array(id=>$user['id']))}"><eq name="user['checked']" value="1">审核<else />查看</eq></a> | <a href="javascript:confirm_delete('{:U('Arbitrator/delete',array(id=>$user['id']))}')">{:L('delete')}</a>
+			</td>      		
+      		</tr>
+      		</volist>
+      	</tbody>
+    </table>
+  
+    <div class="btn"><input type="submit" class="button" name="dosubmit" value="<?php echo L('delete')?>" /></div>  </div>
+</div>
+</form>
+
+<div id="pages" class="page">{$page}</div>

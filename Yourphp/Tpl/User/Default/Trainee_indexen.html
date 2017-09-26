@@ -1,0 +1,204 @@
+<form id="myform" method="post" action="{:U('User/Trainee/doapply?l=en')}">
+<div class="content">
+    <div class="form_list">
+        <div class="bt">Personal basic information</div>
+        <div class="form_group">
+            <div class="form_item">
+                <span class="form_label"><span>*</span>Name: </span>
+                <input class="form_text varlidate" for="Name" id="name" name="name" type="text" />
+            </div>
+            <div class="form_item">
+                <span class="form_label"><span>*</span>Gender: </span>
+                <select class="form_text varlidate" for="Gender" name="sex" id="sex">
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                </select>
+            </div>
+            <div class="form_item">
+                <span class="form_label"><span>*</span>Date of birth: </span>
+                <input type="text" id="birthday" name="birthday" class="form_text varlidate Wdate" for="Date of birth" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',lang:'en'})"/>
+            </div>
+            <div class="form_item">
+                <span class="form_label"><span>*</span>Start work: </span>
+                <input type="text" id="workstarttime" name="workstarttime" style="width: 140px;" class="form_text varlidate Wdate" for="Start work" onfocus="WdatePicker({dateFmt:'yyyy-MM',lang:'en'})"/>
+                -
+                <input type="text" id="workendtime" name="workendtime" style="width: 140px;" class="form_text varlidate Wdate" for="Start work" onfocus="WdatePicker({dateFmt:'yyyy-MM',lang:'en'})"/>
+            </div>
+            <div class="form_item">
+                <span class="form_label"><span>*</span>HuKou: </span>
+                <input class="form_text varlidate" for="HuKou" id="hukou" name="hukou" type="text">
+            </div>
+            <div class="form_item">
+                <span class="form_label"><span>*</span>Current city: </span>
+                <input class="form_text varlidate" for="Current city" id="currentcity" name="currentcity" type="text">
+            </div>
+            <div class="form_item">
+                <span class="form_label">ID card number: </span>
+                <input class="form_text" id="identityid" name="identityid" type="text">
+            </div>
+            <div class="form_item">
+                <span class="form_label"><span>*</span>Mobile: </span>
+                <input class="form_text varlidate" for="Mobile" id="mobile" name="mobile" type="text">
+            </div>
+            <div class="form_item">
+                <span class="form_label">Tel: </span>
+                <input class="form_text" id="tel" name="tel" type="text">
+            </div>
+            <div class="form_item">
+                <span class="form_label"><span>*</span>Email: </span>
+                <input class="form_text varlidate" for="Email" id="email" name="email" type="text">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="form_list">
+        <div class="bt">Working experience</div>
+        <div class="form_group">
+            <div class="form_item">
+                <span class="form_label"><span>*</span>Working/practice experience: </span>
+                <span style="color: rgb(102, 102, 102); font-size: 14px; height: 32px; display: inline; line-height: 32px;">
+                    <input onclick="aaa(1);" type="radio" name="isexperience" id="work_experience_have" checked="checked" value="1">
+                    <span class="">Have</span>
+                    <input type="radio" onclick="aaa(2);" name="isexperience" id="work_experience_no" value="2">
+                    <span class="">Not have</span>
+                </span>
+            </div>
+            <div id="workdiv">
+                <div class="form_item">
+                    <span class="form_label"><span>*</span>Company name: </span>
+                    <input class="form_text varlidate" for="Company name" id="company_name" name="company_name" type="text" />
+                </div>
+                <div class="form_item">
+                    <span class="form_label"><span>*</span>Job category: </span>
+                    <input class="form_text varlidate" for="Job category" id="jobtitle" name="jobtitle" type="text" />
+                </div>
+                <div class="form_item">
+                    <span class="form_label"><span>*</span>Work date: </span>
+                    <input type="text" id="workstime" name="workstime" style="width: 140px;" class="form_text varlidate Wdate" for="Work date" onfocus="WdatePicker({dateFmt:'yyyy-MM',lang:'en'})"/>
+                    -
+                    <input type="text" id="worketime" name="worketime" style="width: 140px;" class="form_text varlidate Wdate" for="Work date" onfocus="WdatePicker({dateFmt:'yyyy-MM',lang:'en'})"/>
+                </div>
+                <div class="form_item">
+                    <span class="form_label"><span>*</span>Monthly income: </span>
+                    <select class="form_text varlidate" for="Monthly income" name="salary" id="salary">
+                        <option value="">--Please choose--</option>
+                        <option value="Confidential">Confidential</option>
+                        <option value="Below 1000RMB/Month">Below 1000RMB/Month</option>
+                        <option value="1000-2000RMB/Month">1000-2000RMB/Month</option>
+                        <option value="2001-4000RMB/Month">2001-4000RMB/Month</option>
+                        <option value="4001-6000RMB/Month">4001-6000RMB/Month</option>
+                        <option value="6001-8000RMB/Month">6001-8000RMB/Month</option>
+                        <option value="8001-10000RMB/Month">8001-10000RMB/Month</option>
+                        <option value="10001-15000RMB/Month">10001-15000RMB/Month</option>
+                        <option value="15000-25000RMB/Month">15000-25000RMB/Month</option>
+                        <option value="Above 25000RMB/Month">Above 25000RMB/Month</option>
+                    </select>
+                </div>
+                <div class="form_item">
+                    <span class="form_label"><span>*</span>Work description: </span>
+                    <textarea id="workdescription" class="form_textarea varlidate" for="Work description" name="workdescription" onchange="this.value=this.value.substring(0, 600)" onkeydown="this.value=this.value.substring(0, 600)" onkeyup="this.value=this.value.substring(0, 600)"></textarea>
+                    <p class="txt">not more than 600.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="form_list">
+        <div class="bt">Education experience</div>
+        <div class="form_group">
+            <div class="form_item">
+                <span class="form_label"><span>*</span>Degree: </span>
+                <select class="form_text varlidate" for="Degree" name="education_level" id="education_level">
+                    <option value="">--Please choose--</option>
+                    <option value="Associate">Associate</option>
+                    <option value="Bachelor">Bachelor</option>
+                    <option value="Master">Master</option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="MBA">MBA</option>
+                    <option value="EMBA">EMBA</option>
+                    <option value="Secondary Specialized">Secondary Specialized</option>
+                    <option value="Skilled Workers Training">Skilled Workers Training</option>
+                    <option value="Senior High School">Senior High School</option>
+                    <option value="Junior High School">Junior High School</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form_item">
+                <span class="form_label"><span>*</span>Unified enrollment: </span>
+                <span style="color: rgb(102, 102, 102); font-size: 14px; height: 32px; display: inline; line-height: 32px;">
+                    <input type="radio" name="istongzhao" checked="checked" value="1">
+                    <span class="">是</span>
+                    <input type="radio" name="istongzhao" value="2">
+                    <span class="">否</span>
+                </span>
+            </div>
+            <div class="form_item">
+                <span class="form_label"><span>*</span>Study date: </span>
+                <input type="text" id="studystartdate" name="studystartdate" style="width: 140px;" class="form_text varlidate Wdate" for="Study date" onfocus="WdatePicker({dateFmt:'yyyy-MM',lang:'en'})"/>
+                -
+                <input type="text" id="studyenddate" name="studyenddate" style="width: 140px;" class="form_text varlidate Wdate" for="Study date" onfocus="WdatePicker({dateFmt:'yyyy-MM',lang:'en'})"/>
+            </div>
+            <div class="form_item">
+                <span class="form_label"><span>*</span>School name: </span>
+                <input class="form_text varlidate" for="School name" id="schoolname" name="schoolname" type="text" />
+            </div>
+            <div class="form_item">
+                <span class="form_label"><span>*</span>Major: </span>
+                <input class="form_text varlidate" for="Major" id="profession_name" name="profession_name" type="text" />
+            </div>
+        </div>
+        <div class="form_group">
+            <div class="btns">
+                <a href="javascript:;" id="submit_on" class="btn_blue">OK</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</form>
+<script src="__PUBLIC__/Js/MyDate/WdatePicker.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+　　if($("#work_experience_no").attr("checked")){
+        $("#workdiv").css('display','none'); 
+    }else{
+        $("#workdiv").css('display','block'); 
+    }
+});
+function aaa(type){
+    if(type == '1'){
+        $("#workdiv").show(100);
+    }else if(type == '2'){
+        $("#workdiv").hide(100);
+    }
+}
+$("#submit_on").on('click', function(){
+    var flag = 0;
+    $(".varlidate").each(function(){
+        var val = $.trim($(this).val());
+        if(val.length<1){
+            var fname = $(this).attr("name");
+            if( fname == "company_name" || fname == "jobtitle" || fname == "workstime" || fname == "worketime" || fname == "salary" || fname == "workdescription"){
+                if(!$("#work_experience_no").attr("checked")){
+                    var hin = $(this).attr("for");
+                    flag = 1;
+                    alert(hin+" Is empty！！");
+                    return false;
+                }
+                
+            }else{
+                var hin = $(this).attr("for");
+                flag = 1;
+                alert(hin+" Is empty！！");
+                return false;
+            }
+        }
+    });
+    if(flag <= 0){
+        $('#myform').submit();
+    }
+});
+    
+</script>

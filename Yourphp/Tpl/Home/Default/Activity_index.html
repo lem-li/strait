@@ -1,0 +1,25 @@
+<!--div class="banner">
+    <div class="banner_wrap">
+        <include file="Home:search"/>
+    </div>
+</div-->
+<div class="wrap" style="overflow:hidden;">
+    <div class="list_l">
+        <ul class="left_nav">
+            <li class="bt bt_about">{$Categorys[$bcid]['catname']}</li>
+            <volist name="list" id="r">
+                <li><a href="{:U('Activity/show?id='.$r['id'])}">{$r['title']}({$r['createtime']|toDate=###,'Y-m-d'})<span class="arrow">></span></a></li>
+            </volist>
+        </ul>
+    </div>
+    <div class="list_r">
+        <div class="cm">
+            {:L(catpos)}<a href="{:URL()}"> {:L(home_font)}</a> >> <a href="{:U('Activity/index')}">活动</a> >> {$list[0]['title']}({$list[0]['createtime']|toDate=###,'Y-m-d'})
+        </div>
+        <div class="r_con">
+            <div class="bt">{$list[0]['title']}<br><span class="p_content" style="float:right">{:L(time)}: {$list[0]['createtime']|toDate=###,'Y-m-d'} <!--&nbsp;&nbsp;&nbsp;&nbsp;{:L(copyfrom)}: {if  $copyfrom}{$copyfrom}{else}{$site_name}{/if}--></span> </div>
+            <br/>
+            <div class="p_content" style="{if $l=='en'}text-indent: 0em;{/if}">{$list[0]['content']}</div>
+        </div>
+    </div>
+</div>

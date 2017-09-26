@@ -1,0 +1,92 @@
+<table class="table_b" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <th colspan="5">{if $l == 'cn'}仲裁员简历{else}Arbitrator’s Resume{/if}</th>
+    </tr>
+    <tr>
+        <td class="blue" align="right" style="width:136px;">姓名：</td>
+        <td style="width:160px;">{$userextendinfo['arbitratorName']}</td>
+        <td class="blue" align="right" style="width:136px;">性别：</td>
+        <td style="width:160px;">
+            {if $userextendinfo['sex'] == 1}
+                男
+            {elseif $userextendinfo['sex'] == 2}
+                女
+            {else}
+                保密
+            {/if}
+        </td>
+        <td rowspan="4" align="center" valign="middle">
+            {if $userextendinfo['photo']}
+            <img src="{$userextendinfo['photo']}" width="130px" height="160px">
+            {/if}
+        </td>
+    </tr>
+    <tr>
+        <td class="blue" align="right">Name：</td>
+        <td>{$userextendinfo['englishArbitratorName']}</td>
+        <td class="blue" align="right">Sex：</td>
+        <td>
+            {if $userextendinfo['englishSex'] == 1}
+                Male
+            {elseif $userextendinfo['englishSex'] == 2}
+                Female
+            {else}
+                Confidential
+            {/if}
+        </td>
+    </tr>
+    <tr>
+        <td class="blue" align="right">国籍：</td>
+        <td>{$nationality[$userextendinfo['nationality']]}</td>
+        <td class="blue" align="right">所在城市：</td>
+        <td>{$userextendinfo['city']}</td>
+    </tr>
+    <tr>
+        <td class="blue" align="right">Nationality：</td>
+        <td>{$nationality_en[$userextendinfo['nationality']]}</td>
+        <td class="blue" align="right">Current Residence：</td>
+        <td>{$userextendinfo['englishCity']}</td>
+    </tr>
+    <tr>
+        <td class="blue" align="right">教育背景：</td>
+        <td colspan="4">{$userextendinfo['education']}</td>
+    </tr>
+    <tr>
+        <td class="blue" align="right">Education Background：</td>
+        <td colspan="4">{$userextendinfo['englishEducation']}</td>
+    </tr>
+    <tr>
+        <td class="blue" align="right">工作经历：</td>
+        <td colspan="4">{$userextendinfo['workingExperience']}</td>
+    </tr>
+    <tr>
+        <td class="blue" align="right">Work Experience：</td>
+        <td colspan="4">{$userextendinfo['englishWorkingExperience']}</td>
+    </tr>
+    <tr>
+        <td class="blue" align="right">专长：</td>
+        <td colspan="4">{$userextendinfo['speciality']}</td>
+    </tr>
+    <tr>
+        <td class="blue" align="right">Expertise：</td>
+        <td colspan="4">{$userextendinfo['englishSpeciality']}</td>
+    </tr>
+    <tr>
+        <td class="blue" align="right">所会语言：</td>
+        <td colspan="4">{$userextendinfo['workingLanguage']}</td>
+    </tr>
+    <tr>
+        <td class="blue" align="right">Working Language：</td>
+        <td colspan="4">{$userextendinfo['englishWorkingLanguage']}</td>
+    </tr>
+</table>
+<div class="btns_b" id="printButton">
+    <a href="javascript:;" onclick=_printnow() class="btn_blue_long">{if $l == 'cn'}打印{else}Print{/if}</a>
+</div>
+<SCRIPT language=javascript>
+    function _printnow() {
+        document.all.printButton.style.display = "none";
+        window.print();
+        document.all.printButton.style.display = "";
+    }
+</SCRIPT>

@@ -1,0 +1,440 @@
+body {
+  background-color: #00abd8;
+}
+.c_left {
+  float: left;
+  width: 380px;
+}
+.c_left .c_bt {
+  line-height: 15px;
+  height: 15px;
+  border-left: 2px solid #00448c;
+  padding-left: 12px;
+  margin-bottom: 10px;
+}
+.c_left .c_bt .bt {
+  color: #00448c;
+  font-size: 16px;
+  float: left;
+}
+.c_left .c_bt .more {
+  color: #454545;
+  font-size: 10px;
+  float: right;
+  display: inline-block;
+}
+.c_right {
+  float: left;
+  width: 620px;
+}
+.c_right .c_bt {
+  line-height: 15px;
+  height: 15px;
+  border-left: 2px solid #ffffff;
+  padding-left: 12px;
+  margin-bottom: 10px;
+}
+.c_right .c_bt .bt {
+  color: #ffffff;
+  font-size: 16px;
+  float: left;
+  margin-right: 15px;
+  display: inline;
+}
+.c_right .c_bt .more {
+  color: #ffffff;
+  font-size: 10px;
+  float: right;
+  display: inline-block;
+}
+.c0 {
+  height: 360px;
+  background: url("../img/banner.jpg") center top no-repeat;
+}
+.c0 .c0_l {
+  height: 350px;
+  background-color: #fafafa;
+  padding: 10px 10px 0 10px;
+  width: 360px;
+}
+.c0 .c0_l .c0_img {
+  width: 360px;
+  height: 170px;
+  overflow: hidden;
+  position: relative;
+}
+.c0 .c0_l .c0_img .scro_img {
+  width: 360px;
+  height: 170px;
+  overflow: hidden;
+}
+.c0 .c0_l .c0_img .scro_img ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10000px;
+}
+.c0 .c0_l .c0_img .scro_img ul li {
+  overflow: hidden;
+  float: left;
+  width: 440px;
+  height: 500px;
+}
+.c0 .c0_l .c0_img .scro_img ul li a {
+  display: block;
+}
+.c0 .c0_l .c0_img .scro_nav {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  width: 100%;
+  height: 20px;
+  z-index: 2;
+}
+.c0 .c0_l .c0_img .scro_nav a {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 0 0 1px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  font-size: 10px;
+}
+.c0 .c0_l .c0_img .scro_nav a.active {
+  background-color: #fe3509;
+  color: #ffffff;
+}
+.c0 .c0_l .c0_list {
+  margin-top: 8px;
+  padding: 0 5px;
+}
+.c0 .c0_l .c0_list li {
+  border-bottom: 1px dotted #00448c;
+  height: 25px;
+  line-height: 25px;
+  margin-top: 2px;
+  background: url("../img/c0_arrow.png") left 7px no-repeat;
+  padding-left: 15px;
+}
+.c0 .c0_l .c0_list li a {
+  width: 335px;
+  height: 25px;
+  font-size: 12px;
+  color: #707070;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.c0 .c0_l .c0_list li a:hover {
+  color: #00448c;
+}
+.c0 .c_right {
+  position: relative;
+  height: 360px;
+}
+.c0 .c_right .search {
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+.c0 .c_right .search .search_input {
+  float: left;
+  width: 260px;
+  height: 28px;
+  line-height: 28px;
+  background-color: #e2dfdf;
+  border: 1px solid #c4c4c4;
+  padding: 0 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.c0 .c_right .search .search_button {
+  background: url(../img/search.png) 0 0 no-repeat;
+  border: 0;
+  cursor: pointer;
+  width: 35px;
+  height: 30px;
+  float: left;
+  display: inline;
+  margin: 0 0 0 15px;
+}
+.c1,
+.c2,
+.c3 {
+  overflow: hidden;
+  position: relative;
+}
+.c1 .c_left {
+  background-color: #e6e6e6;
+  padding-top: 15px;
+  height: 300px;
+}
+.c1 .c_left .c1_item {
+  background: url("../img/itembg.png") 0 0 no-repeat;
+  color: #666666;
+  font-size: 14px;
+  line-height: 46px;
+  padding-left: 30px;
+  width: 145px;
+  height: 46px;
+  float: left;
+  position: relative;
+  text-align: center;
+  margin: 10px 0 0 10px;
+  display: inline;
+}
+.c1 .c_left .c1_item .icon {
+  background: url("../img/icons.png") no-repeat;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 8px;
+  top: 3px;
+}
+.c1 .c_left .c1_item .icon1 {
+  background-position: 0 0;
+}
+.c1 .c_left .c1_item .icon2 {
+  background-position: 0 -40px;
+}
+.c1 .c_left .c1_item .icon3 {
+  background-position: 0 -80px;
+}
+.c1 .c_left .c1_item .icon4 {
+  background-position: 0 -120px;
+}
+.c1 .c_left .c1_item .icon5 {
+  background-position: 0 -160px;
+}
+.c1 .c_left .c1_item .icon6 {
+  background-position: 0 -200px;
+}
+.c1 .c_left .c1_item .icon7 {
+  background-position: 0 -240px;
+}
+.c1 .c_left .c1_item .icon8 {
+  background-position: 0 -280px;
+}
+.c1 .c_left .c1_item .icon9 {
+  background-position: 0 -320px;
+}
+.c1 .c_left .c1_item .icon10 {
+  background-position: 0 -360px;
+}
+.c1 .c_left .c1_item:hover {
+  background: url("../img/itembg.png") 0 -50px no-repeat;
+  color: #ffffff;
+}
+.c1 .c_left .c1_item:hover .icon1 {
+  background-position: -40px 0;
+}
+.c1 .c_left .c1_item:hover .icon2 {
+  background-position: -40px -40px;
+}
+.c1 .c_left .c1_item:hover .icon3 {
+  background-position: -40px -80px;
+}
+.c1 .c_left .c1_item:hover .icon4 {
+  background-position: -40px -120px;
+}
+.c1 .c_left .c1_item:hover .icon5 {
+  background-position: -40px -160px;
+}
+.c1 .c_left .c1_item:hover .icon6 {
+  background-position: -40px -200px;
+}
+.c1 .c_left .c1_item:hover .icon7 {
+  background-position: -40px -240px;
+}
+.c1 .c_left .c1_item:hover .icon8 {
+  background-position: -40px -280px;
+}
+.c1 .c_left .c1_item:hover .icon9 {
+  background-position: -40px -320px;
+}
+.c1 .c_left .c1_item:hover .icon10 {
+  background-position: -40px -360px;
+}
+.c1 .c_right {
+  background-color: #3382c2;
+  height: 295px;
+  padding: 20px 0 0 0;
+  position: relative;
+}
+.c1 .c_right .c_bt {
+  margin: 0 20px 10px 20px;
+}
+.c1 .c1_r {
+  color: #ffffff;
+  font-size: 12px;
+  padding: 0 20px;
+}
+.c1 .c1_r .p1 {
+  font-weight: bold;
+  line-height: 25px;
+  margin-top: 15px;
+  text-indent: 2em;
+}
+.c1 .c1_r .p2 {
+  line-height: 25px;
+  text-indent: 2em;
+}
+.c1 .c1_img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.c2 {
+  height: 300px;
+}
+.c2 .c_left {
+  background-color: #f2f1f1;
+  padding: 20px 20px 0 20px;
+  width: 340px;
+  height: 280px;
+}
+.c2 .c_left .map {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.c2 .c_left .map .map_list {
+  position: absolute;
+  right: 20px;
+  top: 0px;
+}
+.c2 .c_left .map .map_list a {
+  display: block;
+  height: 25px;
+  line-height: 25px;
+  font-family: "SimSun";
+  color: #606060;
+}
+.c2 .c_left .map .map_list a:hover {
+  color: #00448c;
+}
+.c2 .c_left .select {
+  padding: 0;
+  width: 340px;
+  height: 30px;
+  border: 0;
+  font-size: 14px;
+  color: #e6e6e6;
+  padding-left: 10px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  background: url("../img/select_bg.png") 0 0 no-repeat;
+}
+.c2 .c_left .select option {
+  color: #000000;
+  line-height: 22px;
+}
+.c2 .c_right {
+  background-color: #3382c2;
+  height: 300px;
+}
+.c2 .c_right .c2_r_1 {
+  width: 270px;
+  float: left;
+  padding: 20px 20px 0 20px;
+}
+.c2 .c_right .c2_r_2 {
+  width: 270px;
+  float: left;
+  padding: 20px 20px 0 20px;
+  background-color: #307ab8;
+  height: 280px;
+}
+.c2 .c_right .c2_r_list {
+  font-family: SimSun;
+  margin-top: 15px;
+  overflow: hidden;
+}
+.c2 .c_right .c2_r_list li {
+  color: #ffffff;
+  border-bottom: 1px dotted #1c96cc;
+  height: 25px;
+  line-height: 25px;
+  margin-bottom: 3px;
+}
+.c2 .c_right .c2_r_list li span,
+.c2 .c_right .c2_r_list li a {
+  float: left;
+  display: inline;
+}
+.c2 .c_right .c2_r_list li a {
+  color: #ffffff;
+  margin-left: 10px;
+  width: 160px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.c2 .c_right .c2_r_list li a:hover {
+  text-decoration: underline;
+}
+.c2 .c_right .c2_r_list li .date {
+  float: right;
+}
+.c3 {
+  height: 205px;
+  overflow: hidden;
+}
+.c3 .c_left {
+  padding: 20px 20px 0 20px;
+  width: 340px;
+  background-color: #f2f1f1;
+  height: 185px;
+}
+.c3 .c_left .c3_l_c {
+  overflow: hidden;
+  margin-top: 20px;
+}
+.c3 .c_left .c3_l_c a {
+  padding-left: 10px;
+  width: 160px;
+  float: left;
+  line-height: 25px;
+  color: #666666;
+}
+.c3 .c_left .c3_l_c a:hover {
+  color: #00448c;
+}
+.c3 .c_right {
+  background-color: #cbcbcb;
+  padding: 15px 0 0 20px;
+  width: 600px;
+  height: 190px;
+}
+.c3 .c_right .map {
+  float: left;
+}
+.c3 .c_right .addr {
+  margin-left: 25px;
+  float: left;
+  display: inline;
+  width: 250px;
+}
+.c3 .c_right .addr dl {
+  margin-bottom: 5px;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 25px;
+  color: #666666;
+}
+.c3 .c_right .addr dl dt {
+  width: 45px;
+  float: left;
+  font-weight: bold;
+}
+.c3 .c_right .addr dl dd {
+  margin-left: 45px;
+  overflow: hidden;
+}

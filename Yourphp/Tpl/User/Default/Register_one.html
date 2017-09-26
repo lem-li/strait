@@ -1,0 +1,250 @@
+<div class="content">
+	<div class="steps step1">
+        <span class="s1">1.{:L(BASE_INFO)}</span>
+        <span class="s2">2.{:L(AGREEMENT_READ)}</span>
+        <span class="s3">3.{:L(APPLY_TABLE_INFO)}</span>
+        <span class="s4">4.{:L(STEP_FOUR)}</span>
+    </div>
+    <div class="form_list">
+		<div class="bt">{:L(zhuce_info)}</div>
+		<div class="bt_notice">{:L(APPLY_INFO_TIP)}</div>
+		<form id="myform" method="post" action="{:U('User/Register/doreg?l='.$l)}">
+            <table class="form_table" style="margin:10px auto;">
+				<tr>
+					<td style="width:200px;" class="tr">
+						<span class="form_label"><span class="red">*</span>{:L(username)}：</span>
+					</td>
+					<td>
+						<input class="form_text" id="username" name="username" type="text" placeholder="{:L(USERNAME_RULE)}" />
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label"><span class="red">*</span>{:L(password)}：</span>
+					</td>
+					<td>
+						<input class="form_text" name="password" id="password" type="password" placeholder="{:L(PASSWORD_RULE)}">
+                    </td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label"><span class="red">*</span>{:L(USER_repassword)}：</span>
+					</td>
+					<td>
+						<input class="form_text" name="repassword" id="repassword" type="password">
+                    </td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label"><span class="red">*</span>{:L(realname)}：</span>
+					</td>
+					<td>
+						<input class="form_text" id="realname" name="realname" type="text">
+                    </td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label"><span class="red">*</span>{:L(CADETYPE)}:</span>
+					</td>
+					<td>
+						<select class="form_text" name="card_type" id="card_type">
+                                                <option value="1">{if $l=='cn'}身份证{else}ID Card{/if}</option>
+                                                <option value="2">{if $l=='cn'}护照{else}Passport{/if}</option>
+                                                <option value="3">{if $l=='cn'}其他{else}Other{/if}</option>
+                                            </select>
+                    </td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label"><span class="red">*</span>{:L(identity)}：</span>
+					</td>
+					<td>
+						<input class="form_text" id="identityid" name="identityid" type="text">
+                    </td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label"><span class="red">*</span>{:L(mobile)}：</span>
+					</td>
+					<td>
+						<input class="form_text" id="mobile" name="mobile" type="text">
+                    </td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label"><span class="red">*</span>{:L(email)}：</span>
+					</td>
+					<td>
+						<input class="form_text" id="email" name="email" type="text">
+                    </td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label"><span class="red">*</span>{:L(question)}：</span>
+					</td>
+					<td>
+						<input class="form_text" id="question" name="question" type="text">
+                    </td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label"><span class="red">*</span>{:L(answer)}：</span>
+					</td>
+					<td>
+						<input class="form_text" id="answer" name="answer" type="text">
+                    </td>
+				</tr>
+                {if  $member_config['member_login_verify']}
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(verify)}：</span>
+					</td>
+					<td>
+                                                <input class="form_text verifyCode" id="verifyCode" name="verifyCode" type="text" size="6" maxlength="4" style="width: 57px;"  />
+                        <img src="{:U('Home/Index/verify')}" onclick="javascript:resetVerifyCode();" class="checkcode" title="{:L('resetVerifyCode')}" id="verifyImage"/>
+                        <a class="touclick-bgimg touclick-reload"  onclick="javascript:resetVerifyCode();"></a>
+                    </td>
+				</tr>
+                {/if}
+                
+            </table>
+			
+			<div class="form_group">
+                <div class="btns">
+                	<input type="hidden" id="forward" name="forward" value="{$forward}"/>
+                    <a href="javascript:;" id="submit_on" class="btn_green">{:L(nextstep)}</a>
+                </div>
+            </div>
+		</form>
+    </div>
+</div>
+<script type="text/javascript">
+$("#submit_on").on('click', function(){
+    var username   = $.trim($("#username").val());
+    var password   = $.trim($("#password").val());
+    var repassword = $.trim($("#repassword").val());
+    var realname   = $.trim($("#realname").val());
+    var identityid = $.trim($("#identityid").val());
+    var mobile     = $.trim($("#mobile").val());
+    var email      = $.trim($("#email").val());
+    var question   = $.trim($("#question").val());
+    var answer     = $.trim($("#answer").val());
+    //用户名判断相关
+    if(username == ''){
+        alert("{:L(USERNAME_EMPTY)}");
+        return false;
+    }else{
+        /*
+        var pattern = /^[a-z0-9\-_\u4E00-\u9FA5]{2,24}$/i;
+        if(!pattern.test(username)){
+            alert("{:L(USERNAME_RULE)}");
+            return false;
+        }else{*/
+            //判断用户名是否存在
+            var flag = true;
+            $.ajax({    
+                type:'get',        
+                url:"{:U('User/Register/checkusername')}",    
+                data:"username="+username, 
+                async:false,
+                success:function(data){
+                    if(data === 'false'){
+                        alert("{:L(USERNAME_EXIST)}");
+                        flag = false;
+                    }
+                }    
+            });
+            if(!flag){
+                return false;
+            }
+        //}
+    }
+    
+//密码判断
+    if(password == ''){
+        alert("{:L(PASSWORD_EMPTY)}");
+        return false;
+    }else{
+        var passLength = password.length;
+        if(passLength < 6 || passLength > 20){
+            alert("{:L(PASSWORD_RULE)}");
+            return false;
+        }
+    }
+    //确认密码判断
+    if(repassword != password){
+        alert("{:L(REPASSWORD_TIP)}");
+        return false;
+    }
+    //真实姓名判断
+    if(realname == ''){
+        alert("{:L(REALNAME_EMPTY)}");
+        return false;
+    }
+    //身份证号判断
+    if(identityid == ''){
+        alert("{:L(IDCARD_EMPTY)}");
+        return false;
+    }
+    // else{
+    //     var pattern = /^[A-Za-z0-9]{18}$|^[A-Za-z0-9]{15}$/i;
+    //     if(!pattern.test(identityid)){
+    //         alert("{:L(IDCARD_RULE)}");
+    //         return false;
+    //     }
+    // }
+    //手机号判断
+    if(mobile == ''){
+        alert("{:L(MOBILE_EMPTY)}");
+        return false;
+    }
+    // else{
+    //     var pattern = /^1\d{10}$/;
+    //     if(!pattern.test(mobile)){
+    //         alert("{:L(MOBILE_RULE)}");
+    //         return false;
+    //     }
+    // }
+    //邮箱判断
+    if(email == ''){
+        alert("{:L(EMAIL_EMPTY)}");
+        return false;
+    }else{
+        var pattern = /^([-_A-Za-z0-9\.]+)@([_A-Za-z0-9]+\.)+[A-Za-z0-9]{2,3}$/;
+        if(!pattern.test(email)){
+            alert("{:L(EMAIL_RULE)}");
+            return false;
+        }else{
+            //判断邮箱是否存在
+            var flag = true;
+            $.ajax({    
+                type:'get',        
+                url:"{:U('User/Register/checkEmail')}",    
+                data:"email="+email, 
+                async:false,
+                success:function(data){
+                    if(data === 'false'){
+                        alert("{:L(EMAIL_EXIST)}");
+                        flag = false;
+                    }
+                }    
+            });
+            if(!flag){
+                return false;
+            }
+        }
+    }
+    //设置密码问题判断
+    if(question == ''){
+        alert("{:L(QUESTION_EMPTY)}");
+        return false;
+    }
+    //密码答案判断
+    if(answer == ''){
+        alert("{:L(ANSWER_EMPTY)}");
+        return false;
+    }
+    $('#myform').submit();
+});
+    
+</script>

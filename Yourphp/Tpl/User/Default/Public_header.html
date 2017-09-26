@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<base href="{$site_url}/" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="robots" content="index, follow" />
+	<meta name="keywords" content="{$seo_keywords}" />
+	<meta name="description" content="{$seo_description}" />	
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+	<title>{$seo_title}-{$site_name}</title>
+	
+	<script type="text/javascript" src="__PUBLIC__/Js/jquery-1.7.2.min.js"></script>
+	<script src="__PUBLIC__/Js/jquery.validate.js"></script>
+	<script src="__PUBLIC__/Js/yourphp.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/Js/tools.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/Js/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/common.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/login.css" />
+    <style type="text/css">  
+    .anchorBL{  
+        display:none;  
+    }  
+    .header .nav .nav_item .nav_a{
+        margin-left: -8px;
+    }
+   </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="header_wrap">
+        <div class="logo">
+            <a href="/{if $l == 'en'}?l=en{/if}"><img src="{if $webInfo['self']['pic']==''}__PUBLIC__/img/logo.jpg{else}{$webInfo['self']['pic']}{/if}"> </a>
+        </div>
+        <div class="nav">
+            <YP:nav  catid="0" level="3"  home="1" />
+            <div class="switch">
+                <a href="/{if $l == 'en'}?l=en{/if}"><span style="margin-right: 23px;">{if $l=='cn'}首页{else}Home{/if}</span></a>
+                <a href="{:U('Sitemap/index?l='.$l)}"><span style="margin-right: 23px;">{if $l=='cn'}网站地图{else}Site map{/if}</span></a>
+                    {if $l == 'en'}
+                    <a href="/">中文</a> &nbsp;
+                    {else}
+                    <a href="/?l=en">English</a> &nbsp;
+                    {/if}
+            </div>
+        </div>
+    </div>
+</div>

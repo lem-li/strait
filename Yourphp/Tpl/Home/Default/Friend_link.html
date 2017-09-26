@@ -1,0 +1,70 @@
+<!--div class="banner">
+    <div class="banner_wrap">
+        <div class="search">
+            <form name="searchPage" id="searchPage" method="get" action="" target="_blank">
+                <input type="text" class="search_input" placeholder="请输入您要搜索的内容">
+                <input type="button" class="search_button">
+            </form>
+        </div>
+    </div>
+</div-->
+<div class="wrap" id="guanlian">
+    <div style="margin: 30px 0 -47px;color: #666666;font-size: 18px;font-weight: bold;">{if $l=='cn'}关联机构{else}Affiliates{/if}</div>
+    <div class="friendlink_b" style="margin: 80px 0 -47px;">
+        <YP:link  typeid="2"  linktype="1" order="listorder asc" limit="100" >
+            <a href="{$r['siteurl']}" target="_blank" title="{$r['name']}" style="width: 19%;height:45px;line-height:17px;padding-right:10px;">{$r['name']}</a>
+        </YP:link>
+    </div>
+    <div class="friendlink_t">
+        <ul>
+            <YP:link  typeid="2"  linktype="2" order="listorder asc" limit="100" >
+                <li>
+                    <a href="{$r['siteurl']}" target="_blank" title="{$r['name']}">
+                        <img width="150px" height="80px" src="{$r['logo']}">
+                        <span>{$r['name']}</span>
+                    </a>
+                </li>
+            </YP:link>
+        </ul>
+    </div>
+</div>
+<div class="wrap" id="hezuo">
+    <div style="margin: 30px 0 -47px;color: #666666;font-size: 18px;font-weight: bold;">{if $l=='cn'}合作伙伴{else}Partner{/if}</div>
+    <div class="friendlink_b" style="margin: 80px 0 -47px;">
+        <YP:link  typeid="3"  linktype="1" order="listorder asc" limit="100" >
+            <a href="{$r['siteurl']}" target="_blank" title="{$r['name']}" style="width: 19%;height:45px;line-height:17px;padding-right:10px;">{$r['name']}</a>
+        </YP:link>
+    </div>
+    <div class="friendlink_t">
+        <ul>
+            <YP:link  typeid="3"  linktype="2" order="listorder asc" limit="100" >
+                <li>
+                    <a href="{$r['siteurl']}" target="_blank" title="{$r['name']}">
+                        <img width="150px" height="80px" src="{$r['logo']}">
+                        <span>{$r['name']}</span>
+                    </a>
+                </li>
+            </YP:link>
+        </ul>
+    </div>
+</div>
+<div class="wrap" id="changyong">
+    <div style="margin: 30px 0 -47px;color: #666666;font-size: 18px;font-weight: bold;">{if $l=='cn'}常用网站{else}Useful Websites{/if}</div>
+    <div class="friendlink_b" style="margin: 80px 0 -47px;">
+        <YP:link  typeid="8"  linktype="1" order="listorder asc" limit="100" >
+            <a href="{$r['siteurl']}" target="_blank" title="{$r['name']}" style="width: 19%;height:45px;line-height:17px;padding-right:10px;">{$r['name']}</a>
+        </YP:link>
+    </div>
+    <div class="friendlink_t">
+        <ul>
+            <YP:link  typeid="8"  linktype="2" order="listorder asc" limit="100" >
+                <li>
+                    <a href="{$r['siteurl']}" target="_blank" title="{$r['name']}">
+                        <img width="150px" height="80px" src="{$r['logo']}">
+                        <span>{$r['name']}</span>
+                    </a>
+                </li>
+            </YP:link>
+        </ul>
+    </div>
+</div>

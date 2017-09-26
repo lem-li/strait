@@ -1,0 +1,224 @@
+<style type="text/css">  
+   
+	.content .form_list .form_table td .form_textarea {
+		height: 60px;
+		width: 480px;
+	}
+	.content .form_list .form_table td .txt {
+		width: 480px;
+	}
+   </style>
+
+<div class="content">
+    <div class="steps step4">
+        <span class="s1">1.{:L(BASE_INFO)}</span>
+        <span class="s2">2.{:L(AGREEMENT_READ)}</span>
+        <span class="s3">3.{:L(APPLY_TABLE_INFO)}</span>
+        <span class="s4">4.{:L(STEP_FOUR)}</span>
+    </div>
+    <div class="form_list">
+    	<div class="bt">{:L(ZHUCE_APPLY)}</div>
+		<div class="bt_notice">{:L(APPLY_INFO_TIP2)}</div>
+    	<form id="myform"  method="post" enctype="multipart/form-data" action="{:U('User/Register/thirdstep?l='.$l)}" >
+    		<table class="form_table" style="margin: 10px auto;">
+				<tr>
+					<td style="width:180px;" class="tr">
+						<span class="form_label">{:L(edubackground)}: </span>
+					</td>
+					<td>
+						<textarea id="edubackground" class="form_textarea" name="edubackground" onchange="this.value=this.value.substring(0, {$fontnum})" onkeydown="this.value=this.value.substring(0, {$fontnum})" onkeyup="this.value=this.value.substring(0, {$fontnum})">{if $userextendInfo}{$userextendInfo['edubackground']}{/if}</textarea>
+                        <p class="txt">{:L(edubackground_explain)}</p>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(workexperience)}:  </span>
+					</td>
+					<td>
+						<textarea id="workexperience" class="form_textarea" name="workexperience" onchange="this.value=this.value.substring(0, {$fontnum})" onkeydown="this.value=this.value.substring(0, {$fontnum})" onkeyup="this.value=this.value.substring(0, {$fontnum})">{if $userextendInfo}{$userextendInfo['workexperience']}{/if}</textarea>
+                        <p class="txt">{:L(NO_MORE_THAN_BIG)}</p>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(partjob)}: </span>
+					</td>
+					<td>
+						<textarea id="partjob" class="form_textarea" name="partjob" onchange="this.value=this.value.substring(0, {$fontnum1})" onkeydown="this.value=this.value.substring(0, {$fontnum1})" onkeyup="this.value=this.value.substring(0, {$fontnum1})">{if $userextendInfo}{$userextendInfo['partjob']}{/if}</textarea>
+                        <p class="txt">{:L(NO_MORE_THAN_SMALL)}</p>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(profess_results)}: </span>
+					</td>
+					<td>
+						<textarea id="professresults" class="form_textarea" name="professresults" onchange="this.value=this.value.substring(0, {$fontnum})" onkeydown="this.value=this.value.substring(0, {$fontnum})" onkeyup="this.value=this.value.substring(0, {$fontnum})">{if $userextendInfo}{$userextendInfo['professresults']}{/if}</textarea>
+                        <p class="txt">{:L(NO_MORE_THAN_BIG)}</p>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(train)}: </span>
+					</td>
+					<td>
+						<textarea id="train" class="form_textarea" name="train" onchange="this.value=this.value.substring(0, {$fontnum3})" onkeydown="this.value=this.value.substring(0, {$fontnum3})" onkeyup="this.value=this.value.substring(0, {$fontnum3})"></textarea>
+                        <p class="txt">{:L(NO_MORE_THAN_SSMALL)}</p>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(arbitexperience)}: </span>
+					</td>
+					<td>
+						<textarea id="arbitexperience" class="form_textarea" name="arbitexperience" onchange="this.value=this.value.substring(0, {$fontnum})" onkeydown="this.value=this.value.substring(0, {$fontnum})" onkeyup="this.value=this.value.substring(0, {$fontnum})">{if $userextendInfo}{$userextendInfo['arbitexperience']}{/if}</textarea>
+                        <p class="txt">{if $l == 'cn'}比如：自何时起受聘担任仲裁委员会的仲裁员，以及作为仲裁员或者代理人参加仲裁案件审理的情况或者在仲裁领域的研究成果。（不超过1500汉字。）{else} For example, the time for being engaged as an arbitrator of an arbitration institution, the participation of arbitration cases as an arbitrator or an arbitration agent, and/or achievement in arbitration research. (Not more than 3000 characters){/if}</p>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(FIRSTLANG)}: </span>
+					</td>
+					<td>
+						<select class="form_text" name="firstlang" id="firstlang">
+						<option value="">--{if $l == 'cn'}请选择语种{else}Please select a language{/if}--</option>
+						
+                                                <volist name="languagetype" id="lv">
+                                                    <option value="{$key}" {if $userextendInfo && $userextendInfo['firstlang'] == $key}selected="selected"{/if}>{$lv}</option>
+                                                </volist>
+					</select>
+                    <br/>
+					<table class="form_table form_table_border" style="width:300px;margin-top:10px;">
+						<tbody>
+                                <tr>
+                                    <td>&nbsp;{:L(HEARING)}:</td>
+                                    <td><input name="firhearing" value="1" {if $firstlanvalue && $firstlanvalue['firhearing'] == 1}checked{/if} type="radio">{:L(EXCELLENT)}</td>
+                                    <td><input name="firhearing" value="2" {if $firstlanvalue && $firstlanvalue['firhearing'] == 2}checked{/if} type="radio">{:L(GOOD)}</td>
+                                    <td><input name="firhearing" value="3" {if $firstlanvalue && $firstlanvalue['firhearing'] == 3}checked{/if} type="radio">{:L(AVERAGE)}<br></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;{:L(SPEAK)}{if $l=='en'}&nbsp;&nbsp;&nbsp;{/if}:</td>
+                                    <td><input name="firspoken" value="1" {if $firstlanvalue && $firstlanvalue['firspoken'] == 1}checked{/if} type="radio">{:L(EXCELLENT)}</td>
+                                    <td><input name="firspoken" value="2" {if $firstlanvalue && $firstlanvalue['firspoken'] == 2}checked{/if} type="radio">{:L(GOOD)}</td>
+                                    <td><input name="firspoken" value="3" {if $firstlanvalue && $firstlanvalue['firspoken'] == 3}checked{/if} type="radio">{:L(AVERAGE)}<br></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;{:L(READ)}{if $l=='en'}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{/if}:</td>
+                                    <td><input name="firread" value="1" {if $firstlanvalue && $firstlanvalue['firread'] == 1}checked{/if} type="radio">{:L(EXCELLENT)}</td>
+                                    <td><input name="firread" value="2" {if $firstlanvalue && $firstlanvalue['firread'] == 2}checked{/if} type="radio">{:L(GOOD)}</td>
+                                    <td><input name="firread" value="3" {if $firstlanvalue && $firstlanvalue['firread'] == 3}checked{/if} type="radio">{:L(AVERAGE)}<br></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;{:L(WRITING)}{if $l=='en'}&nbsp;{/if}:</td>
+                                    <td><input name="firwriting" value="1" {if $firstlanvalue && $firstlanvalue['firwriting'] == 1}checked{/if} type="radio">{:L(EXCELLENT)}</td>
+                                    <td><input name="firwriting" value="2" {if $firstlanvalue && $firstlanvalue['firwriting'] == 2}checked{/if} type="radio">{:L(GOOD)}</td>
+                                    <td><input name="firwriting" value="3" {if $firstlanvalue && $firstlanvalue['firwriting'] == 3}checked{/if} type="radio">{:L(AVERAGE)}<br></td>
+                                </tr>
+						</tbody>
+					</table>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(TWOLANG)}: </span>
+					</td>
+					<td>
+                                            <select class="form_text" name="twolang" id="twolang">
+						<option value="">--{if $l == 'cn'}请选择语种{else}Please select a language{/if}--</option>
+                            <volist name="languagetype" id="lv">
+                                <option value="{$key}" {if $userextendInfo && $userextendInfo['twolang'] == $key}selected="selected"{/if}>{$lv}</option>
+                            </volist>
+					</select>
+					<br/>
+					<table class="form_table form_table_border" style="width:300px;margin-top:10px;">
+						<tbody>
+							<tr>
+                                    <td>&nbsp;{:L(HEARING)}:</td>
+                                    <td><input name="twohearing" value="1" {if $twolanvalue && $twolanvalue['twohearing'] == 1}checked{/if} type="radio">{:L(EXCELLENT)}</td>
+                                    <td><input name="twohearing" value="2" {if $twolanvalue && $twolanvalue['twohearing'] == 2}checked{/if} type="radio">{:L(GOOD)}</td>
+                                    <td><input name="twohearing" value="3" {if $twolanvalue && $twolanvalue['twohearing'] == 3}checked{/if} type="radio">{:L(AVERAGE)}<br></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;{:L(SPEAK)}{if $l=='en'}&nbsp;&nbsp;&nbsp;{/if}:</td>
+                                    <td><input name="twospoken" value="1" {if $twolanvalue && $twolanvalue['twospoken'] == 1}checked{/if} type="radio">{:L(EXCELLENT)}</td>
+                                    <td><input name="twospoken" value="2" {if $twolanvalue && $twolanvalue['twospoken'] == 2}checked{/if} type="radio">{:L(GOOD)}</td>
+                                    <td><input name="twospoken" value="3" {if $twolanvalue && $twolanvalue['twospoken'] == 3}checked{/if} type="radio">{:L(AVERAGE)}<br></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;{:L(READ)}{if $l=='en'}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{/if}:</td>
+                                    <td><input name="tworead" value="1" {if $twolanvalue && $twolanvalue['tworead'] == 1}checked{/if} type="radio">{:L(EXCELLENT)}</td>
+                                    <td><input name="tworead" value="2" {if $twolanvalue && $twolanvalue['tworead'] == 2}checked{/if} type="radio">{:L(GOOD)}</td>
+                                    <td><input name="tworead" value="3" {if $twolanvalue && $twolanvalue['tworead'] == 3}checked{/if} type="radio">{:L(AVERAGE)}<br></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;{:L(WRITING)}{if $l=='en'}&nbsp;{/if}:</td>
+                                    <td><input name="twowriting" value="1" {if $twolanvalue && $twolanvalue['twowriting'] == 1}checked{/if} type="radio">{:L(EXCELLENT)}</td>
+                                    <td><input name="twowriting" value="2" {if $twolanvalue && $twolanvalue['twowriting'] == 2}checked{/if} type="radio">{:L(GOOD)}</td>
+                                    <td><input name="twowriting" value="3" {if $twolanvalue && $twolanvalue['twowriting'] == 3}checked{/if} type="radio">{:L(AVERAGE)}<br></td>
+                                </tr>
+						</tbody>
+					</table>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(introduction)}: </span>
+					</td>
+					<td>
+						<textarea id="introduction" class="form_textarea" name="introduction" onchange="this.value=this.value.substring(0, {$fontnum})" onkeydown="this.value=this.value.substring(0, {$fontnum})" onkeyup="this.value=this.value.substring(0, {$fontnum})">{if $userextendInfo}{$userextendInfo['introduction']}{/if}</textarea>
+                        <p class="txt">{:L(NO_MORE_THAN_BIG)}</p>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(recommend)}: </span>
+					</td>
+					<td>
+						<textarea id="recommend" class="form_textarea" name="recommend" onchange="this.value=this.value.substring(0, 50)" onkeydown="this.value=this.value.substring(0, 50)" onkeyup="this.value=this.value.substring(0, 50)">{if $userextendInfo}{$userextendInfo['recommend']}{/if}</textarea>
+                        <p class="txt">{if $l == 'cn'}如有推荐人，请注明推荐人姓名，最多不超过两人；如推荐人另有推荐信，请将推荐信邮寄至：北京市西城区桦皮厂胡同2号国际商会大厦6层(100035)，中国国际经济贸易仲裁委员会监督协调处收，并请在信封上注明“推荐信”。{else} If you have referrers, please indicate their names which should be no more than two. If you have letters of recommendation from your referrers, please mail them to CIETAC Supervision & Coordination Department, 6/F CCOIC Building, 2 Huapichang Hutong, Xicheng District, Beijing, 100035, P. R. China and indicate the Letter of Recommendation on the envelop.{/if}</p>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(NOTEPAD)}:  </span>
+					</td>
+					<td>
+						<textarea id="remarks" class="form_textarea" name="remarks" onchange="this.value=this.value.substring(0, {$fontnum})" onkeydown="this.value=this.value.substring(0, {$fontnum})" onkeyup="this.value=this.value.substring(0, {$fontnum})">{if $userextendInfo}{$userextendInfo['remarks']}{/if}</textarea>
+                        <p class="txt">{:L(NO_MORE_THAN_BIG)}</p>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(UPLOAD_FILES)}: </span>
+					</td>
+					<td>
+						<input type="file" id="" name="attachment" value="" style="width: 135px;">
+                                                <span class="tips">（上传格式为word）</span>
+					</td>
+				</tr>
+            </table>
+            
+    		<div class="form_group">
+                <div class="btns">
+                	<input type="hidden" name="userid" value="{$userinfo['id']}" />
+                	<a href="javascript:;" onclick="window.location.href='{:U('User/Register/twostep?userid='.$userinfo['id'].'&l='.$l)}'" class="btn">{:L(laststep)}</a>
+                        <a href="javascript:;" id="preview_on" class="btn_green">{:L(MESSAGE_PREVIEW)}</a>
+                        <a href="javascript:;" id="submit_on" class="btn_green">{:L(save_preview)}</a>
+                </div>
+            </div>
+    	</form>
+    </div>
+</div>
+<script type="text/javascript">
+$("#submit_on").on('click', function(){
+    var action = '{:U('User/Register/thirdstep?l='.$l)}';
+    $('#myform').attr('action', action);
+    $('#myform').submit();
+});
+$("#preview_on").on('click', function(){
+    var action = '{:U('User/Register/save_preview?l='.$l)}';
+    $('#myform').attr('action', action);
+    $('#myform').submit();
+});
+    
+</script>

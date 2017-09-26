@@ -1,0 +1,220 @@
+<div class="c0">
+    <div class="flexslider">
+        <ul class="slides">
+            <volist name="flase_list" id="r">
+                <li style="background: url('{$r.pic}') 50% 0 no-repeat;"></li>
+            </volist>
+        </ul>
+    </div>
+    <div class="wrap">
+        <div class="c_left c0_l">
+            <div class="c_bt">
+                <span class="bt">{if $l=='cn'}新闻中心{else}News{/if}</span>
+                <a href="/index.php?m=Article&a=index&id={if $l=='cn'}30{else}48&l=en{/if}" class="more">MORE</a>
+            </div>
+            <div class="c0_img">
+                <div id="scro_img" class="scro_img">
+                    <ul>
+                        <YP:list name="Article" where="is_thumb=1" field="title,url,thumb"  order="listorder = 0,listorder asc,id desc" catid="30" limit="4">
+                            <li>
+                                <a href="{$r.url}" target="_blank">
+                                    <img width="460" height="210" src="{$r.thumb}" alt="">
+                                </a>
+                            </li>
+                        </YP:list> 
+                    </ul>
+                </div>
+                <div class="scro_nav" id="scro_nav">
+                    <a href="javascript:void(0);" class="active">1</a>
+                    <a href="javascript:void(0);">2</a>
+                    <a href="javascript:void(0);">3</a>
+                    <a href="javascript:void(0);">4</a>
+                </div>
+            </div>
+            <ul class="c0_list">
+                <YP:list name="Article" where="is_thumb=1" field="title,url,createtime"  order="listorder = 0,listorder asc,id desc" catid="30" limit="4">
+                    <li>
+                        <a href="{$r.url}" title="{$r[title]}[{$r.createtime|toDate=###,'Y-m-d'}]" target="_blank" style="width:auto;float:left;">{$r[title]|str_cut=###,50}</a><span class="date" style="float:right;color:#707070;">[{$r.createtime|toDate=###,'Y-m-d'}]</span>
+                    </li>
+                </YP:list> 
+            </ul>
+        </div>
+        <div class="c_right">
+            <include file="Home:search"/>
+        </div>
+    </div>
+</div>
+<div class="c">
+    <div class="c1">
+        <div class="c_left">
+            <a class="c1_item" href="{if $l == 'cn'}{:U('Article/index?id=120')}{else}{:U('Article/index?id=190&l=en')}{/if}" target="_blank"><span class="icon icon1"></span>{if $l == 'cn'}申请仲裁{else}Application{/if}</a>
+            <a class="c1_item" href="http://dndrc.cietac.org/cietac" target="_blank"><span class="icon icon6"></span>{if $l == 'cn'}域名争议解决{else}Domain Name{/if}</a>
+            <a class="c1_item" href="{if $l == 'cn'}{:U('Page/index?id=14')}{else}{:U('Page/index?id=42&l=en')}{/if}" target="_blank"><span class="icon icon3"></span>{if $l == 'cn'}仲裁规则{else}Rules{/if}</a>
+            <a class="c1_item" href="http://www.cietacodr.org/" target="_blank"><span class="icon icon5"></span>{if $l == 'cn'}网上仲裁{else}Online Arbitration{/if}</a>
+            <a class="c1_item" href="/index.php?m=Cost{if $l == 'en'}&l=en{/if}" target="_blank"><span class="icon icon2"></span>{if $l == 'cn'}费用快算{else}Fee Calculator{/if}</a>
+            <a class="c1_item" href="{if $l == 'cn'}{:U('Page/index?id=72')}{else}{:U('Page/index?id=207&l=en')}{/if}" target="_blank"><span class="icon icon7"></span>{if $l == 'cn'}贸仲出版物{else}CIETAC Publication{/if}</a>
+           <a class="c1_item" href="{:U('User/Arbitrator/index')}{if $l == 'en'}&l=en{/if}" target="_blank"><span class="icon icon4"></span>{if $l == 'cn'}仲裁员查询{else}Arbitrator Search{/if}</a>
+            <a class="c1_item" href="{if $l == 'cn'}{:U('Article/index?id=152')}{else}{:U('Article/index?id=239&l=en')}{/if}" target="_blank"><span class="icon icon9"></span>{if $l == 'cn'}贸仲简报{else}Newsletters{/if}</a>
+            <a class="c1_item" href="{if $l == 'cn'}{:U('Page/index?id=24')}{else}{:U('Page/index?id=40&l=en')}{/if}" target="_blank"><span class="icon icon10"></span>{if $l == 'cn'}数据统计{else}Statistics{/if}</a>
+            <a class="c1_item" href="{if $l == 'cn'}{:U('Article/index?id=251')}{else}{:U('Article/index?id=255&l=en')}{/if}" target="_blank"><span class="icon icon8"></span>{if $l == 'cn'}研究报告{else}Research Report{/if}</a>						<a class="c1_item" href="index.php?g=User&m=ArbitratorSm&a=sm" target="_blank"><span class="icon icon11"></span>{if $l == 'cn'}报酬查询{else}{/if}</a>
+        </div>
+        <div class="c_right">
+            {$c_right_1}
+            <div class="c1_img">
+                {if $hd_pic != ''}
+                <a href="{$hd_pic['url']}">
+                    <img width="620" height="90" src="{$hd_pic['pic']}">
+                </a>
+                {else}
+                <img width="620" height="90" src="Public/img/c1_img.jpg">
+                {/if}
+            </div>
+        </div>
+    </div>
+    <div class="c2">
+        <div class="c_left">
+            <div class="c_bt"><span class="bt">{if $l=='cn'}分会{else}Sub-Commission{/if}</span><a href="{if $l == 'cn'}{:U('Page/index?id=26')}{else}{:U('Page/index?id=53&l=en')}{/if}" class="more">MORE</a></div>
+            <div class="map">
+                <div id="baidu_map2" >
+                <img src="Public/img/map2.jpg" width="350px" height="200px">
+                </div>
+                <div class="map_list">
+                    <volist name="webInfo.list" id="r">
+                        {if $r['id'] != 24}
+                        <a href="{if $r['link']!=''}{$r.link}{else}http://{$r.domain}/{/if}" target="_blank">> {if $l=='cn'}{$r.name}{else}{$r.enname}{/if}</a>
+                        {/if}
+                    </volist>
+                </div>
+            </div>
+            <div class="c_bt" style="margin-top: 30px"><span class="bt">{if $l=='cn'}办事处{else}Offices{/if}</span><a href="{if $l == 'cn'}{:U('Page/index?id=246')}{else}{:U('Page/index?id=247&l=en')}{/if}" class="more">MORE</a></div>
+        </div>
+        <div class="c_right">
+            <div class="c2_r_1">
+                <div class="c_bt">
+                    {$c2_r_1}
+                </div>
+                {$c2_r_1_list}
+            </div>
+            <div class="c2_r_2">
+                <div class="c_bt">
+                    <volist name="web_news" id="r">
+                        <span class="bt {if $r.i==1}active{/if}">{$r.name}</span>
+                    </volist>
+                    <a href="/index.php?m=News{if $l=='en'}&l=en{/if}" class="more">MORE</a>
+                </div>
+                <volist name="web_news" id="r">
+                    {$r.list}
+                </volist>
+            </div>
+        </div>
+    </div>
+    <div class="c3">
+        <div class="c_left">
+            <div class="c_bt"><span class="bt">{if $l=='cn'}友情链接{else}Links{/if}</span></div>
+            <div class="c3_l_c">
+                {if $l=='cn'}
+                <a href="/index.php?m=FriendLink#guanlian" style="width:126px;" target="_blank" title="关联机构">关联机构</a>
+                <a href="/index.php?m=FriendLink#hezuo" style="width:126px;" target="_blank" title="合作伙伴">合作伙伴</a>
+                <a href="/index.php?m=FriendLink#changyong" style="width:126px;" target="_blank" title="常用网站">常用网站</a>
+                {else}
+                <a href="/index.php?m=FriendLink&l=en#guanlian" style="width:126px;" target="_blank" title="Affiliates">Affiliates</a>
+                <a href="/index.php?m=FriendLink&l=en#hezuo" style="width:126px;" target="_blank" title="Partner">Partner</a>
+                <a href="/index.php?m=FriendLink&l=en#changyong" style="width:126px;" target="_blank" title="Useful Websites">Useful Websites</a>
+                {/if}
+            </div>
+        </div>
+        <div class="c_right">
+            <div class="map" id="baidu_map" style="width: 274px;height: 173px;"></div>
+            <div class="addr">
+                <dl>
+                    {if $l=='cn'}
+                    <dt>地址：</dt>
+                    <dd>{$webInfo['self']['address']}</dd>
+                    {else}
+                    <dt>Add：</dt>
+                    <dd>{$webInfo['self']['enaddress']}</dd>
+                    {/if}
+                </dl>
+                <dl>
+                    <dt>{if $l=='cn'}电话{else}Tel{/if}：</dt>
+                    <dd>{$webInfo['self']['phone']}</dd>
+                </dl>
+                <dl>
+                    <dt>{if $l=='cn'}传真{else}Fax{/if}：</dt>
+                    <dd>{$webInfo['self']['fax']}</dd>
+                </dl>
+                <dl>
+                    <dt>{if $l=='cn'}邮编{else}P.C.{/if}：</dt>
+                    <dd>{$webInfo['self']['postal']}</dd>
+                </dl>
+                <dl>
+                    <dt>{if $l=='cn'}信箱{else}Email{/if}：</dt>
+                    <dd>{$webInfo['self']['email']}</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var map2 = null;
+	//百度地图API功能
+	function loadJScript() {
+		var script = document.createElement("script");
+		script.type = "text/javascript";
+		script.src = "http://api.map.baidu.com/api?v=2.0&ak=lLlooWKhUVArNOrr3K9Ox7Tm&callback=init";
+		document.body.appendChild(script);
+	}
+	function init() {
+		// 百度地图API功能
+		var lng = {$webInfo['self']['lng']};
+		var lat = {$webInfo['self']['lat']};
+		var map = new BMap.Map("baidu_map")
+		var new_point = new BMap.Point(lng,lat);
+		map.centerAndZoom(new_point,13);
+		/*		
+                var navigationControl = new BMap.NavigationControl({
+			// 靠左上角位置
+			anchor: BMAP_ANCHOR_TOP_LEFT,
+			// LARGE类型
+			type: BMAP_NAVIGATION_CONTROL_LARGE,
+			// 启用显示定位
+			enableGeolocation: true
+		  });
+                map.addControl(navigationControl);
+		*/
+		map.enableScrollWheelZoom();
+		var marker = new BMap.Marker(new_point);  // 创建标注
+		map.addOverlay(marker);              // 将标注添加到地图中
+		map.panTo(new_point);   
+                
+                //map_2(104.090996,35.875633);
+	}  
+	window.onload = loadJScript;  //异步加载地图
+        
+        function map_2(lng,lat){
+            if(window.map2 == null){
+                window.map2 = new BMap.Map("baidu_map2");            // 创建Map实例
+                var point2 = new BMap.Point(lng,lat);  
+                map2.centerAndZoom(point2,3); 
+                map2.disableScrollWheelZoom();  
+                map2.disableDragging(); 
+                return false;
+            }
+            if(lng > 0 && lat > 0){
+                var allOverlaya = map2.getOverlays();
+                //for (var i = 0; i < allOverlaya.length -1; i++){
+                    //map2.removeOverlay(allOverlaya[i]);
+                //}
+                map2.removeOverlay(allOverlaya[0]);
+                var point2 = new BMap.Point(lng,lat);  
+                //map2.centerAndZoom(point1,3); 
+                //初始化地图标记
+                var marker = new BMap.Marker(point2);  // 创建标注
+                map2.addOverlay(marker);              // 将标注添加到地图中
+            }
+        }
+            
+        
+        
+            
+</script>

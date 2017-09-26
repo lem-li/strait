@@ -1,0 +1,219 @@
+
+      	<table cellpadding=0 cellspacing=0 class="table_form" width="100%">
+      	<tr>
+			<td width="210">用户名：<br/>(User name)</td>
+			<td>{$userbaseinfo['username']}</td>
+		</tr>
+		<tr>
+			<td>真实姓名：<br/>(Real name)</td>
+			<td>{$userbaseinfo['realname']}</td>
+		</tr>
+		<tr>
+			<td>性别：<br/>(Sex)</td>
+			<td>
+				{if $userextendinfo['lang'] == 'cn'}
+					{if $userbaseinfo['sex'] == 1}
+					男
+					{elseif $userbaseinfo['sex'] == 2}
+					女
+					{else}
+					保密
+					{/if}
+				{else}
+					{if $userbaseinfo['sex'] == 1}
+					Male
+					{elseif $userbaseinfo['sex'] == 2}
+					Female
+					{else}
+					Confidential
+					{/if}
+				{/if}
+			</td>
+		</tr>
+		<tr>
+			<td>邮箱：<br/>(Email)</td>
+			<td>{$userbaseinfo['email']}</td>
+		</tr>
+		<tr>
+			<td>手机号：<br/>(Mobile phone)</td>
+			<td>{$userbaseinfo['mobile']}</td>
+		</tr>
+		<tr>
+			<td>头像：<br/>(Photo)</td>
+			<td><img alt="" src="{$userextendinfo['photo']}" width="120px" height="90px" style="padding-top: 9px;"></td>
+		</tr>
+		<tr>
+			<td>姓：<br/>(Surname)</td>
+			<td>{$userextendinfo['surname']}</td>
+		</tr>
+		<tr>
+			<td>名：<br/>(First and Middle Names)</td>
+			<td>{$userextendinfo['name']}</td>
+		</tr>
+		<tr>
+			<td>家庭电话：<br/>(Home-TEL)</td>
+			<td>{$userextendinfo['familytel']}</td>
+		</tr>
+		<tr>
+			<td>家庭传真：<br/>(Home-FAX)</td>
+			<td>{$userextendinfo['familyfax']}</td>
+		</tr>
+		<tr>
+			<td>国籍：<br/>(Nationality)</td>
+			<td>{$nationality[$userextendinfo['nationalityid']]}</td>
+		</tr>
+		<tr>
+			<td>第二国籍：<br/>(Second Nationality)</td>
+			<td>{$userextendinfo['twonationality']}</td>
+		</tr>
+		<tr>
+			<td>
+                            {if $userbaseinfo['card_type'] == '1'}
+                                身份证
+                            {else}
+                                护照
+                            {/if}：<br/>(ID card number)</td>
+			<td>{$userbaseinfo['identityid']}</td>
+		</tr>
+		<tr>
+			<td>出生日期：<br/>(Date of Birth)</td>
+			<td>{$userextendinfo['birthday']}</td>
+		</tr>
+		<tr>
+			<td>所在城市：<br/>(Current Residence)</td>
+			<td>{$userextendinfo['city']}</td>
+		</tr>
+		<tr>
+			<td>最高学历：<br/>(Highest Educational Level)</td>
+			<td>{if $userextendinfo['lang'] == 'cn'}{$highestschooling[$userextendinfo['highestschooling']]}{else}{$userextendinfo['highestschooling']}{/if}</td>
+		</tr>
+		<tr>
+			<td>职称：<br/>(Professional Title)</td>
+			<td>{$nicaltitle[$userextendinfo['technicaltitle']]}</td>
+		</tr>
+		<tr>
+			<td>职业分类：<br/>(Occupation Classification)</td>
+			<td>{$occclassification[$userextendinfo['occclassification']]}</td>
+		</tr>
+		{if $userextendInfo['lang'] == 'cn'}
+		<tr>
+			<td>公务员或参公管理人员</td>
+			<td>
+				{if $userextendInfo['identitycategory'] == 1}
+				是
+				{else}
+				否
+				{/if}
+			</td>
+		</tr>
+		{/if}
+		<tr>
+			<td>单位：<br/>(Current Employer)</td>
+			<td>{$userextendinfo['company']}</td>
+		</tr>
+		<tr>
+			<td>职务：<br/>(Job Title)</td>
+			<td>{$userextendinfo['job']}</td>
+		</tr>
+		<tr>
+			<td>单位地址及邮编：<br/>(Current Employer\'s Address and Postcode)</td>
+			<td>{$userextendinfo['companyaddress']}</td>
+		</tr>
+		<tr>
+			<td>家庭地址及邮编：<br/>(Home Address and Postcode)</td>
+			<td>{$userextendinfo['familyaddress']}</td>
+		</tr>
+		<tr>
+			<td>有效通讯地址及邮编：<br/>(Valld Mail Address and Postcode)</td>
+			<td>{$userextendinfo['validaddress']}</td>
+		</tr>
+		<tr>
+			<td>工作电话：<br/>(Office-TEL)</td>
+			<td>{$userextendinfo['worktel']}</td>
+		</tr>
+		<tr>
+			<td>工作传真：<br/>(Office-FAX)</td>
+			<td>{$userextendinfo['workfax']}</td>
+		</tr>
+		<tr>
+			<td>教育背景：<br/>(Education Background)</td>
+			<td>{$userextendinfo['edubackground']}</td>
+		</tr>
+		<tr>
+			<td>工作经历：<br/>(Work Experience)</td>
+			<td>{$userextendinfo['workexperience']}</td>
+		</tr>
+		<tr>
+			<td>仲裁相关经历：<br/>(Experience in Arbitration)</td>
+			<td>{$userextendinfo['arbitexperience']}</td>
+		</tr>
+		<tr>
+			<td>社会团体兼职情况：<br/>(Social Occupation)</td>
+			<td>{$userextendinfo['partjob']}</td>
+		</tr>
+		<tr>
+			<td>专长：<br/>(Expertise)</td>
+			<td>{$userextendinfo['specialty']}</td>
+		</tr>
+		<tr>
+			<td>专业成果：<br/>(Research Achievement)</td>
+			<td>{$userextendinfo['professresults']}</td>
+		</tr>
+		<tr>
+			<td>第一外语水平：<br/>(First Foreign Language Level)</td>
+			<td>{if $userextendinfo && $userextendinfo['firstlang'] }{$languagetype[$userextendinfo['firstlang']]}{else}无{/if}</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>{if $firstlanvalue && $firstlanvalue['firhearing']}听力({$lantype[$firstlanvalue['firhearing']]}){/if}{if $firstlanvalue && $firstlanvalue['firspoken']}&nbsp;&nbsp;&nbsp;&nbsp;口语({$lantype[$firstlanvalue['firspoken']]}){/if}{if $firstlanvalue && $firstlanvalue['firread']}&nbsp;&nbsp;&nbsp;&nbsp;阅读({$lantype[$firstlanvalue['firread']]}){/if}{if $firstlanvalue && $firstlanvalue['firwriting']}&nbsp;&nbsp;&nbsp;&nbsp;写作({$lantype[$firstlanvalue['firwriting']]}){/if}</td>
+		</tr>
+		<tr>
+			<td>第二外语水平：<br/>(Second Foreign Language Level)</td>
+			<td>{if $userextendinfo && $userextendinfo['twolang'] }{$languagetype[$userextendinfo['twolang']]}{else}无{/if}</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>{if $twolanvalue && $twolanvalue['twohearing']}听力({$lantype[$twolanvalue['twohearing']]}){/if}{if $twolanvalue && $twolanvalue['twospoken']}&nbsp;&nbsp;&nbsp;&nbsp;口语({$lantype[$twolanvalue['twospoken']]}){/if}{if $twolanvalue && $twolanvalue['tworead']}&nbsp;&nbsp;&nbsp;&nbsp;阅读({$lantype[$twolanvalue['tworead']]}){/if}{if $twolanvalue && $twolanvalue['twowriting']}&nbsp;&nbsp;&nbsp;&nbsp;写作({$lantype[$twolanvalue['twowriting']]}){/if}</td>
+		</tr>
+		<tr>
+			<td>自我介绍：<br/>(Self Description)</td>
+			<td>{$userextendinfo['introduction']}</td>
+		</tr>
+		<tr>
+			<td>仲裁培训情况：<br/>(Reflection on Arbitrator Training Program)</td>
+			<td>{$userextendinfo['train']}</td>
+		</tr>
+		<tr>
+			<td>推荐人：<br/>(Referee)</td>
+			<td>{$userextendinfo['recommend']}</td>
+		</tr>
+		<tr>
+			<td>备注：<br/>(Notepad)</td>
+			<td>{$userextendinfo['remarks']}</td>
+		</tr>
+		<tr>
+			<td>附件：<br/>(tachment)</td>
+			<td>
+			{if $userextendinfo && $userextendinfo['attachment']}
+			<a href="{$userextendinfo['attachment']}" target="_blank">{if $l == 'cn'}附件查看{else}attachment look{/if}</a>
+			{/if}
+			</td>
+		</tr>
+		</table>
+		
+		<div class="btn">
+		{if $userbaseinfo['checked'] == 1}
+		<form method='post'  id="myform" action="{:URL('Admin-Arbitrator/check')}">
+		<input type="hidden" name="id" value="{$userbaseinfo['id']}" />
+		<INPUT TYPE="submit" name="checkok"  value="审核通过" class="button" >
+		<INPUT TYPE="submit" name="checkno"  value="审核不通过" class="button" >
+		<INPUT TYPE="button"  value="返回列表" class="button" onclick="javacript:location.href='{:URL('Admin-Arbitrator/index'.$userbaseinfo['lang'])}'" >
+		</form>
+		{else}
+		<INPUT TYPE="button"  value="返回列表" class="button" onclick="javacript:location.href='{:URL('Admin-Arbitrator/index'.$userbaseinfo['lang'])}'" >
+		{/if}
+
+		</div>
+		
+		
+     </div>

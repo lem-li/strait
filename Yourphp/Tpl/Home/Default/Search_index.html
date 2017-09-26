@@ -1,0 +1,36 @@
+<div class="banner2">
+    <div class="banner_wrap">
+        <include file="Home:search"/>
+    </div>
+</div>
+<div class="wrap" style="overflow:hidden;">
+    <div class="list_r" style="float:none;width:1000px;">
+        <div class="cm">
+            {:L(catpos)}<a href="{:URL()}"> {:L(home_font)}</a> >> <YP:catpos  catid="catid" space=" &gt " /> {:L(SEARCH_RESULTS)}
+        </div>
+        <div style="padding-top: 20px; height: 30px; color: rgb(102, 102, 102);">您输入的检索词：<font style="color:red;">{$keyword}</font>，共查到<font style="color:red;">{$count}</font>篇相关网页
+        </div>
+        <ul class="news_list">
+            <volist name="list" id="r">
+				<li><!--<span class="date">[{$r.createtime|toDate=###,'Y-m-d'}]</span>-->
+					{if $r['url'] == 1}
+					<a href="{:U('Page/index?id='.$r['id'].'&l='.$l)}" target="_blank">{$r.title}</a>
+					{else}
+					<a href="{$r.url}" target="_blank">{$r.title}</a>
+					{/if}
+				</li>
+			</volist> 
+        </ul>
+        <div class="r_con_b">
+            <div class="page">
+                {$pages}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

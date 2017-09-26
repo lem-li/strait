@@ -1,0 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit();?><div id="thumbnails1" ><ul class="attachment-list" style="padding:0;margin:0;">
+<?php if(is_array($list)): $k = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($k % 2 );++$k;?><li><div id="attachment_<?php echo ($vo[aid]); ?>" class="img"><a href="javascript:void(0);" id="on_<?php echo ($vo[aid]); ?>" onclick="javascript:add_file(this,<?php echo ($vo['aid']); ?>,<?php echo ($vo['status']); ?>)"><div class="icon"></div><img src="<?php echo ($vo['thumb']); ?>" path="<?php echo ($vo['filepath']); ?>" alt="<?php echo ($vo['filename']); ?>" imgid="<?php echo ($vo[aid]); ?>" imgsize="<?php echo ($vo[filesize]); ?>" style="max-width:80px;_width:80px;max-height:80px;_height:80px;"></a></div></li><?php endforeach; endif; else: echo "" ;endif; ?>
+</ul></div>
+<div id="pages" class="page"><?php echo ($page); ?></div>

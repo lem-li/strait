@@ -1,0 +1,155 @@
+<div class="content">
+    <div class="steps step3">
+        <span class="s1">1、{:L(BASE_INFO)}</span>
+        <span class="s2">2、{:L(AGREEMENT_READ)}</span>
+        <span class="s3">3、{:L(APPLY_TABLE_INFO)}</span>
+        <span class="s4">4、{:L(STEP_FOUR)}</span>
+    </div>
+    <div class="form_list form_list2">
+    	<div class="bt">{:L(ZHUCE_APPLY)}</div>
+    	<form id="myform"  method="post" action="{:U('User/Register/fourstep?l='.$l)}" >
+    		<div class="form_group">
+    			<div class="form_group_left">
+    				<div class="form_item" style="height:100px">
+	                    <span class="form_label"><span>*</span>{:L(specialty)}: </span>
+	                    <input type="text" id="specialty" name="specialty"  {if $userextendInfo}value="{$userextendInfo['specialty']}"{/if} class="form_text"/>
+	                    <p class="txt">{if $l == 'cn'}请用简洁词语描述，并按优先顺序排列，限四项。{else}no more than 4 items{/if}</p>
+                	</div>
+                	<div class="form_item">
+	                    <span class="form_label">{:L(FIRSTLANG)}: </span>
+	                    <select class="form_text" name="firstlang" id="firstlang">
+							<option value="">--{if $l == 'cn'}请选择语种{else}Please select a language{/if}--</option>
+							<volist name="languagetype" id="lv">
+								<option value="{$key}" {if $userextendInfo && $userextendInfo['firstlang'] == $key}selected="selected"{/if}>{$lv}</option>
+							</volist>
+						</select><br/>
+						<table>
+							<tbody>
+								<tr>
+									<td>&nbsp;{:L(HEARING)}：</td>
+									<td><input name="firhearing" value="1" {if $firstlanvalue && $firstlanvalue['firhearing'] == 1}checked{/if} type="radio">{:L(EXCELLENT)}</td>
+									<td><input name="firhearing" value="2" {if $firstlanvalue && $firstlanvalue['firhearing'] == 2}checked{/if} type="radio">{:L(GOOD)}</td>
+									<td><input name="firhearing" value="3" {if $firstlanvalue && $firstlanvalue['firhearing'] == 3}checked{/if} type="radio">{:L(AVERAGE)}<br></td>
+								</tr>
+								<tr>
+									<td>&nbsp;{:L(SPEAK)}&nbsp;&nbsp;：</td>
+									<td><input name="firspoken" value="1" {if $firstlanvalue && $firstlanvalue['firspoken'] == 1}checked{/if} type="radio">{:L(EXCELLENT)}</td>
+									<td><input name="firspoken" value="2" {if $firstlanvalue && $firstlanvalue['firspoken'] == 2}checked{/if} type="radio">{:L(GOOD)}</td>
+									<td><input name="firspoken" value="3" {if $firstlanvalue && $firstlanvalue['firspoken'] == 3}checked{/if} type="radio">{:L(AVERAGE)}<br></td>
+								</tr>
+								<tr>
+									<td>&nbsp;{:L(READ)}&nbsp;&nbsp;&nbsp;：</td>
+									<td><input name="firread" value="1" {if $firstlanvalue && $firstlanvalue['firread'] == 1}checked{/if} type="radio">{:L(EXCELLENT)}</td>
+									<td><input name="firread" value="2" {if $firstlanvalue && $firstlanvalue['firread'] == 2}checked{/if} type="radio">{:L(GOOD)}</td>
+									<td><input name="firread" value="3" {if $firstlanvalue && $firstlanvalue['firread'] == 3}checked{/if} type="radio">{:L(AVERAGE)}<br></td>
+								</tr>
+								<tr>
+									<td>&nbsp;{:L(WRITING)}：</td>
+									<td><input name="firwriting" value="1" {if $firstlanvalue && $firstlanvalue['firwriting'] == 1}checked{/if} type="radio">{:L(EXCELLENT)}</td>
+									<td><input name="firwriting" value="2" {if $firstlanvalue && $firstlanvalue['firwriting'] == 2}checked{/if} type="radio">{:L(GOOD)}</td>
+									<td><input name="firwriting" value="3" {if $firstlanvalue && $firstlanvalue['firwriting'] == 3}checked{/if} type="radio">{:L(AVERAGE)}<br></td>
+								</tr>
+							</tbody>
+						</table>
+                	</div>
+                	<div class="form_item">
+	                    <span class="form_label">{:L(introduction)}: </span>
+	                    <textarea id="introduction" class="form_textarea" name="introduction" onchange="this.value=this.value.substring(0, {$fontnum})" onkeydown="this.value=this.value.substring(0, {$fontnum})" onkeyup="this.value=this.value.substring(0, {$fontnum})">{if $userextendInfo}{$userextendInfo['introduction']}{/if}</textarea>
+	                    <p class="txt">{:L(NO_MORE_THAN_BIG)}</p>
+                	</div>
+                	<div class="form_item">
+	                    <span class="form_label">{:L(recommend)}: </span>
+	                    <textarea id="recommend" class="form_textarea" name="recommend" onchange="this.value=this.value.substring(0, 50)" onkeydown="this.value=this.value.substring(0, 50)" onkeyup="this.value=this.value.substring(0, 50)">{if $userextendInfo}{$userextendInfo['recommend']}{/if}</textarea>
+	                    <p class="txt">{if $l == 'cn'}比如：曾与何时起受聘担任仲裁委员会的，(如有推荐人，请注明推荐人姓名，最多不超过两人；如推荐人另有推荐信，请将推荐信邮寄至：北京市西城区桦皮厂胡同2号国际商会大厦6层(100035)，中国国际经济贸易仲裁委员会仲裁监督处收，并请在信封上注明“推荐信”。){else} If you have referrers, please indicate their 
+names which should be no more than two. If you have a letter of 
+recommendation from your referrers, please mail it to the CIETAC 
+Supervision Department, 6/F CCOIC Building, 2 Huapichang Hutong, Xicheng
+ District, Beijing, 100035, P. R. China and indicate the Letter of 
+Recommendation on the envelop.  {/if}</p>
+                	</div>
+    			</div>
+    			<div class="form_group_right">
+    				<div class="form_item">
+	                    <span class="form_label"><span>*</span>{:L(profess_results)}: </span>
+	                    <textarea id="professresults" class="form_textarea" name="professresults" onchange="this.value=this.value.substring(0, {$fontnum})" onkeydown="this.value=this.value.substring(0, {$fontnum})" onkeyup="this.value=this.value.substring(0, {$fontnum})">{if $userextendInfo}{$userextendInfo['professresults']}{/if}</textarea>
+	                    <p class="txt">{:L(NO_MORE_THAN_BIG)}</p>
+                	</div>
+                	<div class="form_item">
+	                    <span class="form_label">{:L(TWOLANG)}: </span>
+						<select class="form_text" name="twolang" id="twolang">
+							<option value="">--{if $l == 'cn'}请选择语种{else}Please select a language{/if}--</option>
+							<volist name="languagetype" id="lv">
+								<option value="{$key}" {if $userextendInfo && $userextendInfo['twolang'] == $key}selected="selected"{/if}>{$lv}</option>
+							</volist>
+						</select><br>
+						<table>
+							<tbody>
+								<tr>
+									<td>&nbsp;{:L(HEARING)}：</td>
+									<td><input name="twohearing" value="1" {if $twolanvalue && $twolanvalue['twohearing'] == 1}checked{/if} type="radio">{:L(EXCELLENT)}</td>
+									<td><input name="twohearing" value="2" {if $twolanvalue && $twolanvalue['twohearing'] == 2}checked{/if} type="radio">{:L(GOOD)}</td>
+									<td><input name="twohearing" value="3" {if $twolanvalue && $twolanvalue['twohearing'] == 3}checked{/if} type="radio">{:L(AVERAGE)}<br></td>
+								</tr>
+								<tr>
+									<td>&nbsp;{:L(SPEAK)}&nbsp;&nbsp;：</td>
+									<td><input name="twospoken" value="1" {if $twolanvalue && $twolanvalue['twospoken'] == 1}checked{/if} type="radio">{:L(EXCELLENT)}</td>
+									<td><input name="twospoken" value="2" {if $twolanvalue && $twolanvalue['twospoken'] == 2}checked{/if} type="radio">{:L(GOOD)}</td>
+									<td><input name="twospoken" value="3" {if $twolanvalue && $twolanvalue['twospoken'] == 3}checked{/if} type="radio">{:L(AVERAGE)}<br></td>
+								</tr>
+								<tr>
+									<td>&nbsp;{:L(READ)}&nbsp;&nbsp;&nbsp;：</td>
+									<td><input name="tworead" value="1" {if $twolanvalue && $twolanvalue['tworead'] == 1}checked{/if} type="radio">{:L(EXCELLENT)}</td>
+									<td><input name="tworead" value="2" {if $twolanvalue && $twolanvalue['tworead'] == 2}checked{/if} type="radio">{:L(GOOD)}</td>
+									<td><input name="tworead" value="3" {if $twolanvalue && $twolanvalue['tworead'] == 3}checked{/if} type="radio">{:L(AVERAGE)}<br></td>
+								</tr>
+								<tr>
+									<td>&nbsp;{:L(WRITING)}：</td>
+									<td><input name="twowriting" value="1" {if $twolanvalue && $twolanvalue['twowriting'] == 1}checked{/if} type="radio">{:L(EXCELLENT)}</td>
+									<td><input name="twowriting" value="2" {if $twolanvalue && $twolanvalue['twowriting'] == 2}checked{/if} type="radio">{:L(GOOD)}</td>
+									<td><input name="twowriting" value="3" {if $twolanvalue && $twolanvalue['twowriting'] == 3}checked{/if} type="radio">{:L(AVERAGE)}<br></td>
+								</tr>
+							</tbody>
+						</table>
+                	</div>
+                	<div class="form_item">
+	                    <span class="form_label">{:L(train)}: </span>
+	                    <textarea id="train" class="form_textarea" name="train" onchange="this.value=this.value.substring(0, {$fontnum3})" onkeydown="this.value=this.value.substring(0, {$fontnum3})" onkeyup="this.value=this.value.substring(0, {$fontnum3})">{if $userextendInfo}{$userextendInfo['train']}{/if}</textarea>
+	                    <p class="txt">{:L(NO_MORE_THAN_SSMALL)}</p>
+                	</div>
+                	<div class="form_item">
+	                    <span class="form_label">{:L(NOTEPAD)}: </span>
+	                    <textarea id="remarks" class="form_textarea" name="remarks" onchange="this.value=this.value.substring(0, {$fontnum})" onkeydown="this.value=this.value.substring(0, {$fontnum})" onkeyup="this.value=this.value.substring(0, {$fontnum})">{if $userextendInfo}{$userextendInfo['remarks']}{/if}</textarea>
+	                    <p class="txt">{:L(NO_MORE_THAN_BIG)}</p>
+                	</div>
+    			</div>
+    		</div>
+    		<div class="form_group">
+                <div class="btns">
+                	<input type="hidden" name="userid" value="{$userinfo['id']}" />
+                	<a href="javascript:;" onclick="window.location.href='{:U('User/Register/thirdstep?userid='.$userinfo['id'].'&l='.$l)}'" class="btn">{:L(laststep)}</a>
+                    <a href="javascript:;" id="submit_on" class="btn_blue">{:L(save_preview)}</a>
+                </div>
+            </div>
+    	</form>
+    </div>
+</div>
+<script type="text/javascript">
+$("#submit_on").on('click', function(){
+    var specialty      = $.trim($("#specialty").val());
+    var professresults = $.trim($("#professresults").val());
+
+    //专长判断
+    if(specialty == ''){
+        alert("{:L(SPECIALTY_EMPTY)}");
+        return false;
+    }
+    //专业成果判断
+    if(professresults == ''){
+        alert("{:L(PRORES_EMPTY)}");
+        return false;
+    }
+    
+    $('#myform').submit();
+});
+    
+</script>

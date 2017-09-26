@@ -1,0 +1,33 @@
+
+<div class="content">
+    <div class="steps step2">
+        <span class="s1">1、{:L(BASE_INFO)}</span>
+        <span class="s2">2、{:L(AGREEMENT_READ)}</span>
+        <span class="s3">3、{:L(APPLY_TABLE_INFO)}</span>
+        <span class="s4">4、{:L(STEP_FOUR)}</span>
+    </div>
+    <div class="form_list">
+        <div class="bt">{:L(ZHUCE_AGREEMENT)}</div>
+        <form id="myform" method="post" action="{:U('User/Register/agreement?l='.$l)}">
+            <div class="form_group">
+                {if $l == 'cn'}
+                <p class="p1">1、我已阅读《中华人民共和国仲裁法》和贸仲《仲裁员聘任规定》。</p>
+                <p class="p1">2、我确认在《仲裁员申请表》所填写的全部信息均为真实的。我理解并同意，如填写信息不实，贸仲随时有权取消我的选聘资格。我接受贸仲对我填写的信息所进行的任何可能的核查，并给予积极协助和全力配合；我同意，为核查信息是否真实，贸仲可以向相关机构进行调查，并出于调查的需要，向该机构披露我在《仲裁申请表》上填写的信息。</p>
+                <p class="p1">3、我完全理解，贸仲有权根据其聘任仲裁员的程序和条件自主决定是否聘任我担任仲裁员，对贸仲所作出的任何决定，我给予充分尊重。</p>
+                {else}
+                <p class="p1">1、I am fully aware of the P.R.C. Arbitration Law and CIETAC Stipulations on Arbitrator Engagement.</p>
+                <p class="p1">2、I hereby confirm that all information filled in the Arbitrator Application Form is true. I understand and agree that CIETAC is entitled to cancel my engagement qualification if there is any untrue information. I accept any possible check of my information by CIETAC and will actively assist and fully cooperate. I agree that CIETAC may investigate relevant authorities to check the information in the Arbitrator Application Form and make relevant disclosure for such purpose. </p>
+                <p class="p1">3、I fully understand that CIETAC is entitled to decide by itself whether to engage me as its arbitrator according to its process and condition for engaging arbitrators. I will fully respect any decision by CIETAC.</p>
+                {/if}
+            </div>
+            <input type="hidden" id="userid" name="userid" value="{$userid}"/>
+            <input type="hidden" id="agee" name="agee" value="1"/>
+            <div class="form_group">
+                <div class="btns">
+                    <a href="{:URL('User-Login/noagreement')}" class="btn">{:L(NO_AGREEMENT)}</a>
+                    <a href="javascript:;" onclick="document.getElementById('myform').submit();" class="btn_blue">{:L(YES_AGREEMENT)}</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

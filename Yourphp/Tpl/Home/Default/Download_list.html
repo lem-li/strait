@@ -1,0 +1,33 @@
+<!--div class="banner2">
+    <div class="banner_wrap">
+        <include file="Home:search"/>
+    </div>
+</div-->
+<div class="wrap" style="overflow:hidden;">
+    <div class="list_l">
+        <div id="left_nav" class="left_nav">
+        	<div class="bt {if $bcid == 30}bt_news{elseif $bcid == 1}bt_about{else}bt_other{/if}">{$Categorys[$bcid]['catname']}</div>
+        	<div class="main_menu">
+	            {$leftmenu}
+            </div>
+        </div>
+    </div>
+    <div class="list_r">
+        <div class="cm">
+            {:L(catpos)}<a href="{:URL()}"> {:L(home_font)}</a> >> <YP:catpos  catid="catid" space=" &gt; " />
+        </div>
+        <ul class="news_list">
+            <volist name="list" id="vo" key="k">
+            	<li><a href="__ROOT__/index.php?m={$module_name}&a=show&id={$vo.id}{if $l=='en'}&l=en{/if}" title="{$vo.title}">> {$vo.title|str_cut=###,90}</a></li>
+			</volist>
+            
+        </ul>
+        <div class="r_con_b">
+            <div class="page">
+                {$pages}
+            </div>
+        </div>
+    </div>
+</div>
+
+

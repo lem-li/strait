@@ -1,0 +1,296 @@
+<div class="content">
+    <div class="steps step3">
+        <span class="s1">1、{:L(BASE_INFO)}</span>
+        <span class="s2">2、{:L(AGREEMENT_READ)}</span>
+        <span class="s3">3、{:L(APPLY_TABLE_INFO)}</span>
+        <span class="s4">4、{:L(STEP_FOUR)}</span>
+    </div>
+    <div class="form_list form_list2">
+        <div class="bt">{:L(ZHUCE_APPLY)}</div>
+        <div class="bt_notice">{:L(APPLY_INFO_TIP)}</div>
+        <form id="myform" enctype="multipart/form-data" method="post" action="{:U('User/Register/twostep?l='.$l)}" >
+        	<div class="form_group">
+        		<div class="form_group_left">
+        			<div class="form_item">
+	                    <span class="form_label"><span>*</span>{:L(realname)}: </span>
+	                    <input type="text" id="realname" name="realname" value="{$userinfo['realname']}" class="form_text"/>
+                	</div>
+                	<div class="form_item">
+	                    <span class="form_label"><span>*</span>{:L(sex)}: </span>
+	                    <select class="form_text" name="sex" id="sex">
+	                        <option value="0" {if $userextendInfo && $userextendInfo['sex'] == 0}selected="selected"{/if}>{:L(sex0)}</option>
+							<option value="1" {if $userextendInfo && $userextendInfo['sex'] == 1}selected="selected"{/if}>{:L(sex1)}</option>
+							<option value="2" {if $userextendInfo && $userextendInfo['sex'] == 2}selected="selected"{/if}>{:L(sex2)}</option>
+	                    </select>
+	                </div>
+	                <div class="form_item">
+	                    <span class="form_label">{:L(upload_photos)}: </span>
+	                    <input type="file" id="photos" name="photos" value="" style="width: 135px;">
+	                    <span class="tips">{:L(PHOTOS_TIP)}</span>
+	                </div>
+	                <div class="form_item">
+	                    <span class="form_label"><span>*</span>{:L(surname)}: </span>
+	                    <input type="text" id="surname" name="surname" {if $userextendInfo}value="{$userextendInfo['surname']}"{/if} class="form_text"/>
+	                </div>
+	                <div class="form_item">
+	                    <span class="form_label">{:L(home_tel)}: </span>
+	                    <input type="text" id="familytel" name="familytel" {if $userextendInfo}value="{$userextendInfo['familytel']}"{/if} class="form_text" placeholder="{:L(example)}：86-10-82217788"/>
+	                </div>
+	                <div class="form_item">
+	                    <span class="form_label"><span>*</span>{:L(nationality)}: </span>
+	                    <select class="form_text" name="nationalityid" id="nationalityid">
+							<volist name="nationality" id="na">
+								<option value="{$key}" {if $userextendInfo && $userextendInfo['nationalityid'] == $key}selected="selected"{/if}>{$na}</option>
+							</volist>
+						</select>
+	                </div>
+	                {if $l == 'cn'}
+	                <div class="form_item">
+	                    <span class="form_label"><span>*</span>证件类型: </span>
+	                    <select class="form_text" name="card_type" id="card_type">
+	                        <option value="1" {if $userinfo['card_type'] == 1}selected="selected"{/if}>身份证</option>
+	                        <option value="2" {if $userinfo['card_type'] == 2}selected="selected"{/if}>护照</option>
+	                    </select>
+	                </div>
+	                {/if}
+	                <div class="form_item">
+	                    <span class="form_label"><span>*</span>{:L(identity)}: </span>
+	                    <input type="text" id="identityid" name="identityid" value="{$userinfo['identityid']}" class="form_text"/>
+	                </div>
+	                <div class="form_item">
+	                    <span class="form_label"><span>*</span>{:L(current_residence)}: </span>
+	                    {if $l == 'cn'}
+						<select class="form_text" name="city" id="city">
+							<option value="">--{:L(please_choose)}--</option>
+							<volist name="city" id="cv">
+								<option value="{$key}" {if $userextendInfo && $userextendInfo['city'] == $key}selected="selected"{/if}>{$cv}</option>
+							</volist>
+						</select>
+						{else}
+						<input type="text" id="city" name="city" {if $userextendInfo}value="{$userextendInfo['city']}"{/if} class="form_text"/>
+						{/if}
+	                </div>
+	                <div class="form_item">
+	                    <span class="form_label"><span>*</span>{:L(professional_title)}: </span>
+	                    <select class="form_text" name="technicaltitle" id="technicaltitle">
+							<option value="">--{:L(please_choose)}--</option>
+							<volist name="nicaltitle" id="tv">
+								<option value="{$key}" {if $userextendInfo && $userextendInfo['technicaltitle'] == $key}selected="selected"{/if}>{$tv}</option>
+							</volist>
+						</select>
+	                </div>
+	                <div class="form_item">
+	                    <span class="form_label">{:L(company)}: </span>
+	                    <input type="text" id="company" name="company"  {if $userextendInfo}value="{$userextendInfo['company']}"{/if} class="form_text"/>
+	                </div>
+                        {/if}
+	                
+                	<div class="form_item">
+	                    <span class="form_label">{:L(company_address_postcode)}: </span>
+	                    <input type="text" id="companyaddress" name="companyaddress"  {if $userextendInfo}value="{$userextendInfo['companyaddress']}"{/if} class="form_text"/>
+                	</div>
+                	<div class="form_item">
+	                    <span class="form_label"><span>*</span>{:L(vaild_address_postcode)}: </span>
+	                    <input type="text" id="validaddress" name="validaddress"  {if $userextendInfo}value="{$userextendInfo['validaddress']}"{/if} class="form_text"/>
+                	</div>
+                	<div class="form_item">
+	                    <span class="form_label">{:L(work_tel)}: </span>
+	                    <input type="text" id="worktel" name="worktel" {if $userextendInfo}value="{$userextendInfo['worktel']}"{/if} class="form_text" placeholder="{:L(example)}：86-10-82217788"/>
+                	</div>
+                	<div class="form_item">
+	                    <span class="form_label"><span>*</span>{:L(mobile)}: </span>
+	                    <input type="text" id="mobile" name="mobile" value="{$userinfo['mobile']}" class="form_text"/>
+                	</div>
+                	
+        		</div>
+        		<div class="form_group_right">
+        			<div class="form_item" style="height: 116px;">
+	                    <span class="form_label">{:L(PHOTOS)}：</span>
+                        {if $userextendInfo && $userextendInfo['photo']}
+						<img alt="" src="{$userextendInfo['photo']}" width="120px" height="90px" style="padding-top: 9px;"><br>
+						{else}
+						<p class="txt" style="padding-top: 5px;">未上传</p>
+						{/if}
+	                    <!--<div class="file_img">
+	                        <input type="file" id="file1" name="file">
+
+	                    </div>-->
+	                </div>
+	                <div class="form_item">
+	                    <span class="form_label"><span>*</span>{:L(mainname)}: </span>
+	                    <input type="text" id="name" name="name" {if $userextendInfo}value="{$userextendInfo['name']}"{/if} class="form_text"/>
+	                </div>
+	                <div class="form_item">
+	                    <span class="form_label">{:L(home_fax)}: </span>
+	                    <input type="text" id="familyfax" name="familyfax" {if $userextendInfo}value="{$userextendInfo['familyfax']}"{/if} class="form_text" placeholder="{:L(example)}：86-10-82217788">
+	                </div>
+	                <div class="form_item">
+	                    <span class="form_label">{:L(second_nationality)}: </span>
+	                    <input type="text" id="twonationality" name="twonationality" value="{$userextendInfo['twonationality']}" class="form_text"/>
+	                </div>
+                        <div class="form_item">
+	                    <span class="form_label"><span>*</span>{:L(identity)}: </span>
+	                    <input type="text" id="identityid" name="identityid" value="{$userinfo['identityid']}" class="form_text"/>
+	                </div>
+	                <div class="form_item">
+	                    <span class="form_label"><span>*</span>{:L(date_of_birth)}: </span>
+	                    <input type="text" id="birthday" name="birthday" {if $userextendInfo}value="{$userextendInfo['birthday']}"{/if} class="form_text Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',lang:'{$l}'})"/>
+	                </div>
+	                <div class="form_item">
+	                    <span class="form_label"><span>*</span>{:L(highest_educational_level)}: </span>
+	                    {if $l == 'cn'}
+						<select class="form_text" name="highestschooling" id="highestschooling">
+							<option value="">--{:L(please_choose)}--</option>
+							<volist name="highestschooling" id="hv">
+								<option value="{$key}" {if $userextendInfo && $userextendInfo['highestschooling'] == $key}selected="selected"{/if}>{$hv}</option>
+							</volist>
+						</select>
+						{else}
+						<input type="text" id="highestschooling" name="highestschooling" {if $userextendInfo}value="{$userextendInfo['highestschooling']}"{/if} class="form_text"/>
+						{/if}
+	                </div>
+	                <div class="form_item">
+	                    <span class="form_label"><span>*</span>{:L(occupation_classification)}: </span>
+	                    <select class="form_text" name="occclassification" id="occclassification">
+							<option value="">--{:L(please_choose)}--</option>
+							<volist name="occclassification" id="ov">
+								<option value="{$key}" {if $userextendInfo && $userextendInfo['occclassification'] == $key}selected="selected"{/if}>{$ov}</option>
+							</volist>
+						</select>
+	                </div>
+                        <div class="form_item">
+	                    <span class="form_label">{:L(company)}: </span>
+	                    <input type="text" id="company" name="company"  {if $userextendInfo}value="{$userextendInfo['company']}"{/if} class="form_text"/>
+                	</div>
+	                <div class="form_item">
+	                    <span class="form_label">{:L(job)}: </span>
+	                    <input type="text" id="job" name="job"  {if $userextendInfo}value="{$userextendInfo['job']}"{/if} class="form_text"/>
+                	</div>
+                	<div class="form_item">
+	                    <span class="form_label">{:L(family_address_postcode)}: </span>
+	                    <input type="text" id="familyaddress" name="familyaddress"  {if $userextendInfo}value="{$userextendInfo['familyaddress']}"{/if} class="form_text"/>
+                	</div>
+                	<div class="form_item">
+	                    <span class="form_label"><span>*</span>{:L(email)}: </span>
+	                    <input type="text" id="email" name="email" value="{$userinfo['email']}" class="form_text"/>
+                	</div>
+                	<div class="form_item">
+	                    <span class="form_label">{:L(work_fax)}: </span>
+	                    <input type="text" id="workfax" name="workfax" {if $userextendInfo}value="{$userextendInfo['workfax']}"{/if} class="form_text" placeholder="{:L(example)}：86-10-82217788"/>
+                	</div>
+                	<div class="form_item">
+	                    <span class="form_label"><span>*</span>{:L(specialty)}: </span>
+	                    <input type="text" id="specialty" name="specialty"  {if $userextendInfo}value="{$userextendInfo['specialty']}"{/if} class="form_text"/>
+	                    <p class="txt">{if $l == 'cn'}(请用简洁词语描述，并按优先顺序排列，限四项。){else}(not more than 4 items){/if}</p>
+                	</div>
+        		</div>
+        	</div>
+        	<div class="form_group">
+                <div class="btns">
+                	<input type="hidden" name="userid" value="{$userinfo['id']}" />
+                    <a href="javascript:;" id="submit_on" class="btn_blue">{:L(nextstep)}</a>
+                </div>
+            </div>
+       	</form>
+    </div>
+</div>
+<script src="__PUBLIC__/Js/MyDate/WdatePicker.js"></script>
+<script type="text/javascript">
+$("#submit_on").on('click', function(){
+    var realname   = $.trim($("#realname").val());
+    var surname    = $.trim($("#surname").val());
+    var identityid = $.trim($("#identityid").val());
+    var city       = $("#city").val();
+    var technicaltitle   = $("#technicaltitle").val();
+    var name       = $.trim($("#name").val());
+    var birthday   = $.trim($("#birthday").val());
+    var highestschooling   = $("#highestschooling").val();
+    var occclassification = $("#occclassification").val();
+    var validaddress    = $.trim($("#validaddress").val());
+    var email           = $.trim($("#email").val());
+    var mobile          = $.trim($("#mobile").val());
+    var specialty       = $.trim($("#specialty").val());
+
+    //真实姓名判断
+    if(realname == ''){
+        alert("{:L(REALNAME_EMPTY)}");
+        return false;
+    }
+    //姓判断
+    if(surname == ''){
+        alert("{:L(SURNAME_EMPTY)}");
+        return false;
+    }
+    //身份证号判断
+    if(identityid == ''){
+        alert("{:L(IDCARD_EMPTY)}");
+        return false;
+    }
+    // else{
+    //     var pattern = /^[A-Za-z0-9]{18}$|^[A-Za-z0-9]{15}$/i;
+    //     if(!pattern.test(identityid)){
+    //         alert("{:L(IDCARD_RULE)}");
+    //         return false;
+    //     }
+    // }
+    //城市判断
+    if(city == ''){
+        alert("{:L(CITY_EMPTY)}");
+        return false;
+    }
+    //职称判断
+    if(technicaltitle == ''){
+        alert("{:L(TECTITLE_EMPTY)}");
+        return false;
+    }
+    //名判断
+    if(name == ''){
+        alert("{:L(NAME_EMPTY)}");
+        return false;
+    }
+    //生日判断
+    if(birthday == ''){
+        alert("{:L(BIRTHDAY_EMPTY)}");
+        return false;
+    }
+    //最高学历判断
+    if(highestschooling == ''){
+        alert("{:L(HIGHTSCHOOL_EMPTY)}");
+        return false;
+    }
+    //职业分类判断
+    if(occclassification == ''){
+        alert("{:L(OCCCLASS_EMPTY)}");
+        return false;
+    }
+    //有效通讯地址及邮编判断
+    if(validaddress == ''){
+        alert("{:L(VALIDADDRESS_EMPTY)}");
+        return false;
+    }
+    //邮箱判断
+    if(email == ''){
+        alert("{:L(EMAIL_EMPTY)}");
+        return false;
+    }
+    //手机号判断
+    if(mobile == ''){
+        alert("{:L(MOBILE_EMPTY)}");
+        return false;
+    }
+    // else{
+    //     var pattern = /^1\d{10}$/;
+    //     if(!pattern.test(mobile)){
+    //         alert("{:L(MOBILE_RULE)}");
+    //         return false;
+    //     }
+    // }
+    //专长判断
+    if(specialty == ''){
+        alert("{:L(SPECIALTY_EMPTY)}");
+        return false;
+    }
+    $('#myform').submit();
+});
+    
+</script>

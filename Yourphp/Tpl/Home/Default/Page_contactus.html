@@ -1,0 +1,100 @@
+<div class="wrap" style="overflow:hidden;">
+    <div class="list_l">
+        <!--ul class="left_nav">
+            <li class="bt {if $bcid == 30}bt_news{elseif $bcid == 1}bt_about{else}bt_other{/if}">{$Categorys[$bcid]['catname']}</li>
+            <volist name="cate_list" id="r">
+                <li><a href="{$r.url}" {if $r['moduleid'] == '0'}target="_blank"{/if}>{$r.catname}<span class="arrow">></span></a></li>
+            </volist>
+        </ul-->
+         <div id="left_nav" class="left_nav">
+        	<div class="bt {if $bcid == 30}bt_news{elseif $bcid == 1}bt_about{else}bt_other{/if}">{$Categorys[$bcid]['catname']}</div>
+        	<div class="main_menu">
+	            {$leftmenu}
+            </div>
+        </div>
+    </div>
+    <div class="list_r">
+        <div class="cm">
+            {:L(catpos)}<a href="{:URL()}"> {:L(home_font)}</a> >> <YP:catpos  catid="catid" space=" &gt; " />
+        </div>
+        <div class="r_con">
+            <div class="bt">{$title}</div>
+            <div class="p_content" style="padding:0 24px;{if $l=='en'||$catid==26}text-indent: 0em;{/if}">
+                    <div id="baidu_map2" style="width: 700px;height: 600px;">
+                    </div>
+                <table class="weblist">
+                    <volist name="webInfo.list" id="r">
+                        {if $r['id'] != 24}
+			<tr>
+                        <td>
+                            <strong><br><span lat="{$r.lat}" lng="{$r.lng}">{if $l=='cn'}{$r.fullname}{else}{$r.enfullname}{/if}</span></strong> <br>
+                            <span>{if $l=='cn'}地址{else}Add{/if}：{if $l=='cn'}{$r.address}{else}{$r.enaddress}{/if}</span><br>
+                            <span>{if $l=='cn'}邮编{else}P.C.{/if}：{$r.postal}</span><br>
+                            <span>{if $l=='cn'}电话{else}Tel{/if}：{$r.phone}</span><br>
+                            <span>{if $l=='cn'}传真{else}Fax{/if}：{$r.fax}</span><br>
+                            <span>{if $l=='cn'}信箱{else}Email{/if}：</span><a href="mailto:{$r.email}">{$r.email}</a><br>
+                            <span>{if $l=='cn'}网址{else}Website{/if}：</span><a href="http://{$r.domain}"><span>http://{$r.domain}</span></a><br>
+                        </td>
+			</tr>
+                        {/if}
+                    </volist>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<style type="text/css">  
+p{margin-left:5px; font-size:14px;}
+</style>
+<script type="text/javascript">
+    var map2 = null;
+	//百度地图API功能
+	function loadJScript() {
+		var script = document.createElement("script");
+		script.type = "text/javascript";
+		script.src = "http://api.map.baidu.com/api?v=2.0&ak=lLlooWKhUVArNOrr3K9Ox7Tm&callback=init";
+		document.body.appendChild(script);
+	}
+	function init() {
+            map_2(104.090996,37.875633);
+            
+            $('.weblist tr').each(function(i,e){
+                var lat = $(e).find('span:eq(0)').attr('lat');
+                var lng = $(e).find('span:eq(0)').attr('lng');
+				var title = $(e).find('span:eq(0)').text();
+				var add = $(e).find('span:eq(1)').text();
+				var tel = $(e).find('span:eq(3)').text();
+                map_2(lng,lat,title,add,tel);
+            });
+	}  
+	window.onload = loadJScript;  //异步加载地图
+        
+	function map_2(lng,lat,tt,add,tel){
+		if(window.map2 == null){
+			window.map2 = new BMap.Map("baidu_map2");            // 创建Map实例
+			var point2 = new BMap.Point(lng,lat);  
+			map2.centerAndZoom(point2,5); 
+			//map2.disableScrollWheelZoom();  
+			//map2.disableDragging(); 
+			return false;
+		}
+		if(lng > 0 && lat > 0){
+			var point2 = new BMap.Point(lng,lat);  
+			//map2.centerAndZoom(point1,3); 
+			//初始化地图标记
+			var marker = new BMap.Marker(point2);  // 创建标注
+			map2.addOverlay(marker);              // 将标注添加到地图中
+				var opts = {
+					width : 250,     // 信息窗口宽度
+					height: 100,     // 信息窗口高度
+					title : tt , // 信息窗口标题
+					enableMessage:true//设置允许信息窗发送短息
+				  }
+				var infoWindow = new BMap.InfoWindow(tel+"<br/>"+add, opts);  // 创建信息窗口对象 
+				marker.addEventListener("click", function(){          
+						map2.openInfoWindow(infoWindow,point2); //开启信息窗口
+				});
+		}
+	}
+            
+</script>

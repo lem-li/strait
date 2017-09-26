@@ -1,0 +1,74 @@
+<div class="content">
+    <div class="form_list form_list2">
+        <form id="myform" method="get" action="{:U('User/Arbitrator/index')}">
+            <input type="hidden" name="g" value="{$Think.GROUP_NAME}" />
+            <input type="hidden" name="m" value="{$Think.MODULE_NAME}" />
+            <input type="hidden" name="a" value="{$Think.ACTION_NAME}" />
+            <input type="hidden" name="l" value="{$l}" /> 
+            <div class="form_group">
+                <div class="form_group_left">
+                    <div class="form_item">
+                        <span class="form_label">姓名: </span>
+                        <input type="text" id="searchName" name="searchName" value="{$searchName}" class="form_text"/>
+                    </div>
+                    <div class="form_item">
+                        <span class="form_label">国籍: </span>
+                        <select class="form_text" name="searchType" id="searchType">
+                            <option value="">--请选择--</option>
+                            <volist name="nationality" id="na">
+                                <option value="{$key}" {if $searchType == $key}selected="selected"{/if}>{$na}</option>
+                            </volist>
+                        </select>
+                    </div>
+                    <div class="form_item">
+                        <span class="form_label">语言: </span>
+                        <input class="form_text" name="searchLanguage" type="text" value="{$searchLanguage}">
+                    </div>
+                </div>
+                <div class="form_group_right">
+                    <div class="form_item">
+                        <span class="form_label">城市: </span>						<input class="form_text" name="searchAddress" type="text" value="{$searchAddress}">
+                        <!--<select class="form_text" name="searchAddress" id="searchAddress">
+                            <option value="">--请选择--</option>
+                            <volist name="city" id="cv">
+                                <option value="{$key}" {if $searchAddress == $key}selected="selected"{/if}>{$cv}</option>
+                            </volist>
+                        </select>-->
+                    </div>
+                    <div class="form_item">
+                        <span class="form_label">专长: </span>
+                        <input type="text" id="searchSpecSkill" name="searchSpecSkill" value="{$searchSpecSkill}" class="form_text"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form_group">
+                <div class="btns">
+                    <a href="javascript:;" onclick="document.getElementById('myform').submit();" class="btn_blue_long">查询</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<table class="table_c" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <th class="center"> 姓名 </th>
+        <th class="p60"> 专长 </th>
+        <th class="center"> 城市 </th>
+        <th class="center"> 国籍 </th>
+    </tr>
+    <volist name="ulist" id="user" key="k">
+    <tr {if $k%2!=0 }class="blue"{/if}>
+        <td class="center"style="cursor: pointer;" onclick="javascript:window.open('{:U('User/Arbitrator/info?l='.$l.'&userId='.$user['userId'])}');">{$user['arbitratorName']}</td>
+        <td class="p60"style="cursor: pointer;" onclick="javascript:window.open('{:U('User/Arbitrator/info?l='.$l.'&userId='.$user['userId'])}');">{$user['speciality']}</td>
+        <td class="center"style="cursor: pointer;" onclick="javascript:window.open('{:U('User/Arbitrator/info?l='.$l.'&userId='.$user['userId'])}');">{$user['city']}</td>
+        <td class="center"style="cursor: pointer;" onclick="javascript:window.open('{:U('User/Arbitrator/info?l='.$l.'&userId='.$user['userId'])}');">{$nationality[$user['nationality']]}</td>
+    </tr>
+    </volist>
+</table>
+<style>
+.r_con_b{border-top: 1px solid #00abd8; padding: 20px 0 0;}
+.r_con_b .page{ height: 25px; line-height: 25px; text-align: center;}
+.r_con_b .page a {color: #434343; display: inline-block; margin: 0 8px;}
+.r_con_b .page a:hover { color: #00abd8;}
+</style>
+<div class="r_con_b"><div class="page">{$page}</div></div>

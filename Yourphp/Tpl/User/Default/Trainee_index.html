@@ -1,0 +1,204 @@
+<form id="myform" method="post" action="{:U('User/Trainee/doapply?l=cn')}">
+<div class="content">
+    <div class="form_list">
+		<div class="bt">个人基本信息</div>
+		<div class="form_group">
+			<div class="form_item">
+                <span class="form_label"><span>*</span>姓名: </span>
+                <input class="form_text varlidate" for="姓名" id="name" name="name" type="text" />
+            </div>
+            <div class="form_item">
+                <span class="form_label"><span>*</span>性别: </span>
+                <select class="form_text varlidate" for="性别" name="sex" id="sex">
+                    <option value="1">男</option>
+                    <option value="2">女</option>
+                </select>
+            </div>
+            <div class="form_item">
+                <span class="form_label"><span>*</span>出生日期: </span>
+                <input type="text" id="birthday" name="birthday" class="form_text varlidate Wdate" for="出生日期" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',lang:'cn'})"/>
+            </div>
+            <div class="form_item">
+                <span class="form_label"><span>*</span>参加工作年份: </span>
+                <input type="text" id="workstarttime" name="workstarttime" style="width: 140px;" class="form_text varlidate Wdate" for="参加工作年份" onfocus="WdatePicker({dateFmt:'yyyy-MM',lang:'cn'})"/>
+                -
+                <input type="text" id="workendtime" name="workendtime" style="width: 140px;" class="form_text varlidate Wdate" for="参加工作年份" onfocus="WdatePicker({dateFmt:'yyyy-MM',lang:'cn'})"/>
+            </div>
+            <div class="form_item">
+                <span class="form_label"><span>*</span>户口所在地: </span>
+                <input class="form_text varlidate" for="户口所在地" id="hukou" name="hukou" type="text">
+            </div>
+            <div class="form_item">
+                <span class="form_label"><span>*</span>现居住城市: </span>
+                <input class="form_text varlidate" for="现居住城市" id="currentcity" name="currentcity" type="text">
+            </div>
+            <div class="form_item">
+                <span class="form_label">身份证号: </span>
+                <input class="form_text" id="identityid" name="identityid" type="text">
+            </div>
+            <div class="form_item">
+                <span class="form_label"><span>*</span>手机号: </span>
+                <input class="form_text varlidate" for="手机号" id="mobile" name="mobile" type="text">
+            </div>
+            <div class="form_item">
+                <span class="form_label">座机: </span>
+                <input class="form_text" id="tel" name="tel" type="text">
+            </div>
+            <div class="form_item">
+                <span class="form_label"><span>*</span>电子邮箱: </span>
+                <input class="form_text varlidate" for="电子邮箱" id="email" name="email" type="text">
+            </div>
+		</div>
+    </div>
+</div>
+<div class="content">
+    <div class="form_list">
+        <div class="bt">最近工作/实习经历</div>
+        <div class="form_group">
+            <div class="form_item">
+                <span class="form_label"><span>*</span>是否有工作/实习经验: </span>
+                <span style="color: rgb(102, 102, 102); font-size: 14px; height: 32px; display: inline; line-height: 32px;">
+                    <input onclick="aaa(1);" type="radio" name="isexperience" id="work_experience_have" checked="checked" value="1">
+                    <span class="">有</span>
+                    <input type="radio" onclick="aaa(2);" name="isexperience" id="work_experience_no" value="2">
+                    <span class="">无</span>
+                </span>
+            </div>
+            <div id="workdiv">
+                <div class="form_item">
+                    <span class="form_label"><span>*</span>公司名称: </span>
+                    <input class="form_text varlidate" for="公司名称" id="company_name" name="company_name" type="text" />
+                </div>
+                <div class="form_item">
+                    <span class="form_label"><span>*</span>职位名称: </span>
+                    <input class="form_text varlidate" for="职位名称" id="jobtitle" name="jobtitle" type="text" />
+                </div>
+                <div class="form_item">
+                    <span class="form_label"><span>*</span>工作时间: </span>
+                    <input type="text" id="workstime" name="workstime" style="width: 140px;" class="form_text varlidate Wdate" for="工作时间" onfocus="WdatePicker({dateFmt:'yyyy-MM',lang:'cn'})"/>
+                    -
+                    <input type="text" id="worketime" name="worketime" style="width: 140px;" class="form_text varlidate Wdate" for="工作时间" onfocus="WdatePicker({dateFmt:'yyyy-MM',lang:'cn'})"/>
+                </div>
+                <div class="form_item">
+                    <span class="form_label"><span>*</span>职位月薪（税前）: </span>
+                    <select class="form_text varlidate" for="职位月薪" name="salary" id="salary">
+                        <option value="">--请选择--</option>
+                        <option value="保密">保密</option>
+                        <option value="1000元/月以下">1000元/月以下</option>
+                        <option value="1000-2000元/月">1000-2000元/月</option>
+                        <option value="2001-4000元/月">2001-4000元/月</option>
+                        <option value="4001-6000元/月">4001-6000元/月</option>
+                        <option value="6001-8000元/月">6001-8000元/月</option>
+                        <option value="8001-10000元/月">8001-10000元/月</option>
+                        <option value="10001-15000元/月">10001-15000元/月</option>
+                        <option value="15000-25000元/月">15000-25000元/月</option>
+                        <option value="25000元/月以上">25000元/月以上</option>
+                    </select>
+                </div>
+                <div class="form_item">
+                    <span class="form_label"><span>*</span>工作描述: </span>
+                    <textarea id="workdescription" class="form_textarea varlidate" for="工作描述" name="workdescription" onchange="this.value=this.value.substring(0, 300)" onkeydown="this.value=this.value.substring(0, 300)" onkeyup="this.value=this.value.substring(0, 300)"></textarea>
+                    <p class="txt">不超过300字</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="form_list">
+        <div class="bt">教育经历</div>
+        <div class="form_group">
+            <div class="form_item">
+                <span class="form_label"><span>*</span>学历/学位: </span>
+                <select class="form_text varlidate" for="学历/学位" name="education_level" id="education_level">
+                    <option value="">--请选择--</option>
+                    <option value="大专">大专</option>
+                    <option value="本科">本科</option>
+                    <option value="硕士">硕士</option>
+                    <option value="博士">博士</option>
+                    <option value="MBA">MBA</option>
+                    <option value="EMBA">EMBA</option>
+                    <option value="中专">中专</option>
+                    <option value="中技">中技</option>
+                    <option value="高中">高中</option>
+                    <option value="初中">初中</option>
+                    <option value="其他">其他</option>
+                </select>
+            </div>
+            <div class="form_item">
+                <span class="form_label"><span>*</span>是否统招: </span>
+                <span style="color: rgb(102, 102, 102); font-size: 14px; height: 32px; display: inline; line-height: 32px;">
+                    <input type="radio" name="istongzhao" checked="checked" value="1">
+                    <span class="">是</span>
+                    <input type="radio" name="istongzhao" value="2">
+                    <span class="">否</span>
+                </span>
+            </div>
+            <div class="form_item">
+                <span class="form_label"><span>*</span>就读时间: </span>
+                <input type="text" id="studystartdate" name="studystartdate" style="width: 140px;" class="form_text varlidate Wdate" for="就读时间" onfocus="WdatePicker({dateFmt:'yyyy-MM',lang:'cn'})"/>
+                -
+                <input type="text" id="studyenddate" name="studyenddate" style="width: 140px;" class="form_text varlidate Wdate" for="就读时间" onfocus="WdatePicker({dateFmt:'yyyy-MM',lang:'cn'})"/>
+            </div>
+            <div class="form_item">
+                <span class="form_label"><span>*</span>学校名称: </span>
+                <input class="form_text varlidate" for="学校名称" id="schoolname" name="schoolname" type="text" />
+            </div>
+            <div class="form_item">
+                <span class="form_label"><span>*</span>专业名称: </span>
+                <input class="form_text varlidate" for="专业名称" id="profession_name" name="profession_name" type="text" />
+            </div>
+        </div>
+        <div class="form_group">
+            <div class="btns">
+                <a href="javascript:;" id="submit_on" class="btn_blue">创建</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</form>
+<script src="__PUBLIC__/Js/MyDate/WdatePicker.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+　　if($("#work_experience_no").attr("checked")){
+        $("#workdiv").css('display','none'); 
+    }else{
+        $("#workdiv").css('display','block'); 
+    }
+});
+function aaa(type){
+    if(type == '1'){
+        $("#workdiv").show(100);
+    }else if(type == '2'){
+        $("#workdiv").hide(100);
+    }
+}
+$("#submit_on").on('click', function(){
+    var flag = 0;
+    $(".varlidate").each(function(){
+        var val = $.trim($(this).val());
+        if(val.length<1){
+            var fname = $(this).attr("name");
+            if( fname == "company_name" || fname == "jobtitle" || fname == "workstime" || fname == "worketime" || fname == "salary" || fname == "workdescription"){
+                if(!$("#work_experience_no").attr("checked")){
+                    var hin = $(this).attr("for");
+                    flag = 1;
+                    alert(hin+"为空！！");
+                    return false;
+                }
+                
+            }else{
+                var hin = $(this).attr("for");
+                flag = 1;
+                alert(hin+"为空！！");
+                return false;
+            }
+        }
+    });
+    if(flag <= 0){
+        $('#myform').submit();
+    }
+});
+    
+</script>

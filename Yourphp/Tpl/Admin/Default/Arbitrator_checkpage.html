@@ -1,0 +1,370 @@
+
+		<table cellpadding=0 cellspacing=0 class="table_form" width="100%">
+			<tr style="font-size: 18px; font-weight: bold;">
+				<td width="400" align="center">最新数据</td>
+				<td width="400" align="center">|</td>
+				<td width="400" align="center">旧数据</td>
+			</tr>
+		</table>
+      	<table cellpadding=0 cellspacing=0 class="table_form" width="100%">
+      	<tr>
+			<td width="210">用户名：<br/>(User name)</td>
+			<td style="width: 500px;">{$userbaseinfo['username']}</td>
+			<td>|</td>
+			<td width="210">用户名：<br/>(User name)</td>
+			<td style="width: 500px;">{$userbaseinfo['username']}</td>
+		</tr>
+		<tr {if $userbaseinfo['realname'] != $logusereditarr['realname']}style="color:red;"{/if}>
+			<td>真实姓名：<br/>(Real name)</td>
+			<td style="width: 500px;">{$userbaseinfo['realname']}</td>
+			<td>|</td>
+			<td>真实姓名：<br/>(Real name)</td>
+			<td style="width: 500px;">{$logusereditarr['realname']}</td>
+		</tr>
+		<tr {if $userbaseinfo['sex'] != $logusereditarr['sex']}style="color:red;"{/if}>
+			<td>性别：<br/>(Sex)</td>
+			<td style="width: 500px;">
+				{if $userextendinfo['lang'] == 'cn'}
+					{if $userbaseinfo['sex'] == 1}
+					男
+					{elseif $userbaseinfo['sex'] == 2}
+					女
+					{else}
+					保密
+					{/if}
+				{else}
+					{if $userbaseinfo['sex'] == 1}
+					Male
+					{elseif $userbaseinfo['sex'] == 2}
+					Female
+					{else}
+					Confidential
+					{/if}
+				{/if}
+			</td>
+			<td>|</td>
+			<td>性别：<br/>(Sex)</td>
+			<td style="width: 500px;">
+				{if $logusereditarr['lang'] == 'cn'}
+					{if $logusereditarr['sex'] == 1}
+					男
+					{elseif $logusereditarr['sex'] == 2}
+					女
+					{else}
+					保密
+					{/if}
+				{else}
+					{if $logusereditarr['sex'] == 1}
+					Male
+					{elseif $logusereditarr['sex'] == 2}
+					Female
+					{else}
+					Confidential
+					{/if}
+				{/if}
+			</td>
+		</tr>
+		<tr {if $userbaseinfo['email'] != $logusereditarr['electronicmail']}style="color:red;"{/if}>
+			<td>邮箱：<br/>(Email)</td>
+			<td style="width: 500px;">{$userbaseinfo['email']}</td>
+			<td>|</td>
+			<td>邮箱：<br/>(Email)</td>
+			<td style="width: 500px;">{$logusereditarr['electronicmail']}</td>
+		</tr>
+		<tr {if $userbaseinfo['mobile'] != $logusereditarr['mobile']}style="color:red;"{/if}>
+			<td>手机号：<br/>(Mobile phone)</td>
+			<td style="width: 500px;">{$userbaseinfo['mobile']}</td>
+			<td>|</td>
+			<td>手机号：<br/>(Mobile phone)</td>
+			<td style="width: 500px;">{$logusereditarr['mobile']}</td>
+		</tr>
+		<tr {if $userextendinfo['photo'] != $logusereditarr['photo']}style="color:red;"{/if}>
+			<td>头像：<br/>(Photo)</td>
+			<td style="width: 500px;"><img alt="" src="{$userextendinfo['photo']}" width="120px" height="90px" style="padding-top: 9px;"></td>
+			<td>|</td>
+			<td>头像：<br/>(Photo)</td>
+			<td style="width: 500px;"><img alt="" src="{$logusereditarr['photo']}" width="120px" height="90px" style="padding-top: 9px;"></td>
+		</tr>
+		<tr {if $userextendinfo['surname'] != $logusereditarr['surname']}style="color:red;"{/if}>
+			<td>姓：<br/>(Surname)</td>
+			<td style="width: 500px;">{$userextendinfo['surname']}</td>
+			<td>|</td>
+			<td>姓：<br/>(Surname)</td>
+			<td style="width: 500px;">{$logusereditarr['surname']}</td>
+		</tr>
+		<tr {if $userextendinfo['name'] != $logusereditarr['name']}style="color:red;"{/if}>
+			<td>名：<br/>(First and Middle Names)</td>
+			<td style="width: 500px;">{$userextendinfo['name']}</td>
+			<td>|</td>
+			<td>名：<br/>(First and Middle Names)</td>
+			<td style="width: 500px;">{$logusereditarr['name']}</td>
+		</tr>
+		<tr {if $userextendinfo['familytel'] != $logusereditarr['familytel']}style="color:red;"{/if}>
+			<td>家庭电话：<br/>(Home-TEL)</td>
+			<td style="width: 500px;">{$userextendinfo['familytel']}</td>
+			<td>|</td>
+			<td>家庭电话：<br/>(Home-TEL)</td>
+			<td style="width: 500px;">{$logusereditarr['familytel']}</td>
+		</tr>
+		<tr {if $userextendinfo['familyfax'] != $logusereditarr['familyfax']}style="color:red;"{/if}>
+			<td>家庭传真：<br/>(Home-FAX)</td>
+			<td style="width: 500px;">{$userextendinfo['familyfax']}</td>
+			<td>|</td>
+			<td>家庭传真：<br/>(Home-FAX)</td>
+			<td style="width: 500px;">{$logusereditarr['familyfax']}</td>
+		</tr>
+		<tr {if $userextendinfo['nationalityid'] != $logusereditarr['nationalityid']}style="color:red;"{/if}>
+			<td>国籍：<br/>(Nationality)</td>
+			<td style="width: 500px;">{$nationality[$userextendinfo['nationalityid']]}</td>
+			<td>|</td>
+			<td>国籍：<br/>(Nationality)</td>
+			<td style="width: 500px;">{$nationality[$logusereditarr['nationalityid']]}</td>
+		</tr>
+		<tr {if $userextendinfo['twonationality'] != $logusereditarr['twonationality']}style="color:red;"{/if}>
+			<td>第二国籍：<br/>(Second Nationality)</td>
+			<td style="width: 500px;">{$userextendinfo['twonationality']}</td>
+			<td>|</td>
+			<td>第二国籍：<br/>(Second Nationality)</td>
+			<td style="width: 500px;">{$logusereditarr['twonationality']}</td>
+		</tr>
+		<tr {if $userbaseinfo['identityid'] !== $logusereditarr['identityid']}style="color:red;"{/if}>
+			<td>
+                            {if $userbaseinfo['card_type'] == '1'}
+                                身份证
+                            {else}
+                                护照
+                            {/if}
+                        ：<br/>(ID card number)</td>
+			<td style="width: 500px;">{$userbaseinfo['identityid']}</td>
+			<td>|</td>
+			<td>
+                            {if $logusereditarr['card_type'] == '1'}
+                                身份证
+                            {else}
+                                护照
+                            {/if}
+                            ：<br/>(ID card number)</td>
+			<td style="width: 500px;">{$logusereditarr['identityid']}</td>
+		</tr>
+		<tr {if $userextendinfo['birthday'] !== $logusereditarr['birthday']}style="color:red;"{/if}>
+			<td>出生日期：<br/>(Date of Birth)</td>
+			<td style="width: 500px;">{$userextendinfo['birthday']}</td>
+			<td>|</td>
+			<td>出生日期：<br/>(Date of Birth)</td>
+			<td style="width: 500px;">{$logusereditarr['birthday']}</td>
+		</tr>
+		<tr {if $userextendinfo['city'] !== $logusereditarr['city']}style="color:red;"{/if}>
+			<td>所在城市：<br/>(Current Residence)</td>
+			<td style="width: 500px;">{$userextendinfo['city']}</td>
+			<td>|</td>
+			<td>所在城市：<br/>(Current Residence)</td>
+			<td style="width: 500px;">{$logusereditarr['city']}</td>
+		</tr>
+		<tr {if $userextendinfo['highestschooling'] !== $logusereditarr['highestschooling']}style="color:red;"{/if}>
+			<td>最高学历：<br/>(Highest Educational Level)</td>
+			<td style="width: 500px;">{if $userextendinfo['lang'] == 'cn'}{$highestschooling[$userextendinfo['highestschooling']]}{else}{$userextendinfo['highestschooling']}{/if}</td>
+			<td>|</td>
+			<td>最高学历：<br/>(Highest Educational Level)</td>
+			<td style="width: 500px;">{if $logusereditarr['lang'] == 'cn'}{$highestschooling[$logusereditarr['highestschooling']]}{else}{$logusereditarr['highestschooling']}{/if}</td>
+		</tr>
+		<tr {if $userextendinfo['technicaltitle'] !== $logusereditarr['technicaltitle']}style="color:red;"{/if}>
+			<td>职称：<br/>(Professional Title)</td>
+			<td style="width: 500px;">{$nicaltitle[$userextendinfo['technicaltitle']]}</td>
+			<td>|</td>
+			<td>职称：<br/>(Professional Title)</td>
+			<td style="width: 500px;">{$nicaltitle[$logusereditarr['technicaltitle']]}</td>
+		</tr>
+		<tr {if $userextendinfo['occclassification'] !== $logusereditarr['occclassification']}style="color:red;"{/if}>
+			<td>职业分类：<br/>(Occupation Classification)</td>
+			<td style="width: 500px;">{$occclassification[$userextendinfo['occclassification']]}</td>
+			<td>|</td>
+			<td>职业分类：<br/>(Occupation Classification)</td>
+			<td style="width: 500px;">{$occclassification[$logusereditarr['occclassification']]}</td>
+		</tr>
+		{if $userextendinfo['lang'] == 'cn'}
+		<tr {if $userextendinfo['identitycategory'] !== $logusereditarr['identitycategory']}style="color:red;"{/if}>
+			<td>公务员或参公管理人员</td>
+			<td style="width: 500px;">
+				{if $userextendinfo['identitycategory'] == 1}
+				是
+				{else}
+				否
+				{/if}
+			</td>
+			<td>|</td>
+			<td>公务员或参公管理人员</td>
+			<td style="width: 500px;">
+				{if $logusereditarr['identitycategory'] == 1}
+				是
+				{else}
+				否
+				{/if}
+			</td>
+		</tr>
+		{/if}
+		<tr {if $userextendinfo['company'] !== $logusereditarr['company']}style="color:red;"{/if}>
+			<td>单位：<br/>(Current Employer)</td>
+			<td style="width: 500px;">{$userextendinfo['company']}</td>
+			<td>|</td>
+			<td>单位：<br/>(Current Employer)</td>
+			<td style="width: 500px;">{$logusereditarr['company']}</td>
+		</tr>
+		<tr {if $userextendinfo['job'] !== $logusereditarr['job']}style="color:red;"{/if}>
+			<td>职务：<br/>(Job Title)</td>
+			<td style="width: 500px;">{$userextendinfo['job']}</td>
+			<td>|</td>
+			<td>职务：<br/>(Job Title)</td>
+			<td style="width: 500px;">{$logusereditarr['job']}</td>
+		</tr>
+		<tr {if $userextendinfo['companyaddress'] !== $logusereditarr['companyaddress']}style="color:red;"{/if}>
+			<td>单位地址及邮编：<br/>(Current Employer\'s Address and Postcode)</td>
+			<td style="width: 500px;">{$userextendinfo['companyaddress']}</td>
+			<td>|</td>
+			<td>单位地址及邮编：<br/>(Current Employer\'s Address and Postcode)</td>
+			<td style="width: 500px;">{$logusereditarr['companyaddress']}</td>
+		</tr>
+		<tr {if $userextendinfo['familyaddress'] !== $logusereditarr['familyaddress']}style="color:red;"{/if}>
+			<td>家庭地址及邮编：<br/>(Home Address and Postcode)</td>
+			<td style="width: 500px;">{$userextendinfo['familyaddress']}</td>
+			<td>|</td>
+			<td>家庭地址及邮编：<br/>(Home Address and Postcode)</td>
+			<td style="width: 500px;">{$logusereditarr['familyaddress']}</td>
+		</tr>
+		<tr {if $userextendinfo['validaddress'] !== $logusereditarr['validaddress']}style="color:red;"{/if}>
+			<td>有效通讯地址及邮编：<br/>(Valld Mail Address and Postcode)</td>
+			<td style="width: 500px;">{$userextendinfo['validaddress']}</td>
+			<td>|</td>
+			<td>有效通讯地址及邮编：<br/>(Valld Mail Address and Postcode)</td>
+			<td style="width: 500px;">{$logusereditarr['validaddress']}</td>
+		</tr>
+		<tr {if $userextendinfo['worktel'] !== $logusereditarr['worktel']}style="color:red;"{/if}>
+			<td>工作电话：<br/>(Office-TEL)</td>
+			<td style="width: 500px;">{$userextendinfo['worktel']}</td>
+			<td>|</td>
+			<td>工作电话：<br/>(Office-TEL)</td>
+			<td style="width: 500px;">{$logusereditarr['worktel']}</td>
+		</tr>
+		<tr {if $userextendinfo['workfax'] !== $logusereditarr['workfax']}style="color:red;"{/if}>
+			<td>工作传真：<br/>(Office-FAX)</td>
+			<td style="width: 500px;">{$userextendinfo['workfax']}</td>
+			<td>|</td>
+			<td>工作传真：<br/>(Office-FAX)</td>
+			<td style="width: 500px;">{$logusereditarr['workfax']}</td>
+		</tr>
+		<tr {if $userextendinfo['edubackground'] !== $logusereditarr['edubackground']}style="color:red;"{/if}>
+			<td>教育背景：<br/>(Education Background)</td>
+			<td style="width: 500px;">{$userextendinfo['edubackground']}</td>
+			<td>|</td>
+			<td>教育背景：<br/>(Education Background)</td>
+			<td style="width: 500px;">{$logusereditarr['edubackground']}</td>
+		</tr>
+		<tr {if $userextendinfo['workexperience'] !== $logusereditarr['workexperience']}style="color:red;"{/if}>
+			<td>工作经历：<br/>(Work Experience)</td>
+			<td style="width: 500px;">{$userextendinfo['workexperience']}</td>
+			<td>|</td>
+			<td>工作经历：<br/>(Work Experience)</td>
+			<td style="width: 500px;">{$logusereditarr['workexperience']}</td>
+		</tr>
+		<tr {if $userextendinfo['arbitexperience'] !== $logusereditarr['arbitexperience']}style="color:red;"{/if}>
+			<td>仲裁相关经历：<br/>(Experience in Arbitration)</td>
+			<td style="width: 500px;">{$userextendinfo['arbitexperience']}</td>
+			<td>|</td>
+			<td>仲裁相关经历：<br/>(Experience in Arbitration)</td>
+			<td style="width: 500px;">{$logusereditarr['arbitexperience']}</td>
+		</tr>
+		<tr {if $userextendinfo['partjob'] !== $logusereditarr['partjob']}style="color:red;"{/if}>
+			<td>社会团体兼职情况：<br/>(Social Occupation)</td>
+			<td style="width: 500px;">{$userextendinfo['partjob']}</td>
+			<td>|</td>
+			<td>社会团体兼职情况：<br/>(Social Occupation)</td>
+			<td style="width: 500px;">{$logusereditarr['partjob']}</td>
+		</tr>
+		<tr {if $userextendinfo['specialty'] !== $logusereditarr['specialty']}style="color:red;"{/if}>
+			<td>专长：<br/>(Expertise)</td>
+			<td style="width: 500px;">{$userextendinfo['specialty']}</td>
+			<td>|</td>
+			<td>专长：<br/>(Expertise)</td>
+			<td style="width: 500px;">{$logusereditarr['specialty']}</td>
+		</tr>
+		<tr {if $userextendinfo['professresults'] !== $logusereditarr['professresults']}style="color:red;"{/if}>
+			<td>专业成果：<br/>(Research Achievement)</td>
+			<td style="width: 500px;">{$userextendinfo['professresults']}</td>
+			<td>|</td>
+			<td>专业成果：<br/>(Research Achievement)</td>
+			<td style="width: 500px;">{$logusereditarr['professresults']}</td>
+		</tr>
+		<tr {if $userextendinfo['firstlang'] !== $logusereditarr['firstlang']}style="color:red;"{/if}>
+			<td>第一外语水平：<br/>(First Foreign Language Level)</td>
+			<td style="width: 500px;">{if $userextendinfo && $userextendinfo['firstlang'] }{$languagetype[$userextendinfo['firstlang']]}{else}无{/if}</td>
+			<td>|</td>
+			<td>第一外语水平：<br/>(First Foreign Language Level)</td>
+			<td style="width: 500px;">{if $logusereditarr && $logusereditarr['firstlang'] }{$languagetype[$logusereditarr['firstlang']]}{else}无{/if}</td>
+		</tr>
+		<tr {if ($firstlanvalue['firhearing'] !== $logfirstlanvalue['firhearing']) || ($firstlanvalue['firspoken'] !== $logfirstlanvalue['firspoken']) || ($firstlanvalue['firread'] !== $logfirstlanvalue['firread']) || ($firstlanvalue['firwriting'] !== $logfirstlanvalue['firwriting'])}style="color:red;"{/if}>
+			<td></td>
+			<td style="width: 500px;">{if $firstlanvalue && $firstlanvalue['firhearing']}听力({$lantype[$firstlanvalue['firhearing']]}){/if}{if $firstlanvalue && $firstlanvalue['firspoken']}&nbsp;&nbsp;&nbsp;&nbsp;口语({$lantype[$firstlanvalue['firspoken']]}){/if}{if $firstlanvalue && $firstlanvalue['firread']}&nbsp;&nbsp;&nbsp;&nbsp;阅读({$lantype[$firstlanvalue['firread']]}){/if}{if $firstlanvalue && $firstlanvalue['firwriting']}&nbsp;&nbsp;&nbsp;&nbsp;写作({$lantype[$firstlanvalue['firwriting']]}){/if}</td>
+			<td>|</td>
+			<td></td>
+			<td style="width: 500px;">{if $logfirstlanvalue && $logfirstlanvalue['firhearing']}听力({$lantype[$logfirstlanvalue['firhearing']]}){/if}{if $logfirstlanvalue && $logfirstlanvalue['firspoken']}&nbsp;&nbsp;&nbsp;&nbsp;口语({$lantype[$logfirstlanvalue['firspoken']]}){/if}{if $logfirstlanvalue && $logfirstlanvalue['firread']}&nbsp;&nbsp;&nbsp;&nbsp;阅读({$lantype[$logfirstlanvalue['firread']]}){/if}{if $logfirstlanvalue && $logfirstlanvalue['firwriting']}&nbsp;&nbsp;&nbsp;&nbsp;写作({$lantype[$logfirstlanvalue['firwriting']]}){/if}</td>
+		</tr>
+		<tr {if $userextendinfo['twolang'] !== $logusereditarr['twolang']}style="color:red;"{/if}>
+			<td>第二外语水平：<br/>(Second Foreign Language Level)</td>
+			<td style="width: 500px;">{if $userextendinfo && $userextendinfo['twolang'] }{$languagetype[$userextendinfo['twolang']]}{else}无{/if}</td>
+			<td>|</td>
+			<td>第二外语水平：<br/>(Second Foreign Language Level)</td>
+			<td style="width: 500px;">{if $logusereditarr && $logusereditarr['twolang'] }{$languagetype[$logusereditarr['twolang']]}{else}无{/if}</td>
+		</tr>
+		<tr {if ($twolanvalue['twohearing'] !== $logtwolanvalue['twohearing']) || ($twolanvalue['twospoken'] !== $logtwolanvalue['twospoken']) || ($twolanvalue['tworead'] !== $logtwolanvalue['tworead']) || ($twolanvalue['twowriting'] !== $logtwolanvalue['twowriting'])}style="color:red;"{/if}>
+			<td></td>
+			<td style="width: 500px;">{if $twolanvalue && $twolanvalue['twohearing']}听力({$lantype[$twolanvalue['twohearing']]}){/if}{if $twolanvalue && $twolanvalue['twospoken']}&nbsp;&nbsp;&nbsp;&nbsp;口语({$lantype[$twolanvalue['twospoken']]}){/if}{if $twolanvalue && $twolanvalue['tworead']}&nbsp;&nbsp;&nbsp;&nbsp;阅读({$lantype[$twolanvalue['tworead']]}){/if}{if $twolanvalue && $twolanvalue['twowriting']}&nbsp;&nbsp;&nbsp;&nbsp;写作({$lantype[$twolanvalue['twowriting']]}){/if}</td>
+			<td>|</td>
+			<td></td>
+			<td style="width: 500px;">{if $logtwolanvalue && $logtwolanvalue['twowriting']}听力({$lantype[$logtwolanvalue['twowriting']]}){/if}{if $logtwolanvalue && $logtwolanvalue['twospoken']}&nbsp;&nbsp;&nbsp;&nbsp;口语({$lantype[$logtwolanvalue['twospoken']]}){/if}{if $logtwolanvalue && $logtwolanvalue['tworead']}&nbsp;&nbsp;&nbsp;&nbsp;阅读({$lantype[$logtwolanvalue['tworead']]}){/if}{if $logtwolanvalue && $logtwolanvalue['twowriting']}&nbsp;&nbsp;&nbsp;&nbsp;写作({$lantype[$logtwolanvalue['twowriting']]}){/if}</td>
+		</tr>
+		<tr {if $userextendinfo['introduction'] !== $logusereditarr['introduction']}style="color:red;"{/if}>
+			<td>自我介绍：<br/>(Self Description)</td>
+			<td style="width: 500px;">{$userextendinfo['introduction']}</td>
+			<td>|</td>
+			<td>自我介绍：<br/>(Self Description)</td>
+			<td style="width: 500px;">{$logusereditarr['introduction']}</td>
+		</tr>
+		<tr {if $userextendinfo['train'] !== $logusereditarr['train']}style="color:red;"{/if}>
+			<td>仲裁培训情况：<br/>(Reflection on Arbitrator Training Program)</td>
+			<td style="width: 500px;">{$userextendinfo['train']}</td>
+			<td>|</td>
+			<td>仲裁培训情况：<br/>(Reflection on Arbitrator Training Program)</td>
+			<td style="width: 500px;">{$logusereditarr['train']}</td>
+		</tr>
+		<tr {if $userextendinfo['recommend'] !== $logusereditarr['recommend']}style="color:red;"{/if}>
+			<td>推荐人：<br/>(Referee)</td>
+			<td style="width: 500px;">{$userextendinfo['recommend']}</td>
+			<td>|</td>
+			<td>推荐人：<br/>(Referee)</td>
+			<td style="width: 500px;">{$logusereditarr['recommend']}</td>
+		</tr>
+		<tr {if $userextendinfo['remarks'] !== $logusereditarr['remarks']}style="color:red;"{/if}>
+			<td>备注：<br/>(Notepad)</td>
+			<td style="width: 500px;">{$userextendinfo['remarks']}</td>
+			<td>|</td>
+			<td>备注：<br/>(Notepad)</td>
+			<td style="width: 500px;">{$logusereditarr['remarks']}</td>
+		</tr>
+
+		</table>
+		
+		<div class="btn">
+		{if $userbaseinfo['checked'] == 1}
+		<form method='post'  id="myform" action="{:URL('Admin-Arbitrator/check')}">
+		<input type="hidden" name="id" value="{$userbaseinfo['id']}" />
+		<INPUT TYPE="submit" name="checkok"  value="审核通过" class="button" >
+		<INPUT TYPE="submit" name="checkno"  value="审核不通过" class="button" >
+		<INPUT TYPE="button"  value="返回列表" class="button" onclick="javacript:location.href='{:URL('Admin-Arbitrator/index'.$userbaseinfo['lang'])}'" >
+		</form>
+		{else}
+		<INPUT TYPE="button"  value="返回列表" class="button" onclick="javacript:location.href='{:URL('Admin-Arbitrator/index'.$userbaseinfo['lang'])}'" >
+		{/if}
+
+		</div>
+		
+		
+     </div>

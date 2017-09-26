@@ -1,0 +1,450 @@
+<div class="content">
+    <div class="form_list form_list2">
+    	<div class="bt">{:L(MESSAGE_PREVIEW)}</div>
+    	<form id="myform"  method="post" action="{:U('User/Register/thirdstep?l='.$l)}" >
+            <table class="form_table form_table_border">
+				<tr>
+					<td style="width:180px;" class="tr">
+						<span class="form_label"><span class="red">*</span>{:L(realname)}:</span>
+					</td>
+					<td style="width:320px;">
+						<span class="info_text">{$vo.realname}</span>
+					</td>
+					<td style="width:180px;" class="tr" rowspan="3">
+                        <span class="form_label">{:L(PHOTOS)}:</span>
+					</td>
+					<td style="width:320px;" rowspan="3">
+                                        {if $userextendInfo && $userextendInfo['photo']}
+                                        <img alt="" src="{$userextendInfo['photo']}" width="120px" height="90px" style="padding-top: 9px;"><br>
+                                        {else}
+                                        <p class="txt">{if $l=='cn'}未上传{/if}</p>
+                                        {/if}
+					</td>
+				</tr>
+				<tr>
+					<td class="tr">
+						<span class="form_label"><span class="red">*</span>{:L(sex)}:</span>
+					</td>
+					<td>
+						<span class="info_text">
+                                                    <eq name='vo.sex' value='0'>{:L(sex0)}</eq>
+                                                    <eq name='vo.sex' value='1'>{:L(sex1)}</eq>
+                                                    <eq name='vo.sex' value='2'>{:L(sex2)}</eq>
+                                                </span>
+					</td>
+				</tr>
+				<tr>
+					<td class="tr"><span class="form_label">{:L(DATE_OF_BIRTH)}:</span></td>
+					<td>						<span class="info_text">{if $userextendInfo}{$userextendInfo['birthday']}{/if}</span>					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label"><span class="red">*</span>{:L(surname)}:</span>
+					</td>
+					<td>
+						<span class="info_text">{if $userextendInfo}{$userextendInfo['surname']}{/if}</span>
+					</td>
+					<td class="tr">
+						<span class="form_label"><span class="red">*</span>{:L(mainname)}:</span>
+					</td>
+					<td>
+						<span class="info_text">{if $userextendInfo}{$userextendInfo['name']}{/if}</span>
+					</td>
+				</tr>
+               
+                <tr>
+					<td class="tr">
+						<span class="form_label"><span class="red">*</span>{:L(nationality)}:</span>
+					</td>
+					<td>
+						<span class="info_text">
+                                                    <volist name="nationality" id="na">
+                                                        {if $userextendInfo && $userextendInfo['nationalityid'] == $key}{$na}{/if}
+                                                    </volist>
+                                                </span>
+					</td>
+					<td class="tr">
+						<span class="form_label">{:L(second_nationality)}:</span>
+					</td>
+					<td>
+						<span class="info_text">
+                                                     <volist name="nationality" id="tna">
+                                                        {if $userextendInfo && $userextendInfo['twonationality'] == $key}{$tna}{/if}
+                                                    </volist>
+                                                </span>
+					</td>
+					
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label "><span class="red">*</span>{if $l == 'cn'}证件类型:{else}Type Of Certificate:{/if}</span>
+					</td>
+					<td>
+						<span class="info_text">
+                                                    <eq name='vo.card_type' value='1'>{if $l == 'cn'}身份证{else}ID Card{/if}</eq>
+                                                    <eq name='vo.card_type' value='2'>{if $l == 'cn'}护照{else}Passport{/if}</eq>
+                                                    <eq name='vo.card_type' value='3'>{if $l == 'cn'}其他{else}Other{/if}</eq>
+                                                </span>
+					</td>
+					<td class="tr">
+						<span class="form_label"><span class="red">*</span>{:L(identity)}:</span>
+					</td>
+					<td>
+						<span class="info_text">{$vo['identityid']}</span>
+					</td>
+					
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label"><span class="red">*</span>{:L(current_residence)}:</span>
+					</td>
+					<td>
+						<span class="info_text">
+                                                    {if $l=='cn'}
+                                                    <volist name="city" id="cv">
+                                                        {if $userextendInfo && $userextendInfo['city'] == $key}{$cv}{/if}
+                                                    </volist>
+                                                    {else}
+                                                    {$userextendInfo['city']}
+                                                    {/if}
+                                                </span>
+					</td>
+					<td class="tr">
+						<span class="form_label"><span class="red">*</span>{:L(highest_educational_level)}:</span>
+					</td>
+					<td>
+						<span class="info_text">
+                                                    {if $l=='cn'}
+                                                    <volist name="highestschooling" id="hv">
+                                                        {if $userextendInfo && $userextendInfo['highestschooling'] == $key}{$hv}{/if}
+                                                    </volist>
+                                                    {else}
+                                                    <span class="info_text">{if $userextendInfo && $userextendInfo['highestschooling']}{$userextendInfo['highestschooling']}{/if}</span>
+                                                    {/if}
+                                                </span>
+					</td>
+					
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label "><span class="red">*</span>{:L(professional_title)}:</span>
+					</td>
+					<td>
+						<span class="info_text">
+                                                    <volist name="nicaltitle" id="tv">
+                                                        {if $userextendInfo && $userextendInfo['technicaltitle'] == $key}{$tv}{/if}
+                                                    </volist>
+                                                </span>
+					</td>
+					<td class="tr">
+						<span class="form_label  "><span class="red">*</span>{:L(occupation_classification)}:</span>
+					</td>
+					<td>
+						<span class="info_text">
+                                                    <volist name="occclassification" id="ov">
+                                                        {if $userextendInfo && $userextendInfo['occclassification'] == $key}{$ov}{/if}
+                                                    </volist>
+                                                </span>
+					</td>
+					
+				</tr>
+                                {if $l=='cn'}
+                                <tr>
+					<td class="tr">
+						<span class="form_label "><span class="red">*</span>公务员或参公管理人员:</span>
+					</td>
+					<td colspan="3">
+						<span class="info_text">
+                                                    <eq name='userextendInfo.identitycategory' value='1'>是</eq>
+                                                    <eq name='userextendInfo.identitycategory' value='2'>否</eq>
+                                                </span>
+					</td>
+				</tr>
+                                {/if}
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(company_address_postcode)}:</span>
+					</td>
+					<td>
+						<span class="info_text">{if $userextendInfo}{$userextendInfo['companyaddress']}{/if}</span>
+					</td>
+					<td class="tr">
+						<span class="form_label">{:L(family_address_postcode)}:</span>
+					</td>
+					<td>
+						<span class="info_text">{if $userextendInfo}{$userextendInfo['familyaddress']}{/if}</span>
+					</td>
+					
+				</tr>
+				<tr>
+					<td class="tr">
+						<span class="form_label">{:L(company)}:</span>
+					</td>
+					<td>
+						<span class="info_text">{if $userextendInfo}{$userextendInfo['company']}{/if}</span>
+					</td>
+					<td class="tr">
+						<span class="form_label  ">{:L(job)}:</span>
+					</td>
+					<td>
+						<span class="info_text">{if $userextendInfo}{$userextendInfo['job']}{/if}</span>
+					</td>
+				</tr>
+                <tr>	
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(work_tel)}:</span>
+					</td>
+					<td>
+						<span class="info_text">{if $userextendInfo}{$userextendInfo['worktel']}{/if}</span>
+					</td>
+					<td class="tr">
+						<span class="form_label">{:L(work_fax)}:</span>
+					</td>
+					<td>
+						<span class="info_text">{if $userextendInfo}{$userextendInfo['workfax']}{/if}</span>
+					</td>
+				</tr>
+				 <tr>
+					<td class="tr">
+						<span class="form_label">{:L(home_tel)}:</span>
+					</td>
+					<td>
+						<span class="info_text">{if $userextendInfo}{$userextendInfo['familytel']}{/if}</span>
+					</td>
+					<td class="tr">
+						<span class="form_label">{:L(home_fax)}:</span>
+					</td>
+					<td>
+						<span class="info_text">{if $userextendInfo}{$userextendInfo['familyfax']}{/if}</span>
+					</td>
+					
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label"><span class="red">*</span>{:L(vaild_address_postcode)}:</span>
+					</td>
+					<td>
+						<span class="info_text">{if $userextendInfo}{$userextendInfo['validaddress']}{/if}</span>
+					</td>
+					<td class="tr">
+						<span class="form_label"><span class="red">*</span>{:L(specialty)}:</span>
+					</td>
+					<td>
+						<span class="info_text">{if $userextendInfo}{$userextendInfo['specialty']}{/if}</span>
+					</td>
+				</tr>
+				 <tr>
+					<td class="tr">
+						<span class="form_label"><span class="red">*</span>{:L(mobile)}:</span>
+					</td>
+					<td>
+						<span class="info_text">{if $vo}{$vo['mobile']}{/if}</span>
+					</td>
+					<td class="tr">
+						<span class="form_label">{:L(email)}:</span>
+					</td>
+					<td>
+						<span class="info_text">{$vo['email']}</span>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(edubackground)}:</span>
+					</td>
+					<td colspan="3">
+						<span class="info_text">{if $userextendInfo}{$userextendInfo['edubackground']}{/if}</span>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(workexperience)}:</span>
+					</td>
+					<td colspan="3">
+						<span class="info_text">{if $userextendInfo}{$userextendInfo['workexperience']}{/if}</span>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+                        <span class="form_label">{:L(partjob)}:</span>
+					</td>
+					<td colspan="3">
+						<span class="info_text">{if $userextendInfo}{$userextendInfo['partjob']}{/if}</span>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+                        <span class="form_label">{:L(profess_results)}:</span>
+					</td>
+					<td colspan="3">
+						<span class="info_text">{if $userextendInfo}{$userextendInfo['professresults']}{/if}</span>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(train)}:</span>
+					</td>
+					<td colspan="3">
+						<span class="info_text">{if $userextendInfo}{$userextendInfo['train']}{/if}</span>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(arbitexperience)}:</span>
+					</td>
+					<td colspan="3">
+						<span class="info_text">{if $userextendInfo}{$userextendInfo['arbitexperience']}{/if}</span>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(FIRSTLANG)}: </span>
+					</td>
+					<td colspan="3">
+                        <table class="form_table form_table_border" style="width:200px;margin:0px;">
+                            <tbody>
+                                 <tr>
+                                    <td colspan="2">
+                                        <volist name="languagetype" id="lv">
+                                            {if $userextendInfo && $userextendInfo['firstlang'] == $key}{$lv}{/if}
+                                        </volist>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;{:L(HEARING)}:</td>
+                                    <td>
+                                        <eq name='firstlanvalue.firhearing' value='1'>{:L(EXCELLENT)}</eq>
+                                        <eq name='firstlanvalue.firhearing' value='2'>{:L(GOOD)}</eq>
+                                        <eq name='firstlanvalue.firhearing' value='3'>{:L(AVERAGE)}</eq>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;{:L(SPEAK)}:</td>
+                                    <td>
+                                        <eq name='firstlanvalue.firspoken' value='1'>{:L(EXCELLENT)}</eq>
+                                        <eq name='firstlanvalue.firspoken' value='2'>{:L(GOOD)}</eq>
+                                        <eq name='firstlanvalue.firspoken' value='3'>{:L(AVERAGE)}</eq>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;{:L(READ)}:</td>
+                                    <td>
+                                        <eq name='firstlanvalue.firread' value='1'>{:L(EXCELLENT)}</eq>
+                                        <eq name='firstlanvalue.firread' value='2'>{:L(GOOD)}</eq>
+                                        <eq name='firstlanvalue.firread' value='3'>{:L(AVERAGE)}</eq>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;{:L(WRITING)}:</td>
+                                    <td>
+                                        <eq name='firstlanvalue.firwriting' value='1'>{:L(EXCELLENT)}</eq>
+                                        <eq name='firstlanvalue.firwriting' value='2'>{:L(GOOD)}</eq>
+                                        <eq name='firstlanvalue.firwriting' value='3'>{:L(AVERAGE)}</eq>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(TWOLANG)}:</span>
+					</td>
+					<td colspan="3">
+						<table class="form_table form_table_border" style="width:200px;margin:0px;">
+                            <tbody>
+                                 <tr>
+                                    <td colspan="2">
+                                        <volist name="languagetype" id="lv">
+                                            {if $userextendInfo && $userextendInfo['twolang'] == $key}{$lv}{/if}
+                                        </volist>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;{:L(HEARING)}:</td>
+                                    <td>
+                                        <eq name='twolanvalue.twohearing' value='1'>{:L(EXCELLENT)}</eq>
+                                        <eq name='twolanvalue.twohearing' value='2'>{:L(GOOD)}</eq>
+                                        <eq name='twolanvalue.twohearing' value='3'>{:L(AVERAGE)}</eq>
+                                    </td>
+                                </tr>
+                               <tr>
+                                    <td>&nbsp;{:L(SPEAK)}:</td>
+                                    <td>
+                                        <eq name='twolanvalue.twospoken' value='1'>{:L(EXCELLENT)}</eq>
+                                        <eq name='twolanvalue.twospoken' value='2'>{:L(GOOD)}</eq>
+                                        <eq name='twolanvalue.twospoken' value='3'>{:L(AVERAGE)}</eq>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;{:L(READ)}:</td>
+                                    <td>
+                                        <eq name='twolanvalue.tworead' value='1'>{:L(EXCELLENT)}</eq>
+                                        <eq name='twolanvalue.tworead' value='2'>{:L(GOOD)}</eq>
+                                        <eq name='twolanvalue.tworead' value='3'>{:L(AVERAGE)}</eq>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;{:L(WRITING)}:</td>
+                                    <td>
+                                        <eq name='twolanvalue.twowriting' value='1'>{:L(EXCELLENT)}</eq>
+                                        <eq name='twolanvalue.twowriting' value='2'>{:L(GOOD)}</eq>
+                                        <eq name='twolanvalue.twowriting' value='3'>{:L(AVERAGE)}</eq>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(introduction)}:</span>
+					</td>
+					<td colspan="3">
+						<span class="info_text">{if $userextendInfo}{$userextendInfo['introduction']}{/if}</span>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(recommend)}:</span>
+					</td>
+					<td colspan="3">
+						<span class="info_text">{if $userextendInfo}{$userextendInfo['recommend']}{/if}</span>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(NOTEPAD)}:</span>
+					</td>
+					<td colspan="3">
+						<span class="info_text">{if $userextendInfo}{$userextendInfo['remarks']}{/if}</span>
+					</td>
+				</tr>
+                <tr>
+					<td class="tr">
+						<span class="form_label">{:L(UPLOAD_FILES)}:</span>
+					</td>
+					<td colspan="3">
+						<span class="info_text">
+                                                    {if $userextendInfo && $userextendInfo['attachment']}
+                                                    <a href="{$userextendInfo['attachment']}" target="_blank">{if $l == 'cn'}附件查看{else}attachment look{/if}</a>
+                                                    {/if}
+                                                </span>
+					</td>
+				</tr>
+			</table>
+            
+    		<div class="form_group">
+                <div class="btns">
+                	<input type="hidden" name="userid" value="{$vo['id']}" />
+                	<a href="javascript:window.history.back()" class="btn">{:L(LASTSTEP)}</a>
+                    <a href="javascript:window.print()" id="submit_on" class="btn_green">{:L(PRINT_DATA)}</a>
+                </div>
+            </div>
+    	</form>
+    </div>
+</div>
+<script type="text/javascript">
+
+</script>

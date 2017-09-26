@@ -1,0 +1,16 @@
+<div class="content">
+	<div class="form_tip_box">
+		<div class="tip_con tip_success">
+			<span class="ic ic_success"></span>
+			<p class="tip_txt">{:L(SAVESUCCESS)}</p>
+		</div>
+        <div class="btns">
+            <a href="{:U('User/Index/profile?l='.$l)}" class="btn">返回</a>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+	setTimeout("location='/index.php?g=User&m=Login&a=index&l={$l}'",3000);
+</script>

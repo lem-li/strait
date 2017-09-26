@@ -1,0 +1,119 @@
+		<table cellpadding=0 cellspacing=0 class="table_form" width="100%" height="60px">
+			<tr style="font-size: 18px; font-weight: bold;">
+				<td width="400" align="left">个人基本信息(Personal basic information)</td>
+			</tr>
+		</table>
+      	<table cellpadding=0 cellspacing=0 class="table_form" width="100%">
+      	<tr>
+		<td width="120">姓名</td>
+		<td>{$traineeinfo['name']}</td>
+		</tr>
+		<tr>
+			<td>{:L('sex')}</td>
+			<td>
+				{if $traineeinfo.sex == 1}
+				男(Male)
+				{else}
+				女(Female)
+				{/if}
+			</td>
+		</tr>
+		<tr>
+			<td>出生日期</td>
+			<td>{$traineeinfo['birthday']}</td>
+		</tr>
+		<tr>
+			<td>参加工作年份</td>
+			<td>{$traineeinfo.worktime}</td>
+		</tr>
+		<tr>
+			<td>户口所在地</td>
+			<td>{$traineeinfo.hukou}</td>
+		</tr>
+		<tr>
+			<td>现居住城市</td>
+			<td>{$traineeinfo.currentcity}</td>
+		</tr>
+		<tr>
+			<td>身份证号</td>
+			<td>{$traineeinfo['identityid']}</td>
+		</tr>
+		<tr>
+			<td>手机号</td>
+			<td>{$traineeinfo['mobile']}</td>
+		</tr>
+		<tr>
+			<td>座机</td>
+			<td>{$traineeinfo['tel']}</td>
+		</tr>
+		<tr>
+			<td>电子邮箱</td>
+			<td>{$traineeinfo['email']}</td>
+		</tr>
+	    </table>
+
+		<table cellpadding=0 cellspacing=0 class="table_form" width="100%" height="60px">
+			<tr style="font-size: 18px; font-weight: bold;">
+				<td width="400" align="left">最近工作/实习经历(Working experience)</td>
+			</tr>
+		</table>
+		<table cellpadding=0 cellspacing=0 class="table_form" width="100%">
+		<tr>
+			<td width="120">是否有工作/实习经验</td>
+			<td>{if $traineeinfo['isexperience'] == 1}有( Have ){else}无( Not have ){/if}</td>
+		</tr>
+		{if $traineeinfo['isexperience'] == 1}
+		<tr>
+			<td>公司名称</td>
+			<td>{$traineeinfo['company_name']}</td>
+		</tr>
+		<tr>
+			<td>职位名称</td>
+			<td>{$traineeinfo['jobtitle']}</td>
+		</tr>
+		<tr>
+			<td>工作时间</td>
+			<td>{$traineeinfo['workdate']}</td>
+		</tr>
+		<tr>
+			<td>职位月薪（税前）</td>
+			<td>{$traineeinfo['salary']}</td>
+		</tr>
+		
+		<tr>
+			<td>工作描述</td>
+			<td>{$traineeinfo['workdescription']}</td>
+		</tr>
+		{/if}
+		
+
+		</table>
+
+		<table cellpadding=0 cellspacing=0 class="table_form" width="100%" height="60px">
+			<tr style="font-size: 18px; font-weight: bold;">
+				<td width="400" align="left">教育经历(Education experience)</td>
+			</tr>
+		</table>
+		<table cellpadding=0 cellspacing=0 class="table_form" width="100%">
+		<tr>
+			<td width="120">学历/学位</td>
+			<td>{$traineeinfo['education_level']}</td>
+		</tr>
+		
+		<tr>
+			<td>是否统招</td>
+			<td>{if $traineeinfo['istongzhao'] == 1}是( Yes ){else}否( No ){/if}</td>
+		</tr>
+		<tr>
+			<td>就读时间</td>
+			<td>{$traineeinfo['studydate']}</td>
+		</tr>
+		<tr>
+			<td>学校名称</td>
+			<td>{$traineeinfo['schoolname']}</td>
+		</tr>
+		<tr>
+			<td>专业名称</td>
+			<td>{$traineeinfo['profession_name']}</td>
+		</tr>
+     </div>

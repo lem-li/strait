@@ -1,0 +1,30 @@
+
+<div class="wrap" style="overflow:hidden;">
+    
+    <div class="list_r" style="width:960px;">
+        <div class="cm">
+            {:L(catpos)}<a href="{:URL()}"> {:L(home_font)}</a> >> <YP:catpos  catid="catid" space=" &gt; " />
+        </div>
+        <div class="r_con">
+            <div class="bt" style="padding:0 250px;">{$title} </div>
+            <br/>
+			
+			<span style="float:right;padding:0 180px;"><a href="__ROOT__/index.php?m={$module_name}&a=down&id={$id}">{if $l=='cn'}文件下载{else}download{/if}</a></span>
+			<br/><br/>
+            <div style="padding:0 150px;{if $l=='en'}text-indent: 0em;{/if}" class="p_content">{$content}</div>
+        </div>
+        <div class="r_con_b">
+            <ul>
+                {if $predata}
+                <li><span>{if $l=='cn'}上一篇{else}Prev{/if}：</span><a href="{$predata['url']}" title="{$predata['title']}" >{$predata['title']|str_cut=###,90}</a>{if $catid==30} ({$predata['createtime']|toDate=###,'Y-m-d'}){/if}</li>
+                {/if}
+                {if $lastdata}
+                <li><span>{if $l=='cn'}下一篇{else}Next{/if}：</span><a href="{$lastdata['url']}" title="{$lastdata['title']}" >{$lastdata['title']|str_cut=###,90}</a> {if $catid==30} ({$lastdata['createtime']|toDate=###,'Y-m-d'}){/if}</li>
+                {/if}
+            </ul>
+        </div>
+    </div>
+</div>
+ 
+
+<script language="JavaScript" src="__ROOT__/index.php?m={$module_name}&a=hits&id={$id}"></script>

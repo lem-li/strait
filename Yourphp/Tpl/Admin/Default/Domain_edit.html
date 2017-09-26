@@ -1,0 +1,105 @@
+
+
+<form name="myform" id="myform" action="<if condition="$action_name=='add'">{:U($module_name.'/insert')}<else />{:U($module_name.'/update')}</if>" method="post">
+<input type="hidden" id="moduleid" name="moduleid" value="{$moduleid}"/>
+<table cellpadding=0 cellspacing=0 class="table_form" width="100%">
+
+	<tr>
+		  <td width="140"><font color="red">*</font>分站名 </td>
+		<td><input type="text" id="name" name="name" value="{$vo.name}" class="input-text required" minlength="2"    maxlength="500" /> </td>
+	</tr>
+        <tr>
+		  <td width="140"><font color="red">*</font>分站英文名 </td>
+		<td><input type="text" id="enname" name="enname" value="{$vo.enname}" class="input-text required" minlength="2"    maxlength="500" /> </td>
+	</tr>
+        <tr>
+                <td width="140"><font color="red">*</font>分会名 </td>
+		<td>
+                <select name="type_id">
+                    <option value="0" {if $vo['type_id']==0}selected="selected"{/if}>分会</option>
+                    <option value="1" {if $vo['type_id']==1}selected="selected"{/if}>办事处</option>
+                </select>
+                </td>
+	</tr>
+        
+        <tr>
+		  <td width="140"><font color="red">*</font>全名 </td>
+		<td><input style="width:300px;" type="text" id="fullname" name="fullname" value="{$vo.fullname}" class="input-text required" minlength="2"    maxlength="500" /> </td>
+	</tr>
+        <tr>
+		  <td width="140"><font color="red">*</font>英文全名 </td>
+		<td><input style="width:300px;" type="text" id="enfullname" name="enfullname" value="{$vo.enfullname}" class="input-text required" minlength="2"    maxlength="500" /> </td>
+	</tr>
+        
+        <tr>
+		  <td width="140"><font color="red"></font>分站域名 </td>
+		<td><input type="text" id="domain" name="domain" value="{$vo.domain}" class="input-text " minlength="2"    maxlength="500" /> </td>
+	</tr>
+        <tr>
+		  <td width="140"><font color="red"></font>分会链接 </td>
+		<td><input style="width:300px;" type="text" id="link" name="link" value="{$vo.link}" class="input-text " minlength="0"    maxlength="500" /> </td>
+	</tr>
+	<tr>
+	  <td>分会logo</td>
+	  <td>
+	   <div class="pic_box"  ><div id="pic_aid_box" style="display:none;"></div>
+		<input type="text"  id="pic" name="pic"  value="{$vo['pic']}" class="input-text" size="40"/><input type="button" class="button" value="上传" onclick="javascript:swfupload('pic_uploadfile','pic','{:L(uploadfiles)}',1,1,0,10,'jpeg,jpg,png,gif',5,230,'{$yourphp_auth}',yesdo,nodo)" />  <a href="javascript:void(0);" onclick="showpicbox($('#pic').val());"> 预览</a></div>
+	
+	 </td>
+	</tr>
+        <tr>
+		  <td width="140"><font color="red">*</font>经度 </td>
+		<td><input type="text" id="lng" name="lng" value="{$vo.lng}" class="input-text required" minlength="2"    maxlength="500" />
+                    经纬度获取地址:<a href="http://api.map.baidu.com/lbsapi/getpoint/index.html" target="_blank">http://api.map.baidu.com/lbsapi/getpoint/index.html </a></td>
+        </tr>
+        
+        <tr>
+		  <td width="140"><font color="red">*</font>纬度 </td>
+		<td><input type="text" id="lat" name="lat" value="{$vo.lat}" class="input-text required" minlength="2"    maxlength="30" /> </td>
+	</tr>
+        <tr>
+		  <td width="140"><font color="red">*</font>地址 </td>
+                  <td><input style="width:400px;" type="text" id="address" name="address" value="{$vo.address}" class="input-text required" minlength="2"    maxlength="500" /> </td>
+	</tr>
+        <tr>
+		  <td width="140"><font color="red">*</font>英文地址 </td>
+                  <td><input style="width:400px;" type="text" id="enaddress" name="enaddress" value="{$vo.enaddress}" class="input-text required" minlength="2"    maxlength="500" /> </td>
+	</tr>
+        <tr>
+		  <td width="140"><font color="red"></font>电话 </td>
+		<td><input type="text" id="phone" name="phone" value="{$vo.phone}" class="input-text " minlength="2"    maxlength="500" /> </td>
+	</tr>
+        <tr>
+		  <td width="140"><font color="red"></font>传真 </td>
+		<td><input type="text" id="fax" name="fax" value="{$vo.fax}" class="input-text " minlength="0"    maxlength="500" /> </td>
+	</tr>
+        <tr>
+		  <td width="140"><font color="red"></font>邮箱 </td>
+		<td><input style="width:300px;" type="text" id="email" name="email" value="{$vo.email}" class="input-text " minlength="2"    maxlength="500" /> </td>
+	</tr>
+        <tr>
+		  <td width="140"><font color="red"></font>邮编 </td>
+		<td><input  type="text" id="postal" name="postal" value="{$vo.postal}" class="input-text " minlength="2"    maxlength="500" /> </td>
+	</tr>
+	
+</table>
+<div  class="btn">
+<if condition="$vo['id']!=''">
+<input type="hidden" name="type" value="{$vo.type}" />
+<input type="hidden" name="oldfield" value="{$vo.field}" />
+<input TYPE="hidden" name="id" value="{$vo.id}">
+</if>
+<INPUT TYPE="submit"  value="{:L('dosubmit')}" class="button" >
+<input TYPE="reset"  value="{:L('cancel')}" class="button">
+</div>
+</form>
+
+</div>
+
+
+<script>
+$('#type').val('{$vo[type]}');
+field_setting('{$vo[type]}');
+
+</script>
+</body></html>

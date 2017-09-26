@@ -1,0 +1,22 @@
+<div class="search">
+    <form name="searchPage" id="searchPage" method="get" action="index.php?" onsubmit="return validatek();">
+        <input type="hidden" id="" name="m" value="Search"/>
+        {if APP_LANG}<input type="hidden" name="l" value="{$l}" />{/if}
+        <input type="text" name="keyword" id="keyword" class="search_input" value="{$keyword}" placeholder="{if $l == 'cn'}请输入您要搜索的内容{else}Please enter the content you want to search.{/if}">
+        <input type="submit" value="" class="search_button">
+    </form>
+</div>
+<script type="text/javascript">
+function validatek(){
+    var langs = '{$l}';
+    var keyword = $.trim($("#keyword").val());
+    if(keyword == ''){
+        if(langs == 'cn'){
+            alert("搜索内容不能为空！");
+        }else{
+            alert("search content is can not empty！");
+        }
+        return false;
+    }
+}
+</script>

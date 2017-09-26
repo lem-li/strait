@@ -1,0 +1,13 @@
+<div class="content">
+	<div class="form_tip_box">
+		<div class="tip_con tip_success">
+			<span class="ic ic_success"></span>
+			<p class="tip_txt">
+			{if $l == 'cn'}提交成功{else}submit Success{/if}
+			</p>
+		</div>
+        <div class="btns">
+            <a href="{:U('User/Login/index?l='.$l)}" class="btn">{if $l == 'cn'}点此登录{else}click here Login In{/if}</a>
+        </div>
+    </div>
+</div>
