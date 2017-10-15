@@ -1,55 +1,45 @@
-<!--div class="banner">
-    <div class="banner_wrap">
-        <include file="Home:search"/>
-    </div>
-</div-->
-<div class="wrap" style="overflow:hidden;">
-    <div class="list_l">
-        <div id="left_nav" class="left_nav">
-        	<div class="bt {if $bcid == 30}bt_news{elseif $bcid == 1}bt_about{else}bt_other{/if}">{$Categorys[$bcid]['catname']}</div>
-        	<div class="main_menu">
-        		<ul>
-        			<volist name="news_years" id="r">
-		                <li><a href="{if $l=='cn'}{:U('Article/index?id=30&year='.$r)}{else}{:U('Article/index?id=48&year='.$r.'&l=en')}{/if}">● {$r}{if $l=='cn'}年{/if}<span class="arrow">></span></a></li>
-		            </volist> 
-        		</ul>
-	            {$leftmenu}
+
+<!-- 内容 -->
+<section id="page-content">
+    <div class="row page-sub-content">
+        <aside id="left" class="left-menu">
+            <!-- =========修改添加样式 -->
+            <nav id="main-menu">
+                <div class="menu-caption">{$Categorys[$bcid]['catname']}</div>
+                <div id="Main_DropDownMenu">
+                    <div id="Main_DropDownMenu_Start"></div>
+                    <div class="main_menu">
+                        <ul>
+                            <volist name="news_years" id="r">
+                                <li><a href="{if $l=='cn'}{:U('Article/index?id=30&year='.$r)}{else}{:U('Article/index?id=48&year='.$r.'&l=en')}{/if}">● {$r}{if $l=='cn'}年{/if}<span class="arrow">></span></a></li>
+                            </volist>
+                        </ul>
+                        {$leftmenu}
+                    </div>
+                    <div id="Main_DropDownMenu_End"></div>
+                </div>
+            </nav>
+        </aside>
+
+        <article id="right" class="main-content">
+            <div id="main-content" class="main-content">
+                <div id="main-heading">
+                    <h1>{$Categorys[$bcid]['catname']}</h1>
+                </div>
+                <!-- 内容 -->
+                {$content}
+                <!-- 内容 -->
+                <div class="r_con_b">
+                    <ul>
+                        {if $predata}
+                        <li><span>{if $l=='cn'}上一篇{else}Prev{/if}：</span><a href="{$predata['url']}" title="{$predata['title']}" >{$predata['title']|str_cut=###,90}</a>{if $catid==30} ({$predata['createtime']|toDate=###,'Y-m-d'}){/if}</li>
+                        {/if}
+                        {if $lastdata}
+                        <li><span>{if $l=='cn'}下一篇{else}Next{/if}：</span><a href="{$lastdata['url']}" title="{$lastdata['title']}" >{$lastdata['title']|str_cut=###,90}</a> {if $catid==30} ({$lastdata['createtime']|toDate=###,'Y-m-d'}){/if}</li>
+                        {/if}
+                    </ul>
+                </div>
             </div>
-        </div>
-        <!--div class="left_b">
-            <div class="bt">
-                <span>在线公告</span>
-                <a href="#" target="_blank" class="more">MORE</a>
-            </div>
-            <ul class="left_list">
-                <li><a href="#" target="_blank">> 关于开展《医患的故事征集故事》 </a> </li>
-                <li><a href="#" target="_blank">> 关于开展《医患的故事征集故事》 </a> </li>
-                <li><a href="#" target="_blank">> 关于开展《医患的故事征集故事》 </a> </li>
-                <li><a href="#" target="_blank">> 关于开展《医患的故事征集故事》 </a> </li>
-                <li><a href="#" target="_blank">> 关于开展《医患的故事征集故事》 </a> </li>
-                <li><a href="#" target="_blank">> 关于开展《医患的故事征集故事》 </a> </li>
-                <li><a href="#" target="_blank">> 关于开展《医患的故事征集故事》 </a> </li>
-            </ul>
-        </div-->
+        </article>
     </div>
-    <div class="list_r">
-        <div class="cm">
-            {:L(catpos)}<a href="{:URL()}"> {:L(home_font)}</a> >> <YP:catpos  catid="catid" space=" &gt; " />{if $currentyear}>> {$currentyear}{if $l=='cn'}年{/if}{/if}
-        </div>
-        <div class="r_con">
-            <div class="bt">{$title}{if $catid==30}<br><span class="p_content" style="float:right">{:L(time)}: {$createtime|toDate=###,'Y-m-d'} <!--&nbsp;&nbsp;&nbsp;&nbsp;{:L(copyfrom)}: {if  $copyfrom}{$copyfrom}{else}{$site_name}{/if}--></span>{/if} </div>
-            <br/>
-            <div class="p_content" style="{if $l=='en'}text-indent: 0em;{/if}">{$content}</div>
-        </div>
-        <div class="r_con_b">
-            <ul>
-                {if $predata}
-                <li><span>{if $l=='cn'}上一篇{else}Prev{/if}：</span><a href="{$predata['url']}" title="{$predata['title']}" >{$predata['title']|str_cut=###,90}</a>{if $catid==30} ({$predata['createtime']|toDate=###,'Y-m-d'}){/if}</li>
-                {/if}
-                {if $lastdata}
-                <li><span>{if $l=='cn'}下一篇{else}Next{/if}：</span><a href="{$lastdata['url']}" title="{$lastdata['title']}" >{$lastdata['title']|str_cut=###,90}</a> {if $catid==30} ({$lastdata['createtime']|toDate=###,'Y-m-d'}){/if}</li>
-                {/if}
-            </ul>
-        </div>
-    </div>
-</div>
+</section>

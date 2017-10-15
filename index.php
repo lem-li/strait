@@ -11,7 +11,7 @@
  */
 //if(!is_file('./Cache/config.php'))header("location: ./Install");
 header("Content-type: text/html;charset=utf-8");
-ini_set('display_errors', false);
+ini_set('display_errors', true);
 ini_set('memory_limit','32M');
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 define('Yourphp',true);

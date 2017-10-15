@@ -32,22 +32,24 @@ class IndexAction extends BaseAction
         $cate1id = LANG_ID == 1 ? 136 : 141;
         $category = M('Category')->where('parentid="'.$cate1id.'"')->order("listorder asc,id asc")->select();
         $c_right_c_bt = '';
-        $c_right_c1_r = '';
+        $c_right_c1_r = '<div class="tab-con">';
         if($category){
-            $c_right_c_bt .= '<div class="c_bt">';
+            $c_right_c_bt .= '<div class="tab-head"><ul>';
             foreach($category as $k=>$cate){
-                $c_right_c_bt .= '<span additional="'.$cate['url'].'" class="bt'.($k==0?' active':'').'">'.$cate['catname'].'</span>';
+                $c_right_c_bt .= '<li class="bt '.($k==0?' selected':'').'">'.($k==0?'<span class="line"></span>':'').$cate['catname'].'</li>';
+
                 $article_list = M($cate['module'])->where('catid='.$cate['id'].' AND website = '.$webid)->order('listorder asc,id DESC')->limit('0,3')->select();
-                $c_right_c1_r .= '<div class="c1_r'.($k<>0?' fn-hide':'').'">';
+                $c_right_c1_r .= '<div class="tab-item '.($k<>0?"hide":"").'"><div class="c-info-con">';
                 if($article_list)foreach($article_list as $article){
-                    $c_right_c1_r .= '<p class="p2" style="'.(LANG_ID == 2?'text-indent: 0em':"").'"><a style="color:#ffffff;" href="'.$article['url'].'" target="_blank">
-                        '.$article['description'].'</a>';
+                    $c_right_c1_r .= '<p style="'.(LANG_ID == 2?'text-indent: 0em':"text-indent: 2em").'"><a style="color:#505050;" href="'.$article['url'].'" target="_blank">
+                        '.mb_substr($article['description'],0,80,'utf-8').'</a>';
                     if($cate['module'] == 'Download')
                     $c_right_c1_r .= '<a style="color:#ffffff;" href="index.php?m=Download&a=down&id='.$article['id'].'" target="_blank">（PDF'.(LANG_ID == 2?' Download':"下载").'）</a></p>';
                 }
-                $c_right_c1_r .= '</div>';
+                $c_right_c1_r .= '</div></div>';
             }
-            $c_right_c_bt .= '<a href="'.$category[0]['url'].'" class="more">MORE</a></div>';
+            $c_right_c1_r .= '</div>';
+            $c_right_c_bt .= '</ul> </div>';
         }
         $this->assign('c_right_1',$c_right_c_bt.$c_right_c1_r);//顶级栏目
         //贸仲讲坛  

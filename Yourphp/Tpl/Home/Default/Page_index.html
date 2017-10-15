@@ -3,37 +3,54 @@
         <include file="Home:search"/>
     </div>
 </div-->
-<div class="wrap" style="overflow:hidden;">
-    <div class="list_l">
-        <div id="left_nav" class="left_nav">
-        	<div class="bt {if $bcid == 30}bt_news{elseif $bcid == 1}bt_about{else}bt_other{/if}">{$Categorys[$bcid]['catname']}</div>
-        	<div class="main_menu">
-	            {$leftmenu}
+<!--<div class="wrap" style="overflow:hidden;">-->
+    <!--<div class="list_l">-->
+        <!--<div id="left_nav" class="left_nav">-->
+        	<!--<div class="bt {if $bcid == 30}bt_news{elseif $bcid == 1}bt_about{else}bt_other{/if}">{$Categorys[$bcid]['catname']}</div>-->
+        	<!--<div class="main_menu">-->
+	            <!--{$leftmenu}-->
+            <!--</div>-->
+        <!--</div>-->
+       <!---->
+    <!--</div>-->
+    <!--<div class="list_r">-->
+        <!--<div class="cm">-->
+            <!--{:L(catpos)}<a href="{:URL()}"> {:L(home_font)}</a> >> <YP:catpos  catid="catid" space=" &gt; " />-->
+        <!--</div>-->
+        <!--<div class="r_con">-->
+            <!--<div class="bt">{$title}</div>-->
+            <!--<div class="p_content" style="{if $l=='en'}text-indent: 0em;{/if}">{$content}</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+
+<!-- 内容 -->
+<section id="page-content">
+    <div class="row page-sub-content">
+        <aside id="left" class="left-menu">
+            <!-- =========修改添加样式 -->
+            <nav id="main-menu">
+                <div class="menu-caption">{$Categorys[$bcid]['catname']}</div>
+                <div id="Main_DropDownMenu">
+                    <div id="Main_DropDownMenu_Start"></div>
+                    <div class="main_menu">
+                        {$leftmenu}
+                    </div>
+                    <div id="Main_DropDownMenu_End"></div>
+                </div>
+            </nav>
+        </aside>
+
+        <article id="right" class="main-content">
+            <div id="main-content" class="main-content">
+                <div id="main-heading">
+                    <h1>{$title}</h1>
+                </div>
+                <!-- 内容 -->
+                {$content}
+                <!-- 内容 -->
             </div>
-        </div>
-        <!--div class="left_b">
-            <div class="bt">
-                <span>在线公告</span>
-                <a href="#" target="_blank" class="more">MORE</a>
-            </div>
-            <ul class="left_list">
-                <li><a href="#" target="_blank">> 关于开展《医患的故事征集故事》 </a> </li>
-                <li><a href="#" target="_blank">> 关于开展《医患的故事征集故事》 </a> </li>
-                <li><a href="#" target="_blank">> 关于开展《医患的故事征集故事》 </a> </li>
-                <li><a href="#" target="_blank">> 关于开展《医患的故事征集故事》 </a> </li>
-                <li><a href="#" target="_blank">> 关于开展《医患的故事征集故事》 </a> </li>
-                <li><a href="#" target="_blank">> 关于开展《医患的故事征集故事》 </a> </li>
-                <li><a href="#" target="_blank">> 关于开展《医患的故事征集故事》 </a> </li>
-            </ul>
-        </div-->
+        </article>
     </div>
-    <div class="list_r">
-        <div class="cm">
-            {:L(catpos)}<a href="{:URL()}"> {:L(home_font)}</a> >> <YP:catpos  catid="catid" space=" &gt; " />
-        </div>
-        <div class="r_con">
-            <div class="bt">{$title}</div>
-            <div class="p_content" style="{if $l=='en'}text-indent: 0em;{/if}">{$content}</div>
-        </div>
-    </div>
-</div>
+</section>

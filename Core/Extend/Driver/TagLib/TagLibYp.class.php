@@ -333,7 +333,10 @@ class TagLibYp extends TagLib
                     }else{
                     	$purl = $v['url'];
                     }
-                    $menu .= '<div '.($_GET['l']=='en'?'style="padding:0;"':'').' class="nav_item'.($i==$count?' last':'').'"><a class="nav_a" href="'.$purl.'">'.$v['catname'].'</a>';
+//                    <li class="nav_item">
+//                        <a href="##" class="nav_a">首 页</a>
+//                    </li>
+                    $menu .= '<li '.($_GET['l']=='en'?'style="padding:0;"':'').' class="nav_item'.($i==$count?' last':'').'"><a class="nav_a" href="'.$purl.'">'.$v['catname'].'</a>';
                     if(isset($cata_arr_res[$v['id']]) && !empty($cata_arr_res[$v['id']])){
                         $menu .= '<span></span><div class="drop_list">';
                         $rrs = $cata_arr_res[$v['id']];
@@ -356,7 +359,7 @@ class TagLibYp extends TagLib
                         }
                         $menu .= '</div>';
                     }
-                    $menu .= "</div>";
+                    $menu .= "</li>";
                 }
             }
             return $menu;
@@ -588,6 +591,17 @@ class TagLibYp extends TagLib
 
 				if(ucfirst($module)!='Page')$where .= " AND status=$status ";
 				if($tag['catid']){
+					$catids = explode('-',$tag['catid']);
+					if(count($catids) == 1){
+                        $tag['catid'] = $tag['catid'];
+					}else{
+						if($lang == 1)
+                            $tag['catid'] = $catids[0];
+						elseif($lang == 2)
+							$tag['catid'] = $catids[1];
+						else
+                            $tag['catid'] = $catids[2];
+					}
 					$onezm  = substr($tag['catid'],0,1);
 					if(substr($tag['catid'],0,2)=='T['){
 						$T = $this->tpl->get('T');

@@ -30,11 +30,11 @@
 		  <td><input type="text" id="title" name="title" value="{$vo.title}" class="input-text" size="50" validate="required:true,cn_username:true, minlength:2, maxlength:20"/></td>
 	</tr>
 	
-	<!--tr>
+	<tr>
 		  <td>{:L(link)}</td>
 		  <td><input type="text" id="link" name="link" value="{$vo.link}" class="input-text" size="50" /></td>
 	</tr>
-	<tr>
+	<!--tr>
 		  <td>{:L(small)}</td>
 		  <td>
 		  
@@ -55,7 +55,7 @@
 
 	<tr>
 		  <td>{:L(description)}</td>
-		  <td><textarea id="description" name="description" rows="5" cols="50"></textarea></td>
+		  <td><textarea id="description" name="description" rows="5" cols="50">{$vo.description}</textarea></td>
 	</tr>
 	<!--tr>
 		  <td>{:L(data)}</td>

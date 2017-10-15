@@ -23,38 +23,48 @@ tr{
 line-height:30px;
 }
 </style>
-<div class="wrap" style="overflow:hidden;">
-    <div class="list_l">
-         <div id="left_nav" class="left_nav">
-        	<div class="bt bt_news">{if $l=='cn'}费用快算{else}Fee Calculator{/if}</div>
-        	<div class="main_menu">
-                    <ul>
-                    <li><a class="menu-link" href="/index.php?m=Cost&type=in2015{if $l=='en'}&l=en{/if}">{if $l=='cn'}国内案件(自2015年){else}Domestic cases(From 2015){/if}<span class="arrow"></span></a></li>
-                    <li><a class="menu-link" href="/index.php?m=Cost&type=in2012{if $l=='en'}&l=en{/if}">{if $l=='cn'}国内案件(自2012年){else}Domestic cases(From 2012){/if}<span class="arrow"></span></a></li>
-                    <li><a class="menu-link" href="/index.php?m=Cost&type=out2015{if $l=='en'}&l=en{/if}">{if $l=='cn'}涉外案件(自2015年){else}Foreign cases(From 2015){/if}<span class="arrow"></span></a></li>
-                    <li><a class="menu-link" href="/index.php?m=Cost&type=out2012{if $l=='en'}&l=en{/if}">{if $l=='cn'}涉外案件(自2012年){else}Foreign cases(From 2012){/if}<span class="arrow"></span></a></li>
-                    <li><a class="menu-link" href="/index.php?m=Cost&type=dispute{if $l=='en'}&l=en{/if}">{if $l=='cn'}金融争议案件{else}Financial dispute case{/if}<span class="arrow"></span></a></li>
-                    </ul>
-                </div>
-        </div>
-    </div>
-    <div class="list_r">
-        <div class="cm">
-            {:L(catpos)}<a href="{:URL()}"> {:L(home_font)}</a> >> <YP:catpos  catid="catid" space=" &gt; " />
-        </div>
-        <div class="r_con">
-            <div class="bt">{$title}</div>
-            <div class="search" style="margin-bottom:80px;">
-				<form name="searchPage" id="searchPage" method="post" action="">
-					<input type="text" class="search_input" name="money" value="{$_REQUEST['money']}">
-                                        <input type="submit" style="width:70px" value="{if $l=='cn'}计算{else}Calculate{/if}" class="search_button">
-				</form>
-			</div>
-			</br>
-			</br>
-			{if $costResult}
-			<table width="400" border="0" align="center" height="30" style="color:#666666;font-size:12px;background-color:#FFFFFF;">
-				<tbody>
+
+
+<!-- 内容 -->
+<section id="page-content">
+	<div class="row page-sub-content">
+		<aside id="left" class="left-menu">
+			<!-- =========修改添加样式 -->
+			<nav id="main-menu">
+				<div class="menu-caption">{if $l=='cn'}费用快算{else}Fee Calculator{/if}</div>
+				<div id="Main_DropDownMenu">
+					<div id="Main_DropDownMenu_Start"></div>
+					<div class="main_menu">
+                        <ul>
+                            <li><a class="menu-link" href="/index.php?m=Cost&type=in2015{if $l=='en'}&l=en{/if}">{if $l=='cn'}国内案件(自2015年){else}Domestic cases(From 2015){/if}<span class="arrow"></span></a></li>
+                            <li><a class="menu-link" href="/index.php?m=Cost&type=in2012{if $l=='en'}&l=en{/if}">{if $l=='cn'}国内案件(自2012年){else}Domestic cases(From 2012){/if}<span class="arrow"></span></a></li>
+                            <li><a class="menu-link" href="/index.php?m=Cost&type=out2015{if $l=='en'}&l=en{/if}">{if $l=='cn'}涉外案件(自2015年){else}Foreign cases(From 2015){/if}<span class="arrow"></span></a></li>
+                            <li><a class="menu-link" href="/index.php?m=Cost&type=out2012{if $l=='en'}&l=en{/if}">{if $l=='cn'}涉外案件(自2012年){else}Foreign cases(From 2012){/if}<span class="arrow"></span></a></li>
+                            <li><a class="menu-link" href="/index.php?m=Cost&type=dispute{if $l=='en'}&l=en{/if}">{if $l=='cn'}金融争议案件{else}Financial dispute case{/if}<span class="arrow"></span></a></li>
+                        </ul>
+					</div>
+					<div id="Main_DropDownMenu_End"></div>
+				</div>
+			</nav>
+		</aside>
+
+		<article id="right" class="main-content">
+			<div id="main-content" class="main-content">
+				<div id="main-heading">
+					<h1>{$title}</h1>
+				</div>
+				<!-- 内容 -->
+				<div class="search" style="margin-bottom:80px;">
+					<form name="searchPage" id="searchPage" method="post" action="">
+						<input type="text" class="search_input" name="money" value="{$_REQUEST['money']}">
+						<input type="submit" style="width:70px" value="{if $l=='cn'}计算{else}Calculate{/if}" class="search_button">
+					</form>
+				</div>
+				</br>
+				</br>
+				{if $costResult}
+				<table width="400" border="0" align="center" height="30" style="color:#666666;font-size:12px;background-color:#FFFFFF;">
+					<tbody>
 					<tr>
 						<td style="font-size:14px;">
 							<hr />
@@ -102,9 +112,11 @@ line-height:30px;
 							</div>
 						</td>
 					</tr>
-				</tbody>
-			</table>
-			{/if}
-        </div>
-    </div>
-</div>
+					</tbody>
+				</table>
+				{/if}
+				<!-- 内容 -->
+			</div>
+		</article>
+	</div>
+</section>

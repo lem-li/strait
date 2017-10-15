@@ -1,7 +1,7 @@
 <?php
 /**
- * 
- * 数据库配置文�?
+ *
+ * 数据库配置文件
  *
  * @package      	YOURPHP
  * @author          yourphp.cn QQ:147613338 <web@yourphp.cn>
@@ -12,8 +12,8 @@
  return array(
 	'DB_TYPE'=>'mysql',
 	'DB_HOST'=>'localhost',
-	'DB_NAME'=>'cietac',
-	'DB_USER'=>'cietac',
+	'DB_NAME'=>'strait',
+	'DB_USER'=>'root',
 	'DB_PWD'=>'123456',
 	'DB_PORT'=>'3306',
 	'DB_PREFIX'=>'mz_',

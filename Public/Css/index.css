@@ -201,11 +201,11 @@ body {
   line-height: 46px;
   padding-left: 30px;
   width: 180px;
-  height: 44px;
+  height: 46px;
   float: left;
   position: relative;
   text-align: center;
-  margin: 5px 0 0 20px;
+  margin: 10px 0 0 20px;
   display: inline;
 }
 .c1 .c_left .c1_item .icon {
@@ -246,9 +246,6 @@ body {
 }
 .c1 .c_left .c1_item .icon10 {
   background-position: 0 -360px;
-}
-.c1 .c_left .c1_item .icon11 {
-  background-position: 0 -400px;
 }
 .c1 .c_left .c1_item:hover {
   background: url("../img/itembg.png") 0 -50px no-repeat;
