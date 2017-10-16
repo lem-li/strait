@@ -17,7 +17,11 @@
                     <!-- 内容 -->
                 <ul class="blue-bullet">
                     <volist name="list" id="r">
+                        {if $r['url'] == 1}
+                        <li><a href="{:U('Page/index?id='.$r['id'].'&l='.$l)}" title="{$r.title}" target="_blank"> {$r.title|str_cut=###,90}</a>{if $catid==30}<span class="date">[{$r.createtime|toDate=###,'Y-m-d'}]</span>{/if}</li>
+                        {else}
                         <li><a href="{$r.url}" title="{$r.title}" target="_blank"> {$r.title|str_cut=###,90}</a>{if $catid==30}<span class="date">[{$r.createtime|toDate=###,'Y-m-d'}]</span>{/if}</li>
+                        {/if}
                     </volist>
                 </ul>
                 <!-- 内容 -->
