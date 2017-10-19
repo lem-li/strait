@@ -91,5 +91,8 @@ return array (
   'TYPEID' => 'Type',
   'CONTENT' => 'Content',
   'NO_READ'=>'Your browsing insufficient privileges!',
+    'SHENQINGZONGCAI'=>'Application',
+    'FEIYONGKUAISUAN'=>'Fee Calculator',
+    'SOUANFANWEI'=>'受案范围',
 );
 ?>

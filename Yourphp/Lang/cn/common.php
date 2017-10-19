@@ -96,7 +96,9 @@ return array (
   'PAY_NOW'=>'立即支付',
   'RELATED_ARTICLES'=>'相关文章',
   'KEYWORD'=>'关键词',
-
+    'SHENQINGZONGCAI'=>'申请仲裁',
+    'FEIYONGKUAISUAN'=>'费用快算',
+    'SOUANFANWEI'=>'受案范围',
 
 );
 ?>

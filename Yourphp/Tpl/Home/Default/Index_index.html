@@ -20,7 +20,7 @@
             <div class="content-feed news-hot">
                 <h2 class="content-feed-heading">
                     <span class="line line-ml10"></span>
-                    <span>热点新闻</span>
+                    <span>{if $l=='cn'}热点新闻{elseif $l=='en'}HOT NEWS{else}熱點新聞{/if}</span>
                 </h2>
                 <div class="yx-rotaion newpic_list">
                     <ul class="rotaion_list">
@@ -41,9 +41,9 @@
             <div class="content-feed quickentry">
                 <div class="content-feeds">
                     <div class="quicklinks clearfix">
-                        <a href="{if $l == 'cn'}{:U('Article/index?id=120')}{else}{:U('Article/index?id=190&l=en')}{/if}" class="qlink kj1"><i></i>申请仲裁</a>
-                        <a href="/index.php?m=Cost{if $l == 'en'}&l=en{/if}" class="qlink kj2"><i></i>费用快算</a>
-                        <a href="#" class="qlink kj3"><i></i>受案范围</a>
+                        <a href="{if $l == 'cn'}{:U('Article/index?id=120')}{else}{:U('Article/index?id=190&l=en')}{/if}" class="qlink kj1"><i></i>{:L(SHENQINGZONGCAI)}</a>
+                        <a href="/index.php?m=Cost{if $l == 'en'}&l=en{/if}" class="qlink kj2"><i></i>{:L(FEIYONGKUAISUAN)}</a>
+                        <a href="#" class="qlink kj3"><i></i>{:L(SOUANFANWEI)}</a>
                     </div>
                 </div>
             </div>
@@ -53,8 +53,8 @@
             <div class="content-feed notices">
                 <h2 class="content-feed-heading content-feed-heading-line">
                     <span class="line"></span>
-                    <span>{if $l == 'cn'}在线公告{else}Online Notice{/if}</span>
-                    <a href="/index.php?m=Article&a=index&id={if $l == 'cn'}151{else}145{/if}" class="link-more link-more-mr0">更多&gt;</a>
+                    <span>{if $l == 'cn'}在线公告{elseif $l=='en'}Online Notice{else}在線公告{/if}</span>
+                    <a href="/index.php?m=Article&a=index&id={if $l == 'cn'}151{else}145{/if}" class="link-more link-more-mr0">{:L(MORE)}&gt;</a>
                 </h2>
                 <div class="content-feed-con">
                     <ul>
@@ -81,8 +81,8 @@
                     <div class="content-feed">
                         <h2 class="content-feed-heading">
                             <span class="line"></span>
-                            <span>{if $l=='cn'}新闻中心{else}News{/if}</span>
-                            <a href="/index.php?m=Article&a=index&id=30" class="link-more">更多&gt;</a>
+                            <span>{if $l=='cn'}新闻中心{elseif $l=='en'}News{else}新聞中心{/if}</span>
+                            <a href="/index.php?m=Article&a=index&id=30" class="link-more">{:L(MORE)}&gt;</a>
                         </h2>
                         <div class="content-feed-con">
                             <ul>
