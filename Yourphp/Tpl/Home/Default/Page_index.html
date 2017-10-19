@@ -1,10 +1,10 @@
 
 <!-- 内容 -->
-<section id="page-content">
+<div id="page-content">
     <div class="row page-sub-content">
-        <aside id="left" class="left-menu">
+        <div id="left" class="left-menu">
             <!-- =========修改添加样式 -->
-            <nav id="main-menu">
+            <div id="main-menu">
                 <div class="menu-caption">{$Categorys[$bcid]['catname']}</div>
                 <div id="Main_DropDownMenu">
                     <div id="Main_DropDownMenu_Start"></div>
@@ -13,10 +13,10 @@
                     </div>
                     <div id="Main_DropDownMenu_End"></div>
                 </div>
-            </nav>
-        </aside>
+            </div>
+        </div>
 
-        <article id="right" class="main-content">
+        <div id="right" class="main-content">
             <div id="main-content" class="main-content">
                 <div id="main-heading">
                     <h1>{$Categorys[$bcid]['catname']}</h1>
@@ -25,6 +25,6 @@
                 {$content}
                 <!-- 内容 -->
             </div>
-        </article>
+        </div>
     </div>
-</section>
+</div>

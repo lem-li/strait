@@ -25,7 +25,7 @@
 </head>
 <body id="home-page">
 <div id="container">
-    <header id="header" class="hide-for-print">
+    <div id="header" class="hide-for-print">
         <div class="row">
             <div class="large-6 medium-6 columns logo">
                 <a href="/{if $l == 'en'}?l=en{/if}">
@@ -64,7 +64,7 @@
                 </script>
             </div>
         </div>
-    </header>
+    </div>
     <!-- 图 -->
     <div id="top-banner" class="hide-for-print hide-for-small top-banner">
         <div class="banners">
@@ -83,16 +83,16 @@
     <div id="top-menu" class="hide-for-print">
         <div id="top-nav" class="row collapse">
             <div class="large-12 medium-12">
-                <nav class="top-bar">
-                    <section class="top-bar-section">
+                <div class="top-bar">
+                    <div class="top-bar-section">
                         <ul class="header_menu">
                             <li class="menu-list-item-parent">
                                 <a href="/{if $l == 'en'}?l=en{elseif $l == 'fc'}?l=fc{/if}" class="menu-link-item-parent-anchor">{:L(HOME_FONT)}</a>
                             </li>
                             <YP:nav  catid="0" level="3"  home="1" />
                         </ul>
-                    </section>
-                </nav>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

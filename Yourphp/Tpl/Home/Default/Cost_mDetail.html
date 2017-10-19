@@ -28,7 +28,7 @@ a:visited {  color: #000000; text-decoration: none}
 <body>
 <div class="mod-body page-fyjs">
 	<!-- 头部导航 -->
-	<nav id="mod-nav" class="mod-nav">
+	<div id="mod-nav" class="mod-nav">
 		<div class="nav-con clearfix">
 			<h1>
 				<span class="page-title">
@@ -36,12 +36,12 @@ a:visited {  color: #000000; text-decoration: none}
 				</span>
 			</h1>	
 		</div>
-	</nav>
+	</div>
 
 	<div class="main">
-		<section class="errorTips"></section>
+		<div class="errorTips"></div>
 		<form action="" name=calculate  method=post>
-			<section class="mod-form">
+			<div class="mod-form">
 				<ul class="clearfix">
 					<li class="">
 						<label>争议金额</label>
@@ -49,7 +49,7 @@ a:visited {  color: #000000; text-decoration: none}
 						<div class="close"></div>
 					</li>
 				</ul>
-			</section>
+			</div>
 			<button type="submit" class="btn jsBtn" >计算</button>
 		</form>
     {if $costResult}

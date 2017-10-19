@@ -496,7 +496,7 @@
 
 #top-nav .nav .nav_item .drop_list {
     display: none;
-    width: 100%;
+    /*width: 100%;*/
     background-color: #1e62a5;
     /* padding: 10px 0; */
     position: absolute;
