@@ -356,9 +356,11 @@ class DomainAction extends AdminbaseAction
 		$category_cn = M('category')->field(" id, catname")->where(" parentid = 0 and ismenu = 1 and lang = 1")->order(" listorder asc,id asc")->select();
 		//英文导航
 		$category_en = M('category')->field(" id, catname")->where(" parentid = 0 and ismenu = 1 and lang = 2")->order(" listorder asc,id asc")->select();
+        $category_fc = M('category')->field(" id, catname")->where(" parentid = 0 and ismenu = 1 and lang = 3")->order(" listorder asc,id asc")->select();
 		$this->assign('id',$id);
 		$this->assign('category_cn',$category_cn);
 		$this->assign('category_en',$category_en);
+        $this->assign('category_fc',$category_fc);
 		if($mainnavdata) $this->assign('mainnavdata',$mainnavdata);
 		$this->display();
 	}
@@ -372,8 +374,10 @@ class DomainAction extends AdminbaseAction
 		$id = intval($_POST['mainid']);
 		$ids = $_POST['ids'];
 		$eids = $_POST['eids'];
+        $fids = $_POST['fids'];
 		$listorders = $_POST['listorders'];
 		$enlistorders = $_POST['enlistorders'];
+        $fclistorders = $_POST['fclistorders'];
 		$cdata = array();
 		if(!empty($ids) && is_array($ids)){
 			foreach($ids as $ck=>$cid){
@@ -387,6 +391,12 @@ class DomainAction extends AdminbaseAction
 				$cdata['en'][$eid]['listorder'] = $enlistorders[$eid];
 			}
 		}
+        if(!empty($fids) && is_array($fids)){
+            foreach($fids as $ek=>$eid){
+                $cdata['fc'][$eid]['catid'] = $eid;
+                $cdata['fc'][$eid]['listorder'] = $fclistorders[$eid];
+            }
+        }
 		if($cdata){
 			$cdatajson = json_encode($cdata);
 		}else{

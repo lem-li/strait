@@ -4,6 +4,7 @@
 		<tr style="font-size: 18px; font-weight: bold;">
 			<td align="center">中文导航</td>
 			<td align="center">英文导航</td>
+			<td align="center">繁体导航</td>
 		</tr>
 		<tr>
 			<td>
@@ -46,6 +47,26 @@
 				</tbody>
 			    </table>
 			</td>
+            <td>
+                <table width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th width="20"><input type="checkbox"  id="check_boxf"  onclick="selectallf('fids[]');" /></th>
+                        <th width="40">排序</th>
+                        <th align="left">栏目名称</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <volist name="category_fc" id="e">
+                        <tr>
+                            <td align="center"><input type="checkbox" name="fids[]" {if $mainnavdata && $mainnavdata['fc'][$e['id']]}checked{/if} value="{$e['id']}" /></td>
+                            <td align='center'><input name='fclistorders[{$e.id}]' type='text' size='3' {if $mainnavdata && $mainnavdata['fc'][$e['id']]} value='{$mainnavdata['fc'][$e['id']]['listorder']}'{else}value='0'{/if} class='input-text-c'></td>
+                            <td bgcolor="F8FAFC">{$e['catname']}</td>
+                        </tr>
+                    </volist>
+                    </tbody>
+                </table>
+            </td>
 		</tr>
 	</table>
 
@@ -67,5 +88,16 @@ function selectalle(name) {
 			this.checked=false;
 		});
 	}
+}
+function selectallf(name) {
+    if ($("#check_boxf").attr("checked")) {
+        $("input[name='"+name+"']").each(function() {
+            this.checked=true;
+        });
+    } else {
+        $("input[name='"+name+"']").each(function() {
+            this.checked=false;
+        });
+    }
 }
 </script>

@@ -240,9 +240,9 @@ class TagLibYp extends TagLib
 		$id = !empty($tag['id'])? $tag['id'] : 'nav';
 		$homefont = !empty($tag['home'])? $tag['home'] : '';
 		$enhomefont = !empty($tag['enhome'])? $tag['enhome'] : '';
+        $weblang = $this->tpl->get('langid');
 		if($GLOBALS['webInfo']['self']['nav']){
 			$webnav = json_decode($GLOBALS['webInfo']['self']['nav'],true);
-			$weblang = $this->tpl->get('langid');
 			if($weblang == 1){
 				$webcate = isset($webnav['cn']) ? $webnav['cn'] : '';
 				if($webcate){
@@ -256,11 +256,12 @@ class TagLibYp extends TagLib
 						$webstr .= $wn['catid'].',';
 					}
 					$webstr = substr($webstr, 0,-1);
+                    var_dump($webstr);
 					$category_arr = M("category")->where(" id in ({$webstr}) or parentid in ({$webstr})")->order(" listorder = 0,listorder asc,id desc")->select();
 				}else{
 					$category_arr = $this->tpl->get('Categorys');
 				}
-			}else{
+			}elseif($weblang == 2){
 				$webcate = isset($webnav['en']) ? $webnav['en'] : '';
 				if($webcate){
 					$listorder = array();
@@ -277,7 +278,26 @@ class TagLibYp extends TagLib
 				}else{
 					$category_arr = $this->tpl->get('Categorys');
 				}
-			}
+			}else{
+                $webcate = isset($webnav['fc']) ? $webnav['fc'] : '';
+                if($webcate){
+                    $listorder = array();
+                    foreach($webcate as $webs){
+                        $listorder[] = $webs['listorder'];
+                    }
+                    array_multisort($listorder, SORT_ASC, $webcate);
+                    $webstr = '';
+                    foreach($webcate as $wn){
+                        $webstr .= $wn['catid'].',';
+                    }
+                    $webstr = substr($webstr, 0,-1);
+                    $category_arr = M("category")->where(" id in ({$webstr}) or parentid in ({$webstr})")->order(" listorder = 0,listorder asc,id desc")->select();
+                }else{
+                    $category_arr = $this->tpl->get('Categorys');
+                }
+
+            }
+
 			//print_r($webnav);
 		}else{
 			$category_arr = $this->tpl->get('Categorys');
@@ -294,7 +314,7 @@ class TagLibYp extends TagLib
 				$catid= $this->tpl->get($catid);
 			}
 		}
-	 
+
  		if(is_array($category_arr)){
 			foreach($category_arr as $r) {
 				if(empty($r['ismenu']))  continue;
