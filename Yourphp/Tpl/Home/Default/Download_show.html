@@ -1,30 +1,50 @@
+<!-- 内容 -->
+<section id="page-content">
+    <div class="row page-sub-content">
+        <aside id="left" class="left-menu">
+            <!-- =========修改添加样式 -->
+            <nav id="main-menu">
+                <div class="menu-caption">{$Categorys[$bcid]['catname']}</div>
+                <div id="Main_DropDownMenu">
+                    <div id="Main_DropDownMenu_Start"></div>
+                    <div class="main_menu">
+                        <ul>
+                            <volist name="news_years" id="r">
+                                <li><a href="{if $l=='cn'}{:U('Article/index?id=30&year='.$r)}{else}{:U('Article/index?id=48&year='.$r.'&l=en')}{/if}">● {$r}{if $l=='cn'}年{/if}<span class="arrow">></span></a></li>
+                            </volist>
+                        </ul>
+                        {$leftmenu}
+                    </div>
+                    <div id="Main_DropDownMenu_End"></div>
+                </div>
+            </nav>
+        </aside>
 
-<div class="wrap" style="overflow:hidden;">
-    
-    <div class="list_r" style="width:960px;">
-        <div class="cm">
-            {:L(catpos)}<a href="{:URL()}"> {:L(home_font)}</a> >> <YP:catpos  catid="catid" space=" &gt; " />
-        </div>
-        <div class="r_con">
-            <div class="bt" style="padding:0 250px;">{$title} </div>
-            <br/>
-			
-			<span style="float:right;padding:0 180px;"><a href="__ROOT__/index.php?m={$module_name}&a=down&id={$id}">{if $l=='cn'}文件下载{else}download{/if}</a></span>
-			<br/><br/>
-            <div style="padding:0 150px;{if $l=='en'}text-indent: 0em;{/if}" class="p_content">{$content}</div>
-        </div>
-        <div class="r_con_b">
-            <ul>
-                {if $predata}
-                <li><span>{if $l=='cn'}上一篇{else}Prev{/if}：</span><a href="{$predata['url']}" title="{$predata['title']}" >{$predata['title']|str_cut=###,90}</a>{if $catid==30} ({$predata['createtime']|toDate=###,'Y-m-d'}){/if}</li>
-                {/if}
-                {if $lastdata}
-                <li><span>{if $l=='cn'}下一篇{else}Next{/if}：</span><a href="{$lastdata['url']}" title="{$lastdata['title']}" >{$lastdata['title']|str_cut=###,90}</a> {if $catid==30} ({$lastdata['createtime']|toDate=###,'Y-m-d'}){/if}</li>
-                {/if}
-            </ul>
-        </div>
+        <article id="right" class="main-content">
+            <div id="main-content" class="main-content">
+                <div id="main-heading">
+                    <h1>{$Categorys[$bcid]['catname']}</h1>
+                </div>
+                <span style="float:right;padding:0 180px;"><a href="__ROOT__/index.php?m={$module_name}&a=down&id={$id}">{if $l=='cn'}文件下载{else}download{/if}</a></span>
+                <!-- 内容 -->
+                {$content}
+                <!-- 内容 -->
+                <br/>
+                <br/>
+                <hr/>
+                <div class="r_con_b">
+                    <ul>
+                        {if $predata}
+                        <li><span>{if $l=='cn'}上一篇{else}Prev{/if}：</span><a href="{$predata['url']}" title="{$predata['title']}" >{$predata['title']|str_cut=###,90}</a>{if $catid==30} ({$predata['createtime']|toDate=###,'Y-m-d'}){/if}</li>
+                        {/if}
+                        {if $lastdata}
+                        <li><span>{if $l=='cn'}下一篇{else}Next{/if}：</span><a href="{$lastdata['url']}" title="{$lastdata['title']}" >{$lastdata['title']|str_cut=###,90}</a> {if $catid==30} ({$lastdata['createtime']|toDate=###,'Y-m-d'}){/if}</li>
+                        {/if}
+                    </ul>
+                </div>
+            </div>
+        </article>
     </div>
-</div>
- 
+</section>
 
 <script language="JavaScript" src="__ROOT__/index.php?m={$module_name}&a=hits&id={$id}"></script>

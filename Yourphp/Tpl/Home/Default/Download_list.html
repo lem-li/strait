@@ -1,33 +1,44 @@
-<!--div class="banner2">
-    <div class="banner_wrap">
-        <include file="Home:search"/>
-    </div>
-</div-->
-<div class="wrap" style="overflow:hidden;">
-    <div class="list_l">
-        <div id="left_nav" class="left_nav">
-        	<div class="bt {if $bcid == 30}bt_news{elseif $bcid == 1}bt_about{else}bt_other{/if}">{$Categorys[$bcid]['catname']}</div>
-        	<div class="main_menu">
-	            {$leftmenu}
-            </div>
-        </div>
-    </div>
-    <div class="list_r">
-        <div class="cm">
-            {:L(catpos)}<a href="{:URL()}"> {:L(home_font)}</a> >> <YP:catpos  catid="catid" space=" &gt; " />
-        </div>
-        <ul class="news_list">
-            <volist name="list" id="vo" key="k">
-            	<li><a href="__ROOT__/index.php?m={$module_name}&a=show&id={$vo.id}{if $l=='en'}&l=en{/if}" title="{$vo.title}">> {$vo.title|str_cut=###,90}</a></li>
-			</volist>
-            
-        </ul>
-        <div class="r_con_b">
-            <div class="page">
-                {$pages}
-            </div>
-        </div>
-    </div>
-</div>
 
+<!-- 内容 -->
+<section id="page-content">
+    <div class="row page-sub-content">
+        <aside id="left" class="left-menu">
+            <!-- =========修改添加样式 -->
+            <nav id="main-menu">
+                <div class="menu-caption">{$Categorys[$bcid]['catname']}</div>
+                <div id="Main_DropDownMenu">
+                    <div id="Main_DropDownMenu_Startaa"></div>
+                    <div class="main_menu">
+                        {$leftmenu}
+                    </div>
+                    <div id="Main_DropDownMenu_End"></div>
+                </div>
+            </nav>
+        </aside>
 
+        <article id="right" class="main-content">
+            <!-- =========修改添加样式 -->
+            <div id="main-content">
+                <div id="main-heading">
+                    <h1>{$Categorys[$bcid]['catname']}</h1>
+                </div>
+                <!-- 内容 -->
+                <ul class="blue-bullet">
+                    <volist name="list" id="r">
+                        <li><a href="{$r.url}" title="{$r.title}" target="_blank">> {$r.title|str_cut=###,90}</a>{if $catid==30}<span class="date">[{$r.createtime|toDate=###,'Y-m-d'}]</span>{/if}</li>
+                    </volist>
+                </ul>
+                <!-- 内容 -->
+
+                <!-- 页码部分开始-->
+
+                <div class="pagetion">
+                    <div class="page">
+                        {$pages}
+                    </div>
+                </div>
+                <!-- 页码部分结束-->
+            </div>
+        </article>
+    </div>
+</section>
