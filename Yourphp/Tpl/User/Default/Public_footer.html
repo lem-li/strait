@@ -3,24 +3,28 @@
         <div class="wrap">
             <dl class="item2">
                 <dd>
-                    <a href="{:URL('User-Login/index')}" target="_blank"> {if $l=='cn'}仲裁员入口{else}Arbitrators entrance{/if}</a>
-                    <a href="{:URL('User-Trainee/index')}" target="_blank"> {if $l=='cn'}实习生入口{else}Interns entrance{/if}</a>
+                    <a href="{:URL('User-Login/index')}" target="_blank"> {if $l=='cn'}仲裁员入口{elseif $l=='en'}Arbitrators entrance{else}仲裁員入口{/if}</a>
+                    <a href="{:URL('User-Trainee/index')}" target="_blank"> {if $l=='cn'}实习生入口{elseif $l=='en'}Interns entrance{else}實習生入口{/if}</a>
                 </dd>
             </dl>
             <dl class="item3">
-                <dt>{if $l=='cn'}仲裁指南{else}Guidelines{/if}</dt>
+                <dt>{if $l=='cn'}仲裁指南{elseif $l=='en'}Guidelines{else}仲裁指南{/if}</dt>
                 {if $l=='cn'}
                 <YP:list sql="select `catname`,`url` FROM `mz_category` WHERE 1 and lang=1 and parentid = 4 ORDER BY listorder asc,id desc limit 6">
                     <dd><a href="{$r.url}" title="{$r.catname}" target="_blank">{$r.catname|str_cut=###,30}</a></dd>
-                </YP:list> 
-                {else}
+                </YP:list>
+                {elseif $l=='en'}
                 <YP:list sql="select `catname`,`url` FROM `mz_category` WHERE 1 and lang=2 and parentid = 45 ORDER BY listorder asc,id desc limit 6">
+                    <dd><a href="{$r.url}" title="{$r.catname}" target="_blank">{$r.catname|str_cut=###,30}</a></dd>
+                </YP:list>
+                {else}
+                <YP:list sql="select `catname`,`url` FROM `mz_category` WHERE 1 and lang=3 and parentid = 45 ORDER BY listorder asc,id desc limit 6">
                     <dd><a href="{$r.url}" title="{$r.catname}" target="_blank">{$r.catname|str_cut=###,30}</a></dd>
                 </YP:list>
                 {/if}
             </dl>
             <dl class="item4">
-                <dt>{if $l=='cn'}资料{else}Data{/if}</dt>
+                <dt>{if $l=='cn'}资料{elseif $l=='en'}Data{else}资料{/if}</dt>
                 {if $l=='cn'}
                 <YP:list sql="select `catname`,`url` FROM `mz_category` WHERE 1 and lang=1 and parentid = 8 ORDER BY listorder asc,id desc limit 4">
                     <dd><a href="{$r.url}" title="{$r.catname}" target="_blank">{$r.catname|str_cut=###,30}</a></dd>
@@ -32,7 +36,7 @@
                 {/if}
             </dl>
             <dl class="item5">
-                <dt>{if $l=='cn'}下载专区{else}Download{/if}</dt>
+                <dt>{if $l=='cn'}下载专区{elseif $l=='en'}Download{else}下載專區{/if}</dt>
                 {if $l=='cn'}
                 <YP:list name="Download" field="id,title"  order="listorder asc,id desc" catid="83" limit="3">
                 <dd><a href="index.php?m=Download&a=down&id={$r.id}" title="{$r.title}" target="_blank">{$r.title|str_cut=###,26}</a></dd>

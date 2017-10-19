@@ -62,6 +62,15 @@ class BaseAction extends Action
 				define('LANG_NAME', $lang);
 				define('LANG_ID', $this->Lang[$lang]['id']);
 				$this->categorys = F('Category_'.$lang);
+				if(empty($this->categorys)){
+                    $categorys = M('category')->field("*")->where(" lang = ".LANG_ID)->select();
+                    $category_arr = array();
+                    if($categorys)foreach ($categorys as $cv){
+                        $category_arr[$cv['id']] = $cv;
+					}
+					unset($categorys);
+                    $this->categorys = $category_arr;
+				}
 				$this->Config = F('Config_'.$lang);
 				$this->assign('l',$lang);
 				$this->assign('langid',LANG_ID);

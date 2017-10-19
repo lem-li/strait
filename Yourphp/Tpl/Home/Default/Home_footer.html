@@ -5,42 +5,70 @@
         <div class="wrap">
             <dl class="item2">
                 <dd>
-                    <a href="/index.php?g=User&amp;m=Login&amp;a=index" target="_blank"> 仲裁员入口</a>
-                    <a href="/index.php?g=User&amp;m=Trainee&amp;a=index" target="_blank"> 实习生入口</a>
+                    <a href="{:URL('User-Login/index')}" target="_blank"> {if $l=='cn'}仲裁员入口{elseif $l=='en'}Arbitrators entrance{else}仲裁員入口{/if}</a>
+                    <a href="{:URL('User-Trainee/index')}" target="_blank"> {if $l=='cn'}实习生入口{elseif $l=='en'}Interns entrance{else}實習生入口{/if}</a>
                 </dd>
             </dl>
             <dl class="item3">
-                <dt>仲裁指南</dt>
-                <dd><a href="/index.php?m=Page&amp;a=index&amp;id=116" title="为何选择仲裁" target="_blank">为何选择仲裁</a></dd>
-                <dd><a href="/index.php?m=Page&amp;a=index&amp;id=117" title="为何选择CIETAC" target="_blank">为何选择CIETAC</a></dd>
-                <dd><a href="/index.php?m=Page&amp;a=index&amp;id=119" title="CIETAC受案范围" target="_blank">CIETAC受案范围</a></dd>
-                <dd><a href="/index.php?m=Page&amp;a=index&amp;id=118" title="示范仲裁条款" target="_blank">示范仲裁条款</a></dd>
-                <dd><a href="/index.php?m=Page&amp;a=index&amp;id=115" title="申请仲裁须知" target="_blank">申请仲裁须知</a></dd>
+                <dt>{if $l=='cn'}仲裁指南{elseif $l=='en'}Guidelines{else}仲裁指南{/if}</dt>
+                {if $l=='cn'}
+                <YP:list sql="select `catname`,`url` FROM `mz_category` WHERE 1 and lang=1 and parentid = 4 ORDER BY listorder asc,id desc limit 6">
+                    <dd><a href="{$r.url}" title="{$r.catname}" target="_blank">{$r.catname|str_cut=###,30}</a></dd>
+                </YP:list>
+                {elseif $l=='en'}
+                <YP:list sql="select `catname`,`url` FROM `mz_category` WHERE 1 and lang=2 and parentid = 45 ORDER BY listorder asc,id desc limit 6">
+                    <dd><a href="{$r.url}" title="{$r.catname}" target="_blank">{$r.catname|str_cut=###,30}</a></dd>
+                </YP:list>
+                {else}
+                <YP:list sql="select `catname`,`url` FROM `mz_category` WHERE 1 and lang=3 and parentid = 45 ORDER BY listorder asc,id desc limit 6">
+                    <dd><a href="{$r.url}" title="{$r.catname}" target="_blank">{$r.catname|str_cut=###,30}</a></dd>
+                </YP:list>
+                {/if}
             </dl>
             <dl class="item4">
-                <dt>资料</dt>
-                <dd><a href="/index.php?m=Article&amp;a=index&amp;id=73" title="中国法资料" target="_blank">中国法资料</a></dd>
-                <dd><a href="/index.php?m=Article&amp;a=index&amp;id=74" title="外国法资料" target="_blank">外国法资料</a></dd>
-                <dd><a href="/index.php?m=Article&amp;a=index&amp;id=75" title="外国仲裁机构仲裁规则" target="_blank">外国仲裁机构仲裁规则</a></dd>
-                <dd><a href="/index.php?m=Article&amp;a=index&amp;id=76" title="国际公约及惯例" target="_blank">国际公约及惯例</a></dd>
+                <dt>{if $l=='cn'}资料{elseif $l=='en'}Data{else}资料{/if}</dt>
+                {if $l=='cn'}
+                <YP:list sql="select `catname`,`url` FROM `mz_category` WHERE 1 and lang=1 and parentid = 8 ORDER BY listorder asc,id desc limit 4">
+                    <dd><a href="{$r.url}" title="{$r.catname}" target="_blank">{$r.catname|str_cut=###,30}</a></dd>
+                </YP:list>
+                {else}
+                <YP:list sql="select `catname`,`url` FROM `mz_category` WHERE 1 and lang=2 and parentid = 46 ORDER BY listorder asc,id desc limit 4">
+                    <dd><a href="{$r.url}" title="{$r.catname}" target="_blank">{$r.catname|str_cut=###,30}</a></dd>
+                </YP:list>
+                {/if}
             </dl>
             <dl class="item5">
-                <dt>下载专区</dt>
-                <dd><a href="index.php?m=Download&amp;a=down&amp;id=2" title="申请仲裁须知" target="_blank">申请仲裁须知</a></dd>
-                <dd><a href="index.php?m=Download&amp;a=down&amp;id=4" title="仲裁申请书示范文本" target="_blank">仲裁申请书示范文本</a></dd>
-                <dd><a href="index.php?m=Download&amp;a=down&amp;id=5" title="答辩书示范文本" target="_blank">答辩书示范文本</a></dd>
+                <dt>{if $l=='cn'}下载专区{elseif $l=='en'}Download{else}下載專區{/if}</dt>
+                {if $l=='cn'}
+                <YP:list name="Download" field="id,title"  order="listorder asc,id desc" catid="83" limit="3">
+                    <dd><a href="index.php?m=Download&a=down&id={$r.id}" title="{$r.title}" target="_blank">{$r.title|str_cut=###,26}</a></dd>
+                </YP:list>
+                {else}
+                <YP:list name="Download" field="id,title"  order="listorder asc,id desc" catid="220" limit="3">
+                    <dd><a href="index.php?m=Download&a=down&id={$r.id}" title="{$r.title}" target="_blank">{$r.title|str_cut=###,26}</a></dd>
+                </YP:list>
+                {/if}
             </dl>
             <div class="item6 wxcode">
                 {if $l=='cn'}
                 <img src="__PUBLIC__/images/wx.png">
-                {else}
+                {elseif $l=='en'}
                 <img src="__PUBLIC__/images/wx-en.png">
+                {else}
+                <img src="__PUBLIC__/images/wx.png">
                 {/if}
             </div>
         </div>
     </div>
     <div class="f2">
-        <span class="icon"></span>海峡两岸仲裁中心 2013版权所有
+        <span class="icon"></span>
+        {if $l=='cn'}
+        海峡两岸仲裁中心 2013版权所有
+        {elseif $l=='en'}
+        Copyright 2013, Arbitration Center across the Taiwan Strait
+        {else}
+        海峽兩岸仲裁中心 2013版權所有
+        {/if}
     </div>
 </div>
 <!-- 页面底部 -->

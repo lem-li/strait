@@ -256,7 +256,6 @@ class TagLibYp extends TagLib
 						$webstr .= $wn['catid'].',';
 					}
 					$webstr = substr($webstr, 0,-1);
-                    var_dump($webstr);
 					$category_arr = M("category")->where(" id in ({$webstr}) or parentid in ({$webstr})")->order(" listorder = 0,listorder asc,id desc")->select();
 				}else{
 					$category_arr = $this->tpl->get('Categorys');
