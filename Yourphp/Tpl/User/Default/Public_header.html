@@ -1,75 +1,60 @@
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if IE 9]><html class="lt-ie10" lang="en"><![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en"><![endif]-->
 <html class="no-js" lang="zh">
 <head>
-    <meta charset="utf-8" />
-    <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="shortcut icon" href="__PUBLIC__/images/fav.ico" type="image/x-icon" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="Description" content="" />
-    <meta name="Keywords" content="" />
-    <meta name="Author" content="LCIA" />
-    <meta name="Copyright" content="{$seo_title}-{$site_name}" />
-    <title>{$seo_title}-{$site_name}</title>
-    <script type="text/javascript" src="__PUBLIC__/Js/jquery-1.7.2.min.js"></script>
-    <script src="__PUBLIC__/Js/jquery.validate.js"></script>
-    <script src="__PUBLIC__/Js/yourphp.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/Js/tools.min.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/Js/index.js"></script>
-    <link rel="stylesheet" href="__PUBLIC__/styles/normalize.css" />
-    <link rel="stylesheet" href="__PUBLIC__/styles/foundation5/app.css" />
-    <link rel="stylesheet" href="__PUBLIC__/styles/foundation5/style.css" />
-    <link rel="stylesheet" href="__PUBLIC__/styles/login.css" />
-    <style type="text/css">
-        .anchorBL{
-            display:none;
-        }
-        .header .nav .nav_item .nav_a{
-            margin-left: -8px;
-        }
-    </style>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+    <link rel="shortcut icon" href="__PUBLIC__/images/fav.ico" type="image/x-icon">
+    <title>海峡两岸仲裁中心</title>
+    <link rel="stylesheet" href="__PUBLIC__/styles/normalize.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/styles/foundation5/app.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/styles/foundation5/style.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/styles/pagetion.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/styles/login.css"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/styles/jquery.bxslider.css"/>
+    <link href="__PUBLIC__/styles/rotaion.css" rel="stylesheet" type="text/css"/>
+    <script src="__PUBLIC__/scripts/jquery.js"></script>
 </head>
-<body>
+<body id="home-page">
 <div id="container">
-    <header id="header" class="hide-for-print">
+    <div id="header">
         <div class="row">
             <div class="large-6 medium-6 columns logo">
-                <a href="index.html">
+                <a href="/">
                     <img src="__PUBLIC__/images/logo.png" alt=""/>
                 </a>
             </div>
             <div class="large-6 medium-6 columns">
                 <ul id="login" class="inline-list">
-                    <li><a href="/" class="online-filing-button button tiny radius" title="中文版">中文版</a></li>
-                    <li><a href="/?l=en" class="online-filing-button button tiny radius" title="English">English</a></li>
-                    <li><a href="/?l=fc" class="online-filing-button button tiny radius" title="繁体版">繁体版</a></li>
+                    <li><a href="/" class="button {if $l == 'cn'}selected{/if}" title="中文版">中文版</a></li>
+                    <li><a href="/?l=en" class="button {if $l == 'en'}selected{/if}" title="English">English</a></li>
+                    <li><a href="/?l=fc" class="button {if $l == 'fc'}selected{/if}" title="繁体版">繁体版</a></li>
                 </ul>
                 <div id="searchBar">
-                    <form>
-                        <input type="text" id="searchBarText" placeholder="请输入要搜索的内容">
+                    <form name="searchPage" id="searchPage" method="get" action="index.php?" onsubmit="return validatek();">
+                        <input type="hidden" id="" name="m" value="Search"/>
+                        <input type="hidden" name="l" value="cn"/>
+                        <input type="text" name="keyword" id="searchBarText" value="" placeholder="请输入要搜索的内容">
                         <input type="submit" value="" id="searchBarBtn">
                     </form>
                 </div>
             </div>
         </div>
-    </header>
-
+    </div>
     <!-- 菜单 -->
-    <div id="top-menu" class="hide-for-print">
+    <div id="top-menu">
         <div id="top-nav" class="row collapse">
             <div class="large-12 medium-12">
-                <nav class="top-bar">
-                    <section class="top-bar-section">
-                        <ul class="header_menu">
+                <div class="top-bar">
+                    <div class="top-bar-section">
+                        <ul class="nav">
                             <YP:nav  catid="0" level="3"  home="1" />
                         </ul>
-                    </section>
-                </nav>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
