@@ -22,12 +22,12 @@ class IndexAction extends BaseAction
         $bansc=D('Domain')->where("status=1 and type_id=1")->order('id asc')->select();
         $this->assign('banshichu',$bansc);
         //幻灯片
-        $flase_list = M('slide_data')->where('fid = 1 AND website = '.$webid.' AND lang = '.LANG_ID)->order('listorder asc,id DESC')->select();
+        $flase_list = M('slide_data')->where('fid = 1 AND website = '.$webid.' AND status = 1 AND lang = '.LANG_ID)->order('listorder asc,id DESC')->select();
         if(empty($flase_list) && LANG_ID == 2){
-            $flase_list = M('slide_data')->where('fid = 1 AND website = '.$webid.' AND lang = 1')->order('listorder asc,id DESC')->select();
+            $flase_list = M('slide_data')->where('fid = 1 AND website = '.$webid.' AND status = 1 AND lang = 1')->order('listorder asc,id DESC')->select();
         }
         if(empty($flase_list) && LANG_ID == 3){
-            $flase_list = M('slide_data')->where('fid = 1 AND website = '.$webid.' AND lang = 1')->order('listorder asc,id DESC')->select();
+            $flase_list = M('slide_data')->where('fid = 1 AND website = '.$webid.' AND status = 1 AND lang = 1')->order('listorder asc,id DESC')->select();
         }
         $this->assign('flase_list',$flase_list);
         
