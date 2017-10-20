@@ -26,6 +26,9 @@ class IndexAction extends BaseAction
         if(empty($flase_list) && LANG_ID == 2){
             $flase_list = M('slide_data')->where('fid = 1 AND website = '.$webid.' AND lang = 1')->order('listorder asc,id DESC')->select();
         }
+        if(empty($flase_list) && LANG_ID == 3){
+            $flase_list = M('slide_data')->where('fid = 1 AND website = '.$webid.' AND lang = 1')->order('listorder asc,id DESC')->select();
+        }
         $this->assign('flase_list',$flase_list);
         
         //重要提示
