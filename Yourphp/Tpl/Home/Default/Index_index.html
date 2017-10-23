@@ -27,7 +27,7 @@
                         <YP:list name="Article" where="is_thumb=1" field="title,url,thumb"  order="listorder = 0,listorder asc,id desc" catid="30" limit="5">
                             <li>
                                 <a href="{$r.url}" target="_blank">
-                                    <img width="460" height="210" src="{$r.thumb}" alt="">
+                                    <img width="460" height="210" src="{$r.thumb}" alt="{$r.title}">
                                 </a>
                             </li>
                         </YP:list>

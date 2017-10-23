@@ -231,6 +231,103 @@ class ArbitratorAction extends AdminbaseAction {
                 $this->assign("month",$month);
 		$this->display();
 	}
+
+    /**
+     * 仲裁员资料管理（英文站添加）
+     */
+    function indexfc(){
+        import ( '@.ORG.Page' );
+        //搜索字段
+        $searchrealname = get_safe_replace($_GET['searchrealname']);
+        $searchSex = get_safe_replace($_GET['searchSex']);
+        $searchidnumber = get_safe_replace($_GET['searchidnumber']);
+        $searchcity = get_safe_replace($_GET['searchcity']);
+        $searchoccclassification = get_safe_replace($_GET['searchoccclassification']);
+        $searchhighestschooling = get_safe_replace($_GET['searchhighestschooling']);
+        $searchlanguagetype = get_safe_replace($_GET['searchlanguagetype']);
+        $searchexpertise = get_safe_replace($_GET['searchexpertise']);
+        $searchchecked = get_safe_replace($_GET['searchchecked']);
+        $searchyear = get_safe_replace($_GET['searchyear']);
+        $searchmonth = get_safe_replace($_GET['searchmonth']);
+
+        $this->assign($_GET);
+        $where = "u.groupid = 3 and u.lang = 'fc'";
+        if(!empty($searchrealname)){
+            $where .= " and u.realname like '%$searchrealname%'";
+        }
+        if(!empty($searchSex)){
+            $where .= " and u.sex = $searchSex";
+        }
+        if(!empty($searchidnumber)){
+            $where .= " and u.identityid = '$searchidnumber'";
+        }
+        if(!empty($searchcity)){
+            $where .= " and e.city = '$searchcity'";
+        }
+        if(!empty($searchoccclassification)){
+            $where .= " and e.occclassification = $searchoccclassification";
+        }
+        if(!empty($searchhighestschooling)){
+            $where .= " and e.highestschooling = '$searchhighestschooling'";
+        }
+        if(!empty($searchlanguagetype)){
+            $where .= " and e.firstlang = $searchlanguagetype";
+        }
+        if(!empty($searchexpertise)){
+            $where .= " and e.specialty like '%$searchexpertise%'";
+        }
+        if(!empty($searchchecked)){
+            $where .= " and u.checked = $searchchecked";
+        }
+        if(!empty($searchyear) && !empty($searchmonth)){
+            $begin_time = strtotime($searchyear.'-'.$searchmonth .'-01 00:00:00');
+            $end_time = strtotime($searchyear.'-'.($searchmonth+1) .'-01 00:00:00');
+            //echo date('Y-m-d H:i:s',$begin_time);
+            //echo date('Y-m-d H:i:s',$end_time);
+            $where .= " and u.createtime >= '{$begin_time}' and u.createtime < '{$end_time}'";
+        }elseif(!empty ($searchyear) && empty ($searchmonth)){
+            $begin_time = strtotime($searchyear.'-01-01 00:00:00');
+            $end_time = strtotime(($searchyear+1).'-01-01 00:00:00');
+            //echo date('Y-m-d H:i:s',$begin_time);
+            //echo date('Y-m-d H:i:s',$end_time);
+            $where .= " and u.createtime >= '{$begin_time}' and u.createtime < '{$end_time}'";
+        }
+        $user=$this->dao;
+        $sqlcount = "select count(*) cnt from mz_user u left join mz_user_extend e on u.id = e.user_id where $where";
+        $countarr = $user->query($sqlcount);
+        $count = 0;
+        if($countarr){
+            $count = $countarr[0]['cnt'];
+        }
+        //$count=$user->where($where)->count();
+        $page=new Page($count,20);
+        $show=$page->show();
+        $this->assign("page",$show);
+        $sql = "select u.*,e.company,e.job,e.birthday,e.technicaltitle,e.highestschooling,e.city from mz_user u left join mz_user_extend e on u.id = e.user_id where $where order by id desc limit $page->firstRow,$page->listRows";
+        $list = $user->query($sql);
+        //$list=$user->order('id')->where($where)
+        //->limit($page->firstRow.','.$page->listRows)->select();
+        //获取城市
+        $city = $GLOBALS['province'];
+        $occclassification = $GLOBALS['occclassification_en'];
+        $highestschooling = $GLOBALS['highestschooling'];
+        $languagetype = $GLOBALS['languagetype_en'];
+        $nicaltitle = $GLOBALS['nicaltitle_en'];
+        $this->assign("occclassification",$occclassification);
+        $this->assign("languagetype",$languagetype);
+        $this->assign("nicaltitle",$nicaltitle);
+        $this->assign('ulist',$list);
+        $now_year = date('Y');
+        for($y=$now_year;$y>=2000;$y--){
+            $year[] = (int)$y;
+        }
+        for($mon=1;$mon<=12;$mon++){
+            $month[] = $mon;
+        }
+        $this->assign("year",$year);
+        $this->assign("month",$month);
+        $this->display();
+    }
 	
 	function detail(){
 		$id=$_GET['id'];
