@@ -2,7 +2,7 @@
 <div class="content">
 	<div class="form_list">
 		<div class="bt">{:L(user_login)}</div>
-		<form method="post" id="myform" action="/index.php?g=User&amp;m=Login&amp;a=dologin">
+		<form method="post" id="myform" action="/index.php?g=User&m=Login&a=dologin">
 			<div class="form_group">
 				<div class="form_item">
 					<span class="form_label">{:L(user_username)}:</span>
@@ -38,18 +38,18 @@
 
 <script type="text/javascript">
     $("#submit_on").on('click', function(){
-        document.forms[0].target="_self";
-        document.forms[0].action = "/index.php?g=User&m=Login&a=dologin";
-        document.forms[0].submit();
+        document.forms[1].target="_self";
+        document.forms[1].action = "/index.php?g=User&m=Login&a=dologin";
+        document.forms[1].submit();
     });
     $("#forgotpass").on('click', function(){
         var username = $.trim($("#username").val());
         if(username == ''){
             alert("{:L(FIND_PASS_TIP)}");
         }else{
-            document.forms[0].target="_blank";
-            document.forms[0].action = "{:URL('User-Login/getpassword')}";
-            document.forms[0].submit();
+            document.forms[1].target="_blank";
+            document.forms[1].action = "{:URL('User-Login/getpassword')}";
+            document.forms[1].submit();
         }
     });
 </script>
