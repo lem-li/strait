@@ -8,8 +8,9 @@ class CostAction extends BaseAction
         $type = empty($_REQUEST['type']) ? 'in2015' : $_REQUEST['type'];
         switch ($type){
                 case 'in2015':
-                        $title = LANG_ID == 1 ? '国内案件仲裁费用（自2015年1月1日起施行）' :
-                                    'Domestic Arbitration Case（effective as from Jan 1, 2015)';
+//                        $title = LANG_ID == 1 ? '国内案件仲裁费用（自2015年1月1日起施行）' :
+//                                    'Domestic Arbitration Case（effective as from Jan 1, 2015)';
+                        $title = LANG_ID == 1 ? '自2017年9月6日起施行' : (LANG_ID == 2 ? 'effective as from Sep. 6, 2017':'自2017年9月6日起施行');
                         $name1 = LANG_ID == 1 ? '案件受理费' : 'Case acceptance fee';
                         $name2 = LANG_ID == 1 ? '案件处理费' : 'Case handling fee';
                         $name3 = LANG_ID == 1 ? '受处理费合计' : 'Total cost of treatment';

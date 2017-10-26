@@ -36,11 +36,12 @@ line-height:30px;
 					<div id="Main_DropDownMenu_Start"></div>
 					<div class="main_menu">
                         <ul>
-                            <li><a class="menu-link" href="/index.php?m=Cost&type=in2015{if $l=='en'}&l=en{/if}">{if $l=='cn'}国内案件(自2015年){else}Domestic cases(From 2015){/if}<span class="arrow"></span></a></li>
-                            <li><a class="menu-link" href="/index.php?m=Cost&type=in2012{if $l=='en'}&l=en{/if}">{if $l=='cn'}国内案件(自2012年){else}Domestic cases(From 2012){/if}<span class="arrow"></span></a></li>
-                            <li><a class="menu-link" href="/index.php?m=Cost&type=out2015{if $l=='en'}&l=en{/if}">{if $l=='cn'}涉外案件(自2015年){else}Foreign cases(From 2015){/if}<span class="arrow"></span></a></li>
-                            <li><a class="menu-link" href="/index.php?m=Cost&type=out2012{if $l=='en'}&l=en{/if}">{if $l=='cn'}涉外案件(自2012年){else}Foreign cases(From 2012){/if}<span class="arrow"></span></a></li>
-                            <li><a class="menu-link" href="/index.php?m=Cost&type=dispute{if $l=='en'}&l=en{/if}">{if $l=='cn'}金融争议案件{else}Financial dispute case{/if}<span class="arrow"></span></a></li>
+                            <li><a class="menu-link" href="/index.php?m=Cost&type=in2015{if $l}&l={$l}{/if}">{:L(FEIYONGKUAISUAN)}<span class="arrow"></span></a></li>
+                            <!--<li><a class="menu-link" href="/index.php?m=Cost&type=in2015{if $l=='en'}&l=en{/if}">{if $l=='cn'}国内案件(自2015年){else}Domestic cases(From 2015){/if}<span class="arrow"></span></a></li>-->
+                            <!--<li><a class="menu-link" href="/index.php?m=Cost&type=in2012{if $l=='en'}&l=en{/if}">{if $l=='cn'}国内案件(自2012年){else}Domestic cases(From 2012){/if}<span class="arrow"></span></a></li>-->
+                            <!--<li><a class="menu-link" href="/index.php?m=Cost&type=out2015{if $l=='en'}&l=en{/if}">{if $l=='cn'}涉外案件(自2015年){else}Foreign cases(From 2015){/if}<span class="arrow"></span></a></li>-->
+                            <!--<li><a class="menu-link" href="/index.php?m=Cost&type=out2012{if $l=='en'}&l=en{/if}">{if $l=='cn'}涉外案件(自2012年){else}Foreign cases(From 2012){/if}<span class="arrow"></span></a></li>-->
+                            <!--<li><a class="menu-link" href="/index.php?m=Cost&type=dispute{if $l=='en'}&l=en{/if}">{if $l=='cn'}金融争议案件{else}Financial dispute case{/if}<span class="arrow"></span></a></li>-->
                         </ul>
 					</div>
 					<div id="Main_DropDownMenu_End"></div>
@@ -57,7 +58,7 @@ line-height:30px;
 				<div class="search" style="margin-bottom:80px;">
 					<form name="searchPage" id="searchPage" method="post" action="">
 						<input type="text" class="search_input" name="money" value="{$_REQUEST['money']}">
-						<input type="submit" style="width:70px" value="{if $l=='cn'}计算{else}Calculate{/if}" class="search_button">
+						<input type="submit" style="width:70px" value="{if $l=='cn'}计算{elseif $l=='en'}Calculate{else}計算{/if}" class="search_button">
 					</form>
 				</div>
 				</br>
@@ -73,13 +74,13 @@ line-height:30px;
 					<tr>
 						<td align="middle" style="font-size:14px;">
 							<div align="center">
-								{if $l=='cn'}案件费用计算结果{else}DisputedMoney{/if}
+								{if $l=='cn'}案件费用计算结果{elseif $l=='en'}DisputedMoney{else}案件費用計算結果{/if}
 							</div>
 						</td>
 					</tr>
 					<tr>
 						<td style="font-size:14px;">
-							{if $l=='cn'}争议金额{else}DisputedMoney{/if}：{$costResult.money}
+							{if $l=='cn'}争议金额{elseif $l=='en'}DisputedMoney{else}爭議金額{/if}：{$costResult.money}
 						</td>
 					</tr>
 					<tr>
@@ -106,8 +107,8 @@ line-height:30px;
 						<td>
 							<div align="center">
 								<span><b style="font-size:16px;color:#CE3658">
-                                                                        {if $l=='cn'}该费用的具体交付金额以仲裁委立案书面复函为准
-                                                                        {else}The cost of the specific delivery amount to the Arbitration Commission filing a written reply shall prevail{/if}
+                                {if $l=='cn'}该费用的具体交付金额以仲裁委立案书面复函为准
+                                {elseif $l=='en'}The cost of the specific delivery amount to the Arbitration Commission filing a written reply shall prevail{else}該費用的具體交付金額以仲裁委立案書面複函為準{/if}
                                                                     </b></span>
 							</div>
 						</td>
