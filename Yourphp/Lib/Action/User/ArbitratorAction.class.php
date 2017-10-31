@@ -177,7 +177,7 @@ class ArbitratorAction extends BaseAction {
 			if(!empty($searchSpecSkill)){
 				$where .= "&arbitratorCondition.searchSpeciality=".urlencode($searchSpecSkill);
 			}
-		}else{
+		}elseif(LANG_NAME == 'en'){
 			$searchENName = get_safe_replace($_GET['searchENName']);
 			$searchType = get_safe_replace($_GET['searchType']);
 			$searchENLanguage = get_safe_replace($_GET['searchENLanguage']);
@@ -199,7 +199,29 @@ class ArbitratorAction extends BaseAction {
 			if(!empty($searchENSpecSkill)){
 				$where .= "&arbitratorCondition.searchEnglishSpeciality=".urlencode($searchENSpecSkill);
 			}
-		}
+		}else{
+            $searchName = get_safe_replace($_GET['searchName']);
+            $searchType = get_safe_replace($_GET['searchType']);
+            $searchLanguage = get_safe_replace($_GET['searchLanguage']);
+            $searchAddress = get_safe_replace($_GET['searchAddress']);
+            $searchSpecSkill = get_safe_replace($_GET['searchSpecSkill']);
+            $where = "?arbitratorCondition.branchID=1";
+            if(!empty($searchName)){
+                $where .= "&arbitratorCondition.searchArbitratorName=".urlencode($searchName);
+            }
+            if(!empty($searchType)){
+                $where .= "&arbitratorCondition.nationalityType=$searchType";
+            }
+            if(!empty($searchLanguage)){
+                $where .= "&arbitratorCondition.searchLanguage=".urlencode($searchLanguage);
+            }
+            if(!empty($searchAddress)){
+                $where .= "&arbitratorCondition.searchHomeAddress=".urlencode($searchAddress);
+            }
+            if(!empty($searchSpecSkill)){
+                $where .= "&arbitratorCondition.searchSpeciality=".urlencode($searchSpecSkill);
+            }
+        }
  		$this->assign($_GET);
  		$counturl = $counturl.$where;
  		$countjson = curl_get($counturl);

@@ -1,0 +1,146 @@
+﻿#peopleHub .tab {
+	width:100%;
+	background:#f6f6f6;
+	border-bottom:1px #c9c9c9 solid;
+	position:relative;
+	padding:12px 0
+}
+#peopleHub .tab li {
+	width:33%;
+	float:left;
+	text-align:center;
+	border-right:1px #DCDCDC solid;
+	line-height:24px
+}
+#peopleHub .tab li a {
+	font-size:1.4rem;
+	color:#505050
+}
+#peopleHub .tab li a:hover {
+	color:#ff7f00
+}
+#peopleHub .tab li a b {
+	font-size:1.4rem;
+	padding-right:7px
+}
+#peopleHub .tab li .on {
+	color:#ff7f00
+}
+#peopleHub .tab li:last-child {
+	border-right:none
+}
+#peopleHub .tab em {
+	display:block;
+	width:33%;
+	border-bottom:3px #ff7f00 solid;
+	font-size:0;
+	overflow:hidden;
+	position:absolute;
+	left:0;
+	bottom:-1px;
+	z-index:999
+}
+#peopleHub .msgCon {
+	background:#fff;
+	padding-left:15px
+}
+#peopleHub .msgCon li {
+	position:relative;
+	border-bottom:1px #dbdbdb solid
+}
+#peopleHub .msgCon li a {
+	padding:10px 0;
+	display:block;
+	height:42px
+}
+#peopleHub .msgCon li .msgImg {
+	width:42px;
+	float:left;
+	height:42px;
+	text-align:center;
+	border-radius:5px;
+	overflow:hidden
+}
+#peopleHub .msgCon li .msgImg img {
+	max-width:42px
+}
+#peopleHub .msgCon li .sendpublic {
+	position:absolute;
+	right:1rem;
+	top:50%;
+	margin-top:-16px;
+	display:inline-block;
+	height:32px;
+	line-height:32px;
+	width:54px;
+	text-align:center;
+	border-radius:.3rem;
+	color:#fff;
+	padding:0
+}
+#peopleHub .msgCon li .sendMessage {
+	background:#ff8b26
+}
+#peopleHub .msgCon li .sendAgree {
+	background:#6EBE1E
+}
+#peopleHub .msgCon li .QThide,#peopleHub .msgCon li .hide {
+	display:none
+}
+#peopleHub .msgCon li a:visited p {
+	color:#aaa
+}
+#peopleHub .msgCon li a:visited h2 {
+	color:#888
+}
+#peopleHub .msgCon li .msgBasic {
+	width:72.8%;
+	float:left;
+	padding:0 0 0 16px
+}
+#peopleHub .msgCon li .msgBasic h2 {
+	padding:0 9px 0 0;
+	margin-bottom:10px;
+	margin-right:40px;
+	color:#000;
+	font-size:1.6rem;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	display:-webkit-box;
+	-webkit-line-clamp:2;
+	-webkit-box-orient:vertical
+}
+#peopleHub .msgCon li .msgBasic h2 em {
+	font-size:1.2rem;
+	font-weight:400;
+	color:#00b4e2
+}
+#peopleHub .msgCon li .msgBasic p {
+	font-size:1.1rem;
+	color:#8c8c8c;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	padding-bottom:10px
+}
+#peopleHub .msgCon li .msgBasic p b {
+	font-size:1.4rem;
+	color:#ff7f00;
+	padding:0 4px
+}
+#peopleHub .msgCon li .arrows {
+	padding-top:14px;
+	color:#C4C4C4
+}
+#peopleHub .msgCon li:last-child {
+	border-bottom:none
+}
+#peopleHub .msgCon .nonews {
+	background:#fff;
+	margin-left:-15px;
+	padding-right:15px;
+	width:100%;
+	text-align:center;
+	padding-top:50%;
+	font-size:1.8rem
+}
