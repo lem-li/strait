@@ -240,7 +240,6 @@ class ArbitratorAction extends BaseAction {
 		if(isset($listjson['result']) && !empty($listjson['result'])){
 			$listarr = json_decode($listjson['result'],true);
 		}
-		print_r($listarr);exit;
 		$list = array();
 		if($listarr && isset($listarr['arbitrator'])){
 			$list = $listarr['arbitrator'];
