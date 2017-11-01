@@ -68,7 +68,7 @@ class ContentAction extends AdminbaseAction
                 if(MODULE_NAME=='Page'){
                     $userInfo = M('User')->find($_SESSION['adminid']);
                     if($userInfo['adminid'] == 1 || $userInfo['groupid'] == 1){
-                        $webid = empty($_REQUEST['websiteid'])?1:$_REQUEST['websiteid'];
+                        $webid = empty($_REQUEST['websiteid'])?24:$_REQUEST['websiteid'];
                     }else{
                         $webid = $userInfo['website'];
                     }

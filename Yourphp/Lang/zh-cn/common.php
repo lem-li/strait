@@ -1,7 +1,7 @@
 <?php
 return array(
-	'welcome'=>'欢迎使用中国国际经济贸易仲裁委员会管理后台',
-	'system_name'=>'中国国际经济贸易仲裁委员会',
+	'welcome'=>'欢迎使用中国海峡两岸仲裁中心管理后台',
+	'system_name'=>'中国海峡两岸仲裁中心',
 	'official_site' => '官方网站',
 	'authorization' => '授权',
 	'chaxun' => '查询',
