@@ -97,7 +97,7 @@ class SearchAction extends BaseAction
 			}
 		}
 		$this->dao= M($module);
-		$sqlcount = "select count(*) cnt from mz_page where $where union select count(*) cnt from mz_article where $where";
+		$sqlcount = "select count(*) cnt from mz_page where $where AND website = 24 union select count(*) cnt from mz_article where $where";
 		$countarr = $this->dao->query($sqlcount);
 		$count = 0;
 		if($countarr){
@@ -125,7 +125,7 @@ class SearchAction extends BaseAction
 			//page字段
 			$fieldpa = 'id,status as url,title';
 			//$list = $this->dao->field($field)->where($where)->order('id desc')->limit($page->firstRow . ',' . $page->listRows)->select();
-			$sql = "select a.* from (select $fieldpa from mz_page where $where union select $fieldar from mz_article where $where) a limit $page->firstRow,$page->listRows";
+			$sql = "select a.* from (select $fieldpa from mz_page where $where AND website = 24 union select $fieldar from mz_article where $where) a limit $page->firstRow,$page->listRows";
 			$list = $this->dao->query($sql);
 			if($list)foreach($list as &$v){
 				$v['title'] = str_replace($keyword, '<font color=red>'.$keyword.'</font>',$v['title']);
