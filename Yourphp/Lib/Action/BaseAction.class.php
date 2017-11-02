@@ -248,9 +248,9 @@ class BaseAction extends Action
 
 			$template = $cat['template_list'] ? $cat['template_list'] :  'index' ;
 			$this->assign ($data);
-                        if($catid == 26 || $catid == 53){
-                            $template = 'contactus';
-                        }
+//                        if($catid == 26 || $catid == 53){
+//                            $template = 'contactus';
+//                        }
 			$this->display(THEME_PATH.$module.'_'.$template.'.html');
 
 		}else{
