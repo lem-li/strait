@@ -12,9 +12,19 @@
 if(!defined("Yourphp")) exit("Access Denied");
 class BaseAction extends Action
 {
+
     public $year_lengh = 6;
     protected   $Config ,$sysConfig,$categorys,$module,$moduleid,$mod,$dao,$Type,$Role,$_userid,$_groupid,$_email,$_username ,$forward ,$user_menu,$Lang,$member_config;
     public function _initialize() {
+
+
+//        $user_arr = array('uid'=>(string)123);
+//
+//        var_dump(json_encode($user_arr));
+//		$a = array('uid'=> "123");
+//		$a = json_encode($a);
+//        $aa = json_decode($a,true);
+//		var_dump($aa['uid']);exit();
             require_once APP_PATH.'Conf/peopleattr.php';
 			$this->sysConfig = F('sys.config');
 			$this->module = F('Module');

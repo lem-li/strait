@@ -31,8 +31,12 @@
                 <YP:list sql="select `catname`,`url` FROM `mz_category` WHERE 1 and lang=1 and parentid = 8 ORDER BY listorder asc,id desc limit 4">
                     <dd><a href="{$r.url}" title="{$r.catname}" target="_blank">{$r.catname|str_cut=###,30}</a></dd>
                 </YP:list>
-                {else}
+                {elseif $l=='en'}
                 <YP:list sql="select `catname`,`url` FROM `mz_category` WHERE 1 and lang=2 and parentid = 46 ORDER BY listorder asc,id desc limit 4">
+                    <dd><a href="{$r.url}" title="{$r.catname}" target="_blank">{$r.catname|str_cut=###,30}</a></dd>
+                </YP:list>
+                {else}
+                <YP:list sql="select `catname`,`url` FROM `mz_category` WHERE 1 and lang=3 and parentid = 368 ORDER BY listorder asc,id desc limit 4">
                     <dd><a href="{$r.url}" title="{$r.catname}" target="_blank">{$r.catname|str_cut=###,30}</a></dd>
                 </YP:list>
                 {/if}

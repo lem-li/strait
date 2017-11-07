@@ -41,8 +41,8 @@
             <div class="content-feed quickentry">
                 <div class="content-feeds">
                     <div class="quicklinks clearfix">
-                        <a href="{if $l == 'cn'}{:U('Article/index?id=120')}{else}{:U('Article/index?id=190&l=en')}{/if}" class="qlink kj1"><i></i>{:L(SHENQINGZONGCAI)}</a>
-                        <a href="/index.php?m=Cost{if $l == 'en'}&l=en{/if}" class="qlink kj2"><i></i>{:L(FEIYONGKUAISUAN)}</a>
+                        <a href="{if $l == 'cn'}{:U('Article/index?id=120')}{elseif $l=='en'}{:U('Article/index?id=190&l=en')}{else}{:U('Article/index?id=382&l=fc')}{/if}" class="qlink kj1"><i></i>{:L(SHENQINGZONGCAI)}</a>
+                        <a href="/index.php?m=Cost{if $l == 'en'}&l=en{/if}{if $l == 'fc'}&l=fc{/if}" class="qlink kj2"><i></i>{:L(FEIYONGKUAISUAN)}</a>
                         <a href="#" class="qlink kj3"><i></i>{:L(SOUANFANWEI)}</a>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                 <h2 class="content-feed-heading content-feed-heading-line">
                     <span class="line"></span>
                     <span>{if $l == 'cn'}在线公告{elseif $l=='en'}Online Notice{else}在線公告{/if}</span>
-                    <a href="/index.php?m=Article&a=index&id={if $l == 'cn'}151{else}145{/if}" class="link-more link-more-mr0">{:L(MORE)}&gt;</a>
+                    <a href="/index.php?m=Article&a=index&id={if $l == 'cn'}151{elseif $l=='en'}145&l=en{else}374&l=fc{/if}" class="link-more link-more-mr0">{:L(MORE)}&gt;</a>
                 </h2>
                 <div class="content-feed-con">
                     <ul>
@@ -82,7 +82,7 @@
                         <h2 class="content-feed-heading">
                             <span class="line"></span>
                             <span>{if $l=='cn'}新闻中心{elseif $l=='en'}News{else}新聞中心{/if}</span>
-                            <a href="/index.php?m=Article&a=index&id=30" class="link-more">{:L(MORE)}&gt;</a>
+                            <a href="/index.php?m=Article&a=index&id={if $l=='cn'}30&l=cn{elseif $l=='en'}48&l=en{else}361&l=fc{/if}" class="link-more">{:L(MORE)}&gt;</a>
                         </h2>
                         <div class="content-feed-con">
                             <ul>

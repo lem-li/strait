@@ -32,7 +32,13 @@ class IndexAction extends BaseAction
         $this->assign('flase_list',$flase_list);
         
         //重要提示
-        $cate1id = LANG_ID == 1 ? 136 : 141;
+        if(LANG_ID == 1){
+            $cate1id = 136;
+        }elseif (LANG_ID == 2){
+            $cate1id = 141;
+        }else{
+            $cate1id = 372;
+        }
         $category = M('Category')->where('parentid="'.$cate1id.'"')->order("listorder asc,id asc")->select();
         $c_right_c_bt = '';
         $c_right_c1_r = '<div class="tab-con">';
