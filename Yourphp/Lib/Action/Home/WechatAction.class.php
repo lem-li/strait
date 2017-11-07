@@ -190,7 +190,6 @@ class WechatAction extends BaseAction
         $this->display("Wechat:detail"); */
 		
 		$id = '383';
-        $module=M('Page');
         $this->dao= M($module);
         $sql = "select * from mz_page where catid = '{$id}' ";
         $arr = $this->dao->query($sql);
