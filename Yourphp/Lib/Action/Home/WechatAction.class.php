@@ -12,8 +12,10 @@ class WechatAction extends BaseAction
 
         if($lang == 1){
             $catid = 30;
-        }else{
+        }elseif($lang == 2){
             $catid = 48;
+        }else{
+            $catid = 361;
         }
         if(empty($wid) && !is_numeric($wid)){
             $wid = $weblist[0]['id'];
@@ -42,8 +44,10 @@ class WechatAction extends BaseAction
 
         if($lang == 1){
             $catid = 151;
-        }else{
+        }elseif($lang == 2){
             $catid = 145;
+        }else{
+            $catid = 374;
         }
         if(empty($wid) && !is_numeric($wid)){
             $wid = $weblist[0]['id'];
@@ -185,7 +189,8 @@ class WechatAction extends BaseAction
         layout(false);
         $this->display("Wechat:detail"); */
 		
-		$id = '361';
+		$id = '383';
+        $module=M('Page');
         $this->dao= M($module);
         $sql = "select * from mz_page where catid = '{$id}' ";
         $arr = $this->dao->query($sql);
